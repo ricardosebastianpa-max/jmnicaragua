@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos | JM Schoenstatt Nicaragua</title>
+    <meta name="description" content="Recursos del movimiento Schoenstatt: biblioteca, canciones y materiales para crecer. Ecosistema formativo de la JM Nicaragua.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Recursos — JM Schoenstatt Nicaragua">
+    <meta property="og:description" content="Materiales, canciones y biblioteca para la vida del movimiento.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-ivory">
+
+    <!-- Navigation -->
+    <nav class="navbar dark-theme">
+        <a href="index.html" class="logo">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+        <div class="nav-links">
+            <a href="la-jm.html">Qué somos</a>
+            <a href="caminos.html">Etapas</a>
+            <a href="encuentros.html">La Agenda</a>
+            <a href="equipo.html">El Equipo</a>
+            <a href="recursos.html" style="color: var(--old-gold);">Recursos</a>
+            <a href="dar-el-paso.html" class="btn-primary" style="padding: 0.5rem 1rem; color: var(--pure-white);">Dar el Paso</a>
+        </div>
+        <button class="menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('active')">
+            <i data-lucide="menu" color="#111111"></i>
+        </button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="menu-btn" style="position: absolute; top: 1.5rem; right: 4%; color: var(--ivory);" onclick="document.getElementById('mobileNav').classList.remove('active')">
+            <i data-lucide="x"></i>
+        </button>
+        <a href="la-jm.html">Qué somos</a>
+        <a href="caminos.html">Etapas</a>
+        <a href="encuentros.html">Agenda</a>
+        <a href="equipo.html">El Equipo</a>
+        <a href="recursos.html" style="color: var(--old-gold);">Recursos</a>
+        <a href="dar-el-paso.html">Dar el Paso</a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-ivory" style="padding: 10rem 4% 5rem 4%; border-bottom: 1px solid var(--surface-border); text-align: center;">
+        <span class="chip" style="color: var(--charcoal); border-color: rgba(0,0,0,0.1);">
+            <i data-lucide="library" size="14"></i> Ecosistema formativo
+        </span>
+        <h1 class="section-title" style="margin-bottom: 1rem;">Banco de Recursos.</h1>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 650px;">Material para seguir creciendo. Textos, canciones y herramientas que alimentan la vida de la JM desde adentro.</p>
+        <span class="accent-hand" style="margin-top: 1.5rem; display: block;">Esto crece con nosotros.</span>
+    </header>
+
+    <!-- Content Sections -->
+    <section class="bg-pure section-pad">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            
+            <!-- Category Filter (Visual Only) -->
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; justify-content: center;">
+                <button class="age-option active"><i data-lucide="layout-grid" size="16"></i> Todos</button>
+                <button class="age-option"><i data-lucide="book-open" size="16"></i> Biblioteca</button>
+                <button class="age-option"><i data-lucide="music" size="16"></i> Cancionero</button>
+                <button class="age-option"><i data-lucide="file-text" size="16"></i> Guías</button>
+            </div>
+
+            <!-- Biblioteca del Movimiento -->
+            <div class="resource-section reveal-on-scroll">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="book-open" size="28" color="var(--blue-mid)"></i>
+                        <h3 style="margin: 0;">Biblioteca del Movimiento</h3>
+                    </div>
+                    <span class="chip" style="margin: 0;">Fundamentales</span>
+                </div>
+                <p>Textos esenciales de Schoenstatt. Escritos del Padre Kentenich, documentos formativos y materiales de estudio que dan forma a nuestra identidad masculina.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="scroll" size="18"></i></div>
+                        <div>
+                            <strong>Acta de Prefundación (1914)</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">El pacto inicial con la Mater.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="book" size="18"></i></div>
+                        <div>
+                            <strong>Hacia el Padre</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Oraciones y pedagogía kentenijiana.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="user-check" size="18"></i></div>
+                        <div>
+                            <strong>El Ideal del Hombre Nuevo</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Fundamentos de la formación.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="heart" size="18"></i></div>
+                        <div>
+                            <strong>Alianza de Amor</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Manual de introducción.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cancionero JM -->
+            <div class="resource-section reveal-on-scroll">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="music" size="28" color="var(--blue-mid)"></i>
+                        <h3 style="margin: 0;">Cancionero</h3>
+                    </div>
+                    <span class="chip" style="margin: 0;">Audio & Letras</span>
+                </div>
+                <p>Las canciones que nos definen. Himnos de rama, cantos marianos y canciones de fogón que hacen vibrar nuestra vida compartida.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="play-circle" size="18"></i></div>
+                        <div>
+                            <strong>Himno de la JM</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">"Juventud de sol, paso de vencedor..."</p>
+                        </div>
+                        <i data-lucide="external-link" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="music-2" size="18"></i></div>
+                        <div>
+                            <strong>Cantos Marianos</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Selección para noches Mater.</p>
+                        </div>
+                        <i data-lucide="file-text" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="flame" size="18"></i></div>
+                        <div>
+                            <strong>Canciones de Fogón</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Acordes y letras para misiones.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Guías y Herramientas -->
+            <div class="resource-section reveal-on-scroll">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="pen-tool" size="28" color="var(--blue-mid)"></i>
+                        <h3 style="margin: 0;">Herramientas para Crecer</h3>
+                    </div>
+                    <span class="chip" style="margin: 0;">Prácticos</span>
+                </div>
+                <p>Métodos concretos para tu propia autoeducación. Guías para círculos, fichas de ideal personal y esquemas de oración diaria.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="clipboard-list" size="18"></i></div>
+                        <div>
+                            <strong>Guía de Círculos</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Estructura para reuniones de vida.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="compass" size="18"></i></div>
+                        <div>
+                            <strong>Ideal Personal</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Fichas de descubrimiento vocacional.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="res-icon"><i data-lucide="calendar" size="18"></i></div>
+                        <div>
+                            <strong>Horario Espiritual</strong>
+                            <p style="font-size: 0.8rem; margin: 0; opacity: 0.6;">Planificador de hábitos diarios.</p>
+                        </div>
+                        <i data-lucide="download" size="14" style="margin-left: auto; opacity: 0.4;"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contribution CTA -->
+    <section class="bg-blue-deep section-pad-dense" style="text-align: center; padding: 5rem 4%;">
+        <div class="reveal-on-scroll">
+            <h2 class="section-title text-ivory" style="font-size: 2.5rem; margin-bottom: 1rem;">¿Buscás algo más?</h2>
+            <p class="section-text text-ivory" style="margin: 0 auto 2.5rem auto; opacity: 0.7; max-width: 600px;">Si necesitás un material específico que no encontrás acá, o tenés algo que aportar a nuestra biblioteca, contactanos.</p>
+            <a href="dar-el-paso.html" class="btn-secondary">Contactar a Secretaría</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-marian">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo" style="color: var(--ivory); font-size: 1.5rem; margin-bottom: 1rem;">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+                <p style="font-size: 0.9rem; max-width: 300px; color: var(--ivory); opacity: 0.7;">Forjando el carácter de hombres libres desde el Santuario hacia la calle. Movimiento Católico Mariano.</p>
+            </div>
+            <div>
+                <h4>Caminos</h4>
+                <a href="cruzados.html">Cruzados (8 - 12 años)</a>
+                <a href="pioneros.html">Pioneros (13 - 17 años)</a>
+                <a href="universitarios.html">Rama Mayor (18+)</a>
+            </div>
+            <div>
+                <h4>Conectar</h4>
+                <a href="equipo.html">Nuestro Equipo</a>
+                <a href="vida-compartida.html">Vida Compartida</a>
+                <a href="dar-el-paso.html">Contactar a Jefatura</a>
+            </div>
+            <div>
+                <h4>Explorar</h4>
+                <a href="la-jm.html">Qué Somos</a>
+                <a href="encuentros.html">La Agenda</a>
+                <a href="recursos.html">Recursos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 JM Schoenstatt Nicaragua.</span>
+            <span>Un ecosistema de formación activo.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

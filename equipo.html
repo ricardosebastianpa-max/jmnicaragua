@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo | JM Schoenstatt Nicaragua</title>
+    <meta name="description" content="Conocé al equipo de la JM Schoenstatt Nicaragua. Gente real, transparencia humana.">
+    <meta property="og:title" content="El Equipo — JM Schoenstatt Nicaragua">
+    <meta property="og:description" content="No somos una franquicia sin rostro. Gente real de este lado.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-ivory">
+
+    <!-- Navigation -->
+    <nav class="navbar dark-theme">
+        <a href="index.html" class="logo">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+        <div class="nav-links">
+            <a href="la-jm.html">Qué somos</a>
+            <a href="caminos.html">Etapas</a>
+            <a href="encuentros.html">La Agenda</a>
+            <a href="equipo.html" style="color: var(--old-gold);">El Equipo</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="dar-el-paso.html" class="btn-primary" style="padding: 0.5rem 1rem; color: var(--pure-white);">Escribinos directo</a>
+        </div>
+        <button class="menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('active')"><i data-lucide="menu"></i></button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="menu-btn" style="position: absolute; top: 1.5rem; right: 4%; color: var(--ivory);" onclick="document.getElementById('mobileNav').classList.remove('active')"><i data-lucide="x"></i></button>
+        <a href="la-jm.html">Qué somos</a>
+        <a href="caminos.html">Etapas</a>
+        <a href="encuentros.html">Agenda</a>
+        <a href="equipo.html" style="color: var(--old-gold);">El Equipo</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dar-el-paso.html">Dar el Paso</a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-ivory" style="padding: 10rem 4% 3rem 4%; border-bottom: 1px solid var(--surface-border); text-align: center;">
+        <span class="chip" style="color: var(--charcoal); border-color: rgba(0,0,0,0.1);"><i data-lucide="shield-check" size="14"></i> Transparencia Humana</span>
+        <h1 class="section-title" style="margin-bottom: 1rem;">Gente real.<br>De este lado alguien contesta.</h1>
+        <p class="section-text" style="margin: 0 auto;">No somos una franquicia sin rostro. La JM Nicaragua está estructurada y cuidada por un equipo de adultos y jóvenes universitarios completamente confiables y dedicados a la formación segura.</p>
+        <span class="accent-hand" style="margin-top: 1rem;">Llamanos cuando gustes.</span>
+    </header>
+
+    <!-- Acompañamiento -->
+    <section class="bg-pure section-pad">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="margin-bottom: 3rem;">
+                <span class="overline"><i data-lucide="award" size="16"></i> ACOMPAÑAMIENTO</span>
+                <h2 class="section-title" style="font-size: 2.4rem;">Dirección Espiritual y Laica</h2>
+                <p class="section-text">Quienes acompañan el camino de la JM con guía espiritual y experiencia de vida. Siempre accesibles para conversar.</p>
+            </div>
+            
+            <div id="team-asesores" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>P. Juan Francisco Escobar</h4>
+                    <span class="role">Asesor Religioso</span>
+                    <span class="quote">"Que María sea la que forme en ustedes al hombre nuevo."</span>
+                </div>
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>Juan Jarquín</h4>
+                    <span class="role">Asesor Laico</span>
+                    <span class="quote">"La vida se hace caminando al lado de otro."</span>
+                </div>
+            </div>
+    </section>
+
+    <!-- Guías de Etapa -->
+    <section class="bg-ivory section-pad divider-top">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="margin-bottom: 3rem;">
+                <span class="overline"><i data-lucide="users" size="16"></i> GUÍAS DE ETAPA</span>
+                <h2 class="section-title" style="font-size: 2.4rem;">Quienes caminan con cada etapa</h2>
+                <p class="section-text">Cada etapa tiene un guía que la conoce por dentro. Ellos son la primera cara que vas a ver, y están para recibirte.</p>
+            </div>
+            
+            <div id="team-guias" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>Hector Peralta</h4>
+                    <span class="role">Guía — Cruzados</span>
+                    <span class="quote">"Cada niño tiene algo heroico escondido. Solo hay que sacarlo."</span>
+                </div>
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>Ricardo Picado</h4>
+                    <span class="role">Guía — Pioneros</span>
+                    <span class="quote">"La secundaria no la sobrevive nadie solo."</span>
+                </div>
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>Yunahpu Traumann</h4>
+                    <span class="role">Guía — Universitarios</span>
+                    <span class="quote">"Nuestra generación necesita hombres que piensen profundo."</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apoyo Logístico -->
+    <section class="bg-pure section-pad divider-top">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="margin-bottom: 3rem;">
+                <span class="overline"><i data-lucide="heart-handshake" size="16"></i> APOYO LOGÍSTICO</span>
+                <h2 class="section-title" style="font-size: 2.4rem;">Quienes sostienen por detrás</h2>
+                <p class="section-text">El trabajo invisible que hace posible que todo funcione.</p>
+            </div>
+            
+            <div id="team-apoyo" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>Carmen Alvarado</h4>
+                    <span class="role">Apoyo — Cruzados</span>
+                    <span class="quote">"Los niños necesitan sentirse seguros para ser libres."</span>
+                </div>
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>Jaime Picado</h4>
+                    <span class="role">Apoyo — Universitarios</span>
+                    <span class="quote">"Servir sin que nadie te vea es la mejor escuela."</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust CTA -->
+    <section class="bg-blue-mid section-pad-dense" style="text-align: center; padding: 5rem 4%;">
+        <span class="overline text-ivory" style="opacity: 0.5;"><i data-lucide="shield-check" size="16"></i> Para Padres e Interesados</span>
+        <h3 class="section-title text-ivory" style="font-size: 2rem; margin-bottom: 1rem;">Transparencia Abierta</h3>
+        <p class="section-text text-ivory" style="margin: 0 auto 2rem auto;">Si sos papá, mamá, o solo querés conocer quién nos lidera antes de unirte, podés escribinos directamente al WhatsApp para agendar una llamada con la Jefatura.</p>
+        <a href="dar-el-paso.html" class="btn-secondary">Escribirles por WA <i data-lucide="message-circle" size="14" style="margin-left: 4px;"></i></a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-marian">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo" style="color: var(--ivory); font-size: 1.5rem; margin-bottom: 1rem;">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+                <p style="font-size: 0.9rem; max-width: 300px; color: var(--ivory); opacity: 0.7;">Forjando el carácter de hombres libres desde el Santuario hacia la calle. Movimiento Católico Mariano.</p>
+            </div>
+            <div><h4>Caminos</h4><a href="cruzados.html">Cruzados (8 - 12 años)</a><a href="pioneros.html">Pioneros (13 - 17 años)</a><a href="universitarios.html">Rama Mayor (18+)</a></div>
+            <div><h4>Conectar</h4><a href="equipo.html">Nuestro Equipo</a><a href="vida-compartida.html">Vida Compartida</a><a href="dar-el-paso.html">Contactar a Jefatura</a></div>
+            <div><h4>Explorar</h4><a href="la-jm.html">Qué Somos</a><a href="encuentros.html">La Agenda</a><a href="recursos.html">Recursos</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 JM Schoenstatt Nicaragua.</span><span>Un ecosistema de formación activo.</span></div>
+    </footer>
+    <script>lucide.createIcons();</script>
+<script src="main.js"></script>
+<script>
+// Dynamic team loader — enhances static team cards with managed data
+(function() {
+    fetch('/api/public/team').then(r => r.json()).then(members => {
+        if (!members || !members.length) return;
+        const esc = s => { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+
+        const sectionMap = { asesores: 'team-asesores', guias: 'team-guias', apoyo: 'team-apoyo' };
+        const grouped = { asesores: [], guias: [], apoyo: [] };
+        members.forEach(m => {
+            if (grouped[m.section]) grouped[m.section].push(m);
+        });
+
+        for (const [section, containerId] of Object.entries(sectionMap)) {
+            const container = document.getElementById(containerId);
+            if (!container || !grouped[section].length) continue;
+            container.innerHTML = grouped[section].map(m => `
+                <div class="team-card">
+                    <div class="photo-medallion large"></div>
+                    <h4>${esc(m.name)}</h4>
+                    <span class="role">${esc(m.role)}</span>
+                    <span class="quote">"${esc(m.quote)}"</span>
+                </div>
+            `).join('');
+        }
+    }).catch(() => {});
+})();
+</script>
+</body>
+</html>

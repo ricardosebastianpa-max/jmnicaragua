@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminos | JM Schoenstatt Nicaragua</title>
+    <meta name="description" content="Encontrá tu etapa en la JM: Cruzados (8-12), Pioneros (13-17) o Universitarios (18+). Cada edad tiene su propio frente.">
+    <meta property="og:title" content="Etapas — JM Schoenstatt Nicaragua">
+    <meta property="og:description" content="Cada edad tiene su propio frente. Encontrá tu etapa en el movimiento.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-ivory">
+
+    <!-- Navbar -->
+    <nav class="navbar dark-theme">
+        <a href="index.html" class="logo">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+        <div class="nav-links">
+            <a href="la-jm.html">Qué somos</a>
+            <a href="caminos.html" style="color: var(--old-gold);">Etapas</a>
+            <a href="encuentros.html">La Agenda</a>
+            <a href="equipo.html">El Equipo</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="dar-el-paso.html" class="btn-primary" style="padding: 0.5rem 1rem; color: var(--pure-white);">Dar el Paso</a>
+        </div>
+        <button class="menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('active')"><i data-lucide="menu"></i></button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="menu-btn" style="position: absolute; top: 1.5rem; right: 4%; color: var(--ivory);" onclick="document.getElementById('mobileNav').classList.remove('active')"><i data-lucide="x"></i></button>
+        <a href="la-jm.html">Qué somos</a>
+        <a href="caminos.html" style="color: var(--old-gold);">Etapas</a>
+        <a href="encuentros.html">La Agenda</a>
+        <a href="equipo.html">El Equipo</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dar-el-paso.html">Dar el Paso</a>
+    </div>
+
+    <!-- Inner Hero -->
+    <section class="bg-ivory" style="padding: 10rem 4% 4rem 4%; border-bottom: 1px solid var(--surface-border);">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <span class="overline" style="margin-bottom: 1rem;"><i data-lucide="milestone" size="16"></i> Ecosistema</span>
+            <h1 class="section-title" style="margin-bottom: 2rem;">Cada edad tiene<br>su propio frente.</h1>
+            <p class="section-text text-dim">No metemos a un niño de 10 años en el mismo grupo que un universitario de 22. Dividimos la JM en tres grandes bloques para respetar tu momento biológico, escolar y de presión social.</p>
+        </div>
+    </section>
+
+    <!-- Age Selector -->
+    <section class="bg-pure" style="padding: 3rem 4% 1rem 4%;">
+        <div class="age-selector">
+            <h4><i data-lucide="user" size="16" style="vertical-align: middle; margin-right: 8px;"></i> ¿Qué edad tenés?</h4>
+            <div class="age-options">
+                <a href="cruzados.html" class="age-option"><span class="dot" style="background: var(--blue-light);"></span> Primaria (8-12)</a>
+                <a href="pioneros.html" class="age-option"><span class="dot" style="background: var(--blue-mid);"></span> Secundaria (13-17)</a>
+                <a href="universitarios.html" class="age-option"><span class="dot" style="background: var(--blue-deep);"></span> Universidad (18+)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Picker Hub with Blue Gradient -->
+    <section class="bg-pure section-pad divider-bottom">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+            
+            <!-- Cruzados Row -->
+            <a href="cruzados.html" class="stage-card blue-light hover-lift" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; min-height: auto; padding: 3rem;">
+                <div>
+                    <span class="chip" style="border-color: rgba(255,255,255,0.2); color: var(--ivory);">8 - 12 años</span>
+                    <h3 style="font-size: 3rem; color: var(--ivory);">Cruzados</h3>
+                    <span class="stage-motto">¡Todos para todos!</span>
+                </div>
+                <div>
+                    <p style="font-size: 1.15rem; margin-bottom: 1.5rem; color: var(--ivory);">Etapa de pura vitalidad. Nos enfocamos en conservar el asombro infantil, educar en la lealtad básica con los primeros amigos y anclar un amor enorme por la Naturaleza y María.</p>
+                    <div style="display: flex; gap: 2rem; align-items: center;">
+                        <span class="link-inline" style="color: var(--old-gold);">Ver Cruzados <i data-lucide="arrow-right" size="14"></i></span>
+                        <div class="parent-note" style="margin-top: 0; padding-top: 0; border: none; font-size: 0.8rem; color: var(--ivory);">
+                            <i data-lucide="shield-check" size="14" color="#D2A856"></i> Entorno supervisado para padres.
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Pioneros Row -->
+            <a href="pioneros.html" class="stage-card blue-mid hover-lift" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; min-height: auto; padding: 3rem;">
+                <div>
+                    <span class="chip" style="border-color: rgba(255,255,255,0.2); color: var(--ivory);">13 - 17 años</span>
+                    <h3 style="font-size: 3rem; color: var(--ivory);">Pioneros</h3>
+                    <span class="stage-motto">¡Siempre adelante!</span>
+                </div>
+                <div>
+                    <p style="font-size: 1.15rem; margin-bottom: 1.5rem; color: var(--ivory);">Cuerpo a cuerpo contra la secundaria. Es la etapa de mayor turbulencia donde empezamos a decidir quiénes somos. Trabajamos el choque exterior forjando hombría, pureza y carácter crítico.</p>
+                    <span class="link-inline" style="color: var(--old-gold);">Ver Pioneros <i data-lucide="arrow-right" size="14"></i></span>
+                </div>
+            </a>
+
+            <!-- Universitarios Row -->
+            <a href="universitarios.html" class="stage-card blue-deep hover-lift" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; min-height: auto; padding: 3rem;">
+                <div>
+                    <span class="chip" style="border-color: rgba(255,255,255,0.15); color: var(--ivory);">18+ años</span>
+                    <h3 style="font-size: 3rem; color: var(--ivory);">Universitarios</h3>
+                    <span class="stage-motto">Por ti, ¡hombres nuevos!</span>
+                </div>
+                <div>
+                    <p style="font-size: 1.15rem; margin-bottom: 1.5rem; color: var(--ivory);">La hora del deber adulto. Navegamos la universidad y el inicio profesional combinando espiritualidad profunda (aprender a sostener silencio interior) y acción pública en Nicaragua.</p>
+                    <span class="link-inline" style="color: var(--old-gold);">Ver Universitarios <i data-lucide="arrow-right" size="14"></i></span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Generic Onboarding Fallback -->
+    <section class="bg-ivory section-pad-dense" style="text-align: center;">
+        <span class="overline"><i data-lucide="help-circle" size="16"></i> Duda común</span>
+        <h3 class="section-title" style="font-size: 2rem; margin-bottom: 1rem;">¿Y si tengo una edad límite?</h3>
+        <p class="section-text" style="margin: 0 auto 2rem auto;">Si tienes 12 y pasas a 13, o si tienes 17 y medio... no te compliques las matemáticas. Escribinos rápido y nosotros te orientamos en qué grupo encajas mejor por tu etapa escolar actual.</p>
+        <a href="dar-el-paso.html" class="btn-outline">Que alguien me asesore</a>
+    </section>
+
+    <style>
+        @media (max-width: 800px) {
+            .stage-card[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; padding: 2rem !important; }
+        }
+    </style>
+
+    <!-- Global Footer -->
+    <footer class="site-footer bg-marian">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo" style="color: var(--ivory); font-size: 1.5rem; margin-bottom: 1rem;">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+                <p style="font-size: 0.9rem; max-width: 300px; color: var(--ivory); opacity: 0.7;">Forjando el carácter de hombres libres desde el Santuario hacia la calle. Movimiento Católico Mariano.</p>
+            </div>
+            <div><h4>Caminos</h4><a href="cruzados.html">Cruzados (8 - 12 años)</a><a href="pioneros.html">Pioneros (13 - 17 años)</a><a href="universitarios.html">Rama Mayor (18+)</a></div>
+            <div><h4>Conectar</h4><a href="equipo.html">Nuestro Equipo</a><a href="vida-compartida.html">Vida Compartida</a><a href="dar-el-paso.html">Contactar a Jefatura</a></div>
+            <div><h4>Explorar</h4><a href="la-jm.html">Qué Somos</a><a href="encuentros.html">La Agenda</a><a href="recursos.html">Recursos</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 JM Schoenstatt Nicaragua.</span><span>Un ecosistema de formación activo.</span></div>
+    </footer>
+    <script>lucide.createIcons();</script>
+<script src="main.js"></script>
+</body>
+</html>

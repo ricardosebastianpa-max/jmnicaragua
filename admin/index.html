@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | JM Schoenstatt Nicaragua</title>
+    <style>
+        :root {
+            --blue: #1A3A65;
+            --blue-light: #3B6EA5;
+            --gold: #D2A856;
+            --charcoal: #111111;
+            --gray-50: #FAFAFA;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --white: #FFFFFF;
+            --red: #DC2626;
+            --green: #16A34A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif; background: var(--gray-50); color: var(--charcoal); line-height: 1.5; }
+
+        /* Login */
+        .login-wrap { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+        .login-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 3rem; max-width: 400px; width: 100%; text-align: center; }
+        .login-card h1 { font-size: 1.5rem; font-weight: 700; color: var(--blue); margin-bottom: 0.25rem; }
+        .login-card p { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 2rem; }
+        .login-card .error { color: var(--red); font-size: 0.8rem; margin-top: 0.5rem; display: none; }
+
+        /* Inputs */
+        input, textarea, select {
+            width: 100%; padding: 0.7rem 0.9rem; font-size: 0.9rem;
+            border: 1px solid var(--gray-200); border-radius: 6px;
+            background: var(--white); font-family: inherit; color: var(--charcoal);
+            transition: border-color 0.15s;
+        }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--blue-light); }
+        textarea { resize: vertical; min-height: 80px; }
+        label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-600); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .field { margin-bottom: 1.25rem; }
+        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .checkbox-field { display: flex; align-items: center; gap: 0.5rem; }
+        .checkbox-field input { width: auto; }
+        .checkbox-field label { margin: 0; text-transform: none; font-weight: 400; font-size: 0.9rem; }
+
+        /* Buttons */
+        .btn { padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: inherit; display: inline-flex; align-items: center; gap: 0.4rem; }
+        .btn-primary { background: var(--blue); color: var(--white); }
+        .btn-primary:hover { background: var(--blue-light); }
+        .btn-secondary { background: var(--gray-100); color: var(--gray-700); border: 1px solid var(--gray-200); }
+        .btn-secondary:hover { background: var(--gray-200); }
+        .btn-danger { background: var(--white); color: var(--red); border: 1px solid var(--gray-200); }
+        .btn-danger:hover { background: #FEF2F2; }
+        .btn-gold { background: var(--gold); color: var(--charcoal); }
+        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        .btn-block { width: 100%; justify-content: center; }
+
+        /* Layout */
+        .app-header { background: var(--blue); color: var(--white); padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        .app-header h1 { font-size: 1rem; font-weight: 600; }
+        .app-header h1 span { font-weight: 400; opacity: 0.7; }
+        .app-header .btn { background: rgba(255,255,255,0.15); color: var(--white); border: 1px solid rgba(255,255,255,0.2); font-size: 0.8rem; }
+        .app-header .btn:hover { background: rgba(255,255,255,0.25); }
+
+        .tabs { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0 1.5rem; display: flex; gap: 0; overflow-x: auto; }
+        .tab { padding: 0.85rem 1.2rem; font-size: 0.85rem; font-weight: 500; color: var(--gray-400); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+        .tab:hover { color: var(--gray-700); }
+        .tab.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+
+        .content { padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+
+        /* Panel */
+        .panel { background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; }
+        .panel-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; }
+        .panel-header h2 { font-size: 1.1rem; font-weight: 600; }
+        .panel-body { padding: 1.5rem; }
+        .panel-empty { text-align: center; padding: 3rem; color: var(--gray-400); }
+        .panel-empty p { font-size: 0.9rem; }
+
+        /* Table-like rows */
+        .item-row { padding: 1rem 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 1rem; transition: background 0.1s; }
+        .item-row:last-child { border-bottom: none; }
+        .item-row:hover { background: var(--gray-50); }
+        .item-info { flex: 1; min-width: 0; }
+        .item-title { font-size: 0.95rem; font-weight: 600; }
+        .item-meta { font-size: 0.8rem; color: var(--gray-400); margin-top: 0.15rem; }
+        .item-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.7rem; font-weight: 600; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-blue { background: #EFF6FF; color: var(--blue); }
+        .badge-gold { background: #FFFBEB; color: #92400E; }
+        .badge-green { background: #F0FDF4; color: var(--green); }
+        .badge-red { background: #FEF2F2; color: var(--red); }
+        .badge-gray { background: var(--gray-100); color: var(--gray-600); }
+        .unread-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-light); display: inline-block; margin-right: 0.4rem; }
+
+        /* Modal */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: flex-start; justify-content: center; padding: 3rem 1rem; z-index: 200; overflow-y: auto; }
+        .modal-card { background: var(--white); border-radius: 10px; max-width: 560px; width: 100%; }
+        .modal-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; }
+        .modal-header h3 { font-size: 1.05rem; font-weight: 600; }
+        .modal-close { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--gray-400); padding: 0.25rem; line-height: 1; }
+        .modal-body { padding: 1.5rem; }
+        .modal-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--gray-200); display: flex; justify-content: flex-end; gap: 0.75rem; }
+
+        .hidden { display: none !important; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .content { padding: 1rem; }
+            .field-row { grid-template-columns: 1fr; }
+            .item-row { flex-wrap: wrap; }
+            .item-actions { width: 100%; justify-content: flex-end; }
+        }
+
+        /* Toast */
+        .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--charcoal); color: var(--white); padding: 0.75rem 1.25rem; border-radius: 8px; font-size: 0.85rem; z-index: 300; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="login-screen" class="login-wrap">
+    <div class="login-card">
+        <h1>JM Admin</h1>
+        <p>Panel de administración — Schoenstatt Nicaragua</p>
+        <div class="field">
+            <input type="password" id="login-password" placeholder="Contraseña de administrador" onkeydown="if(event.key==='Enter')doLogin()">
+        </div>
+        <button class="btn btn-primary btn-block" onclick="doLogin()">Entrar</button>
+        <div class="error" id="login-error">Contraseña incorrecta</div>
+    </div>
+</div>
+
+<!-- App -->
+<div id="app" class="hidden">
+    <header class="app-header">
+        <h1>JM Admin <span>/ Schoenstatt Nicaragua</span></h1>
+        <button class="btn" onclick="doLogout()">Cerrar sesión</button>
+    </header>
+
+    <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="events">Eventos</button>
+        <button class="tab" data-tab="team">Equipo</button>
+        <button class="tab" data-tab="resources">Recursos</button>
+        <button class="tab" data-tab="branches">Etapas</button>
+        <button class="tab" data-tab="submissions">Mensajes</button>
+        <button class="tab" data-tab="settings">Configuración</button>
+    </div>
+
+    <div class="content" id="content"></div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal-overlay hidden" onclick="if(event.target===this)closeModal()">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 id="modal-title">Formulario</h3>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer" id="modal-footer"></div>
+    </div>
+</div>
+
+<script>
+// ========= CONFIG =========
+const API_BASE = '/api/admin';
+let TOKEN = sessionStorage.getItem('jm_admin_token') || '';
+
+// ========= AUTH =========
+async function doLogin() {
+    const pw = document.getElementById('login-password').value;
+    try {
+        const res = await fetch(API_BASE + '/settings', { headers: { 'X-Admin-Token': pw } });
+        if (res.status === 401) {
+            document.getElementById('login-error').style.display = 'block';
+            return;
+        }
+        TOKEN = pw;
+        sessionStorage.setItem('jm_admin_token', pw);
+        showApp();
+    } catch (e) {
+        document.getElementById('login-error').style.display = 'block';
+    }
+}
+
+function doLogout() {
+    TOKEN = '';
+    sessionStorage.removeItem('jm_admin_token');
+    document.getElementById('app').classList.add('hidden');
+    document.getElementById('login-screen').classList.remove('hidden');
+    document.getElementById('login-password').value = '';
+}
+
+function showApp() {
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('app').classList.remove('hidden');
+    switchTab('events');
+}
+
+// ========= API HELPERS =========
+async function api(method, path, body) {
+    const opts = { method, headers: { 'X-Admin-Token': TOKEN, 'Content-Type': 'application/json' } };
+    if (body) opts.body = JSON.stringify(body);
+    const res = await fetch(API_BASE + path, opts);
+    if (res.status === 401) { doLogout(); return null; }
+    return res.json();
+}
+
+// ========= TOAST =========
+function toast(msg) {
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 3000);
+}
+
+// ========= MODAL =========
+function openModal(title, bodyHTML, footerHTML) {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-body').innerHTML = bodyHTML;
+    document.getElementById('modal-footer').innerHTML = footerHTML;
+    document.getElementById('modal').classList.remove('hidden');
+}
+function closeModal() { document.getElementById('modal').classList.add('hidden'); }
+
+// ========= TABS =========
+let currentTab = 'events';
+document.getElementById('tabs').addEventListener('click', (e) => {
+    if (e.target.classList.contains('tab')) switchTab(e.target.dataset.tab);
+});
+
+function switchTab(tab) {
+    currentTab = tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    loadTab(tab);
+}
+
+async function loadTab(tab) {
+    const c = document.getElementById('content');
+    c.innerHTML = '<p style="color:var(--gray-400);padding:2rem;text-align:center;">Cargando...</p>';
+    try {
+        switch(tab) {
+            case 'events': await renderEvents(); break;
+            case 'team': await renderTeam(); break;
+            case 'resources': await renderResources(); break;
+            case 'branches': await renderBranches(); break;
+            case 'submissions': await renderSubmissions(); break;
+            case 'settings': await renderSettings(); break;
+        }
+    } catch(e) {
+        c.innerHTML = '<p style="color:var(--red);padding:2rem;text-align:center;">Error al cargar datos. ¿El sitio ya fue desplegado?</p>';
+    }
+}
+
+// ========= EVENTS =========
+async function renderEvents() {
+    const items = await api('GET', '/events') || [];
+    const c = document.getElementById('content');
+    const active = items.filter(i => !i.archived);
+    const archived = items.filter(i => i.archived);
+
+    let html = `<div class="panel"><div class="panel-header"><h2>Eventos activos (${active.length})</h2><button class="btn btn-primary btn-sm" onclick="openEventForm()">+ Nuevo evento</button></div>`;
+    if (!active.length) {
+        html += '<div class="panel-empty"><p>No hay eventos. Creá el primero o cargá datos iniciales.</p><br><button class="btn btn-gold btn-sm" onclick="seedEvents()">Cargar datos iniciales</button></div>';
+    } else {
+        active.forEach(ev => {
+            const d = ev.date ? new Date(ev.date).toLocaleDateString('es-NI', { day:'numeric', month:'short' }) : '';
+            const typeMap = { encuentro:'Encuentro', retiro:'Retiro', mision:'Misión', 'noche-mater':'Noche Mater', otro:'Otro' };
+            html += `<div class="item-row">
+                <div class="item-info">
+                    <div class="item-title">${esc(ev.title)}</div>
+                    <div class="item-meta">${d} · ${esc(typeMap[ev.type]||ev.type||'')} · ${esc(ev.audience||'toda-la-rama')}${ev.featured?' · <span class="badge badge-gold">Destacado</span>':''}</div>
+                </div>
+                <div class="item-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="openEventForm('${ev.id}')">Editar</button>
+                    <button class="btn btn-secondary btn-sm" onclick="archiveEvent('${ev.id}')">Archivar</button>
+                </div>
+            </div>`;
+        });
+    }
+    html += '</div>';
+
+    if (archived.length) {
+        html += `<div class="panel" style="margin-top:1.5rem;opacity:0.7;"><div class="panel-header"><h2>Archivados (${archived.length})</h2></div>`;
+        archived.forEach(ev => {
+            html += `<div class="item-row"><div class="item-info"><div class="item-title">${esc(ev.title)}</div><div class="item-meta"><span class="badge badge-gray">Archivado</span></div></div><div class="item-actions"><button class="btn btn-secondary btn-sm" onclick="unarchiveEvent('${ev.id}')">Restaurar</button><button class="btn btn-danger btn-sm" onclick="deleteItem('events','${ev.id}')">Eliminar</button></div></div>`;
+        });
+        html += '</div>';
+    }
+    c.innerHTML = html;
+}
+
+async function openEventForm(id) {
+    let ev = {};
+    if (id) {
+        ev = await api('GET', '/events/' + id) || {};
+    }
+    const body = `
+        <div class="field"><label>Título</label><input id="f-title" value="${esc(ev.title||'')}"></div>
+        <div class="field-row">
+            <div class="field"><label>Fecha</label><input type="date" id="f-date" value="${ev.date||''}"></div>
+            <div class="field"><label>Tipo</label><select id="f-type"><option value="encuentro" ${ev.type==='encuentro'?'selected':''}>Encuentro</option><option value="retiro" ${ev.type==='retiro'?'selected':''}>Retiro</option><option value="mision" ${ev.type==='mision'?'selected':''}>Misión</option><option value="noche-mater" ${ev.type==='noche-mater'?'selected':''}>Noche Mater</option><option value="otro" ${ev.type==='otro'?'selected':''}>Otro</option></select></div>
+        </div>
+        <div class="field-row">
+            <div class="field"><label>Audiencia</label><select id="f-audience"><option value="toda-la-rama" ${ev.audience==='toda-la-rama'?'selected':''}>Toda la rama</option><option value="cruzados" ${ev.audience==='cruzados'?'selected':''}>Cruzados</option><option value="pioneros" ${ev.audience==='pioneros'?'selected':''}>Pioneros</option><option value="universitarios" ${ev.audience==='universitarios'?'selected':''}>Universitarios</option></select></div>
+            <div class="field"><label>Ubicación</label><input id="f-location" value="${esc(ev.location||'')}"></div>
+        </div>
+        <div class="field"><label>Descripción</label><textarea id="f-desc">${esc(ev.description||'')}</textarea></div>
+        <div class="field-row">
+            <div class="field"><label>Texto del botón</label><input id="f-cta" value="${esc(ev.cta_text||'')}"></div>
+            <div class="field"><label>Link del botón</label><input id="f-link" value="${esc(ev.cta_link||'')}"></div>
+        </div>
+        <div class="checkbox-field"><input type="checkbox" id="f-featured" ${ev.featured?'checked':''}><label for="f-featured">Destacar en inicio</label></div>`;
+    const footer = `<button class="btn btn-secondary" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveEvent('${id||''}')">Guardar</button>`;
+    openModal(id ? 'Editar evento' : 'Nuevo evento', body, footer);
+}
+
+async function saveEvent(id) {
+    const data = {
+        title: document.getElementById('f-title').value,
+        date: document.getElementById('f-date').value,
+        type: document.getElementById('f-type').value,
+        audience: document.getElementById('f-audience').value,
+        location: document.getElementById('f-location').value,
+        description: document.getElementById('f-desc').value,
+        cta_text: document.getElementById('f-cta').value,
+        cta_link: document.getElementById('f-link').value,
+        featured: document.getElementById('f-featured').checked,
+        archived: false,
+    };
+    if (id) { await api('PUT', '/events/' + id, data); }
+    else { await api('POST', '/events', data); }
+    closeModal(); toast('Evento guardado'); renderEvents();
+}
+
+async function archiveEvent(id) { await api('PUT', '/events/' + id, { archived: true }); toast('Archivado'); renderEvents(); }
+async function unarchiveEvent(id) { await api('PUT', '/events/' + id, { archived: false }); toast('Restaurado'); renderEvents(); }
+
+async function seedEvents() {
+    const seed = [
+        { title: 'Día de Alianza Mensual', date: '2026-04-18', type: 'encuentro', audience: 'toda-la-rama', description: 'Toda la rama reunida. Misa coral y patio en el Centro JM.', location: 'Centro JM, Managua', cta_text: 'Llegar directo', featured: true, archived: false },
+        { title: 'Retiro Cerrado de Pioneros', date: '2026-04-09', type: 'retiro', audience: 'pioneros', description: 'Fin de semana de inmersión espiritual en campo abierto. Forja, silencio y fogón.', location: 'Campo', cta_text: 'Pedir Cupo', featured: true, archived: false },
+        { title: 'Visita Urbana Solidaria', date: '2026-04-24', type: 'mision', audience: 'toda-la-rama', description: 'Sábado por la mañana sirviendo en zonas de necesidad real.', location: 'Managua', cta_text: 'Ver Coordenadas', featured: false, archived: false },
+        { title: 'Adoración Nocturna', date: '2026-04-25', type: 'noche-mater', audience: 'toda-la-rama', description: 'Silencio, velas y oración. Encuentro profundo con Jesús.', location: 'Centro JM, Managua', cta_text: '', featured: false, archived: false },
+    ];
+    for (const ev of seed) await api('POST', '/events', ev);
+    toast('Eventos iniciales cargados'); renderEvents();
+}
+
+// ========= TEAM =========
+async function renderTeam() {
+    const items = await api('GET', '/team') || [];
+    const c = document.getElementById('content');
+    const sections = { asesores: 'Dirección Espiritual y Laica', guias: 'Guías de Etapa', apoyo: 'Apoyo Logístico' };
+
+    let html = `<div class="panel"><div class="panel-header"><h2>Equipo (${items.length})</h2><div style="display:flex;gap:0.5rem;"><button class="btn btn-primary btn-sm" onclick="openTeamForm()">+ Nuevo miembro</button>${!items.length?'<button class="btn btn-gold btn-sm" onclick="seedTeam()">Cargar datos iniciales</button>':''}</div></div>`;
+
+    if (!items.length) {
+        html += '<div class="panel-empty"><p>No hay miembros registrados.</p></div>';
+    } else {
+        for (const [key, label] of Object.entries(sections)) {
+            const group = items.filter(i => i.section === key).sort((a,b) => (a.order||99)-(b.order||99));
+            if (group.length) {
+                html += `<div style="padding:0.75rem 1.5rem;background:var(--gray-50);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--gray-400);border-bottom:1px solid var(--gray-100);">${label}</div>`;
+                group.forEach(m => {
+                    html += `<div class="item-row"><div class="item-info"><div class="item-title">${esc(m.name)} ${m.active===false?'<span class="badge badge-gray">Inactivo</span>':''}</div><div class="item-meta">${esc(m.role)} · "${esc(m.quote||'')}"</div></div><div class="item-actions"><button class="btn btn-secondary btn-sm" onclick="openTeamForm('${m.id}')">Editar</button><button class="btn btn-danger btn-sm" onclick="deleteItem('team','${m.id}')">Eliminar</button></div></div>`;
+                });
+            }
+        }
+    }
+    html += '</div>';
+    c.innerHTML = html;
+}
+
+async function openTeamForm(id) {
+    let m = {};
+    if (id) m = await api('GET', '/team/' + id) || {};
+    const body = `
+        <div class="field"><label>Nombre completo</label><input id="f-name" value="${esc(m.name||'')}"></div>
+        <div class="field-row">
+            <div class="field"><label>Rol</label><input id="f-role" value="${esc(m.role||'')}" placeholder="Ej: Guía — Cruzados"></div>
+            <div class="field"><label>Sección</label><select id="f-section"><option value="asesores" ${m.section==='asesores'?'selected':''}>Dirección/Asesores</option><option value="guias" ${m.section==='guias'?'selected':''}>Guías de Etapa</option><option value="apoyo" ${m.section==='apoyo'?'selected':''}>Apoyo Logístico</option></select></div>
+        </div>
+        <div class="field"><label>Frase/Cita</label><input id="f-quote" value="${esc(m.quote||'')}"></div>
+        <div class="field"><label>Orden (número)</label><input type="number" id="f-order" value="${m.order||1}"></div>
+        <div class="checkbox-field"><input type="checkbox" id="f-active" ${m.active!==false?'checked':''}><label for="f-active">Activo (visible en la web)</label></div>`;
+    const footer = `<button class="btn btn-secondary" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveTeam('${id||''}')">Guardar</button>`;
+    openModal(id ? 'Editar miembro' : 'Nuevo miembro', body, footer);
+}
+
+async function saveTeam(id) {
+    const data = { name: document.getElementById('f-name').value, role: document.getElementById('f-role').value, section: document.getElementById('f-section').value, quote: document.getElementById('f-quote').value, order: parseInt(document.getElementById('f-order').value) || 1, active: document.getElementById('f-active').checked };
+    if (id) await api('PUT', '/team/' + id, data);
+    else await api('POST', '/team', data);
+    closeModal(); toast('Miembro guardado'); renderTeam();
+}
+
+async function seedTeam() {
+    const seed = [
+        { name: 'P. Juan Francisco Escobar', role: 'Asesor Religioso', section: 'asesores', quote: 'Que María sea la que forme en ustedes al hombre nuevo.', order: 1, active: true },
+        { name: 'Juan Jarquín', role: 'Asesor Laico', section: 'asesores', quote: 'La vida se hace caminando al lado de otro.', order: 2, active: true },
+        { name: 'Hector Peralta', role: 'Guía — Cruzados', section: 'guias', quote: 'Cada niño tiene algo heroico escondido. Solo hay que sacarlo.', order: 1, active: true },
+        { name: 'Ricardo Picado', role: 'Guía — Pioneros', section: 'guias', quote: 'La secundaria no la sobrevive nadie solo.', order: 2, active: true },
+        { name: 'Yunahpu Traumann', role: 'Guía — Universitarios', section: 'guias', quote: 'Nuestra generación necesita hombres que piensen profundo.', order: 3, active: true },
+        { name: 'Carmen Alvarado', role: 'Apoyo — Cruzados', section: 'apoyo', quote: 'Los niños necesitan sentirse seguros para ser libres.', order: 1, active: true },
+        { name: 'Jaime Picado', role: 'Apoyo — Universitarios', section: 'apoyo', quote: 'Servir sin que nadie te vea es la mejor escuela.', order: 2, active: true },
+    ];
+    for (const m of seed) await api('POST', '/team', m);
+    toast('Equipo inicial cargado'); renderTeam();
+}
+
+// ========= RESOURCES =========
+async function renderResources() {
+    const items = await api('GET', '/resources') || [];
+    const c = document.getElementById('content');
+    const cats = { biblioteca: 'Biblioteca', cancionero: 'Cancionero', herramientas: 'Herramientas' };
+
+    let html = `<div class="panel"><div class="panel-header"><h2>Recursos (${items.length})</h2><div style="display:flex;gap:0.5rem;"><button class="btn btn-primary btn-sm" onclick="openResourceForm()">+ Nuevo recurso</button></div></div>`;
+    if (!items.length) {
+        html += '<div class="panel-empty"><p>No hay recursos registrados.</p></div>';
+    } else {
+        for (const [key, label] of Object.entries(cats)) {
+            const group = items.filter(i => i.category === key).sort((a,b) => (a.order||99)-(b.order||99));
+            if (group.length) {
+                html += `<div style="padding:0.75rem 1.5rem;background:var(--gray-50);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--gray-400);border-bottom:1px solid var(--gray-100);">${label}</div>`;
+                group.forEach(r => {
+                    html += `<div class="item-row"><div class="item-info"><div class="item-title">${esc(r.title)} ${r.type?'<span class="badge badge-blue">'+esc(r.type)+'</span>':''}</div><div class="item-meta">${esc(r.subtitle||'')}</div></div><div class="item-actions"><button class="btn btn-secondary btn-sm" onclick="openResourceForm('${r.id}')">Editar</button><button class="btn btn-danger btn-sm" onclick="deleteItem('resources','${r.id}')">Eliminar</button></div></div>`;
+                });
+            }
+        }
+    }
+    html += '</div>';
+    c.innerHTML = html;
+}
+
+async function openResourceForm(id) {
+    let r = {};
+    if (id) r = await api('GET', '/resources/' + id) || {};
+    const body = `
+        <div class="field"><label>Título</label><input id="f-title" value="${esc(r.title||'')}"></div>
+        <div class="field"><label>Subtítulo</label><input id="f-subtitle" value="${esc(r.subtitle||'')}"></div>
+        <div class="field-row">
+            <div class="field"><label>Categoría</label><select id="f-cat"><option value="biblioteca" ${r.category==='biblioteca'?'selected':''}>Biblioteca</option><option value="cancionero" ${r.category==='cancionero'?'selected':''}>Cancionero</option><option value="herramientas" ${r.category==='herramientas'?'selected':''}>Herramientas</option></select></div>
+            <div class="field"><label>Tipo (etiqueta)</label><input id="f-type" value="${esc(r.type||'')}" placeholder="PDF, Audio, Link..."></div>
+        </div>
+        <div class="field"><label>Link</label><input id="f-link" value="${esc(r.link||'')}" placeholder="https://..."></div>
+        <div class="field"><label>Orden</label><input type="number" id="f-order" value="${r.order||1}"></div>`;
+    const footer = `<button class="btn btn-secondary" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveResource('${id||''}')">Guardar</button>`;
+    openModal(id ? 'Editar recurso' : 'Nuevo recurso', body, footer);
+}
+
+async function saveResource(id) {
+    const data = { title: document.getElementById('f-title').value, subtitle: document.getElementById('f-subtitle').value, category: document.getElementById('f-cat').value, type: document.getElementById('f-type').value, link: document.getElementById('f-link').value, order: parseInt(document.getElementById('f-order').value) || 1 };
+    if (id) await api('PUT', '/resources/' + id, data);
+    else await api('POST', '/resources', data);
+    closeModal(); toast('Recurso guardado'); renderResources();
+}
+
+// ========= BRANCHES =========
+async function renderBranches() {
+    const data = await api('GET', '/branches') || {};
+    const c = document.getElementById('content');
+    const branches = ['cruzados', 'pioneros', 'universitarios'];
+    const labels = { cruzados: 'Cruzados (8-12 años)', pioneros: 'Pioneros (13-17 años)', universitarios: 'Universitarios (18+)' };
+
+    let html = '<div style="display:flex;flex-direction:column;gap:1.5rem;">';
+    branches.forEach(key => {
+        const b = data[key] || {};
+        html += `<div class="panel"><div class="panel-header"><h2>${labels[key]}</h2><button class="btn btn-secondary btn-sm" onclick="openBranchForm('${key}')">Editar</button></div>
+        <div class="panel-body" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+            <div><label>Día</label><p style="font-size:0.95rem;">${esc(b.day||'—')}</p></div>
+            <div><label>Frecuencia</label><p style="font-size:0.95rem;">${esc(b.frequency||'—')}</p></div>
+            <div><label>Lugar</label><p style="font-size:0.95rem;">${esc(b.location||'—')}</p></div>
+            <div><label>Guía</label><p style="font-size:0.95rem;">${esc(b.leader||'—')}</p></div>
+            <div><label>Contacto</label><p style="font-size:0.95rem;">${esc(b.contact||'—')}</p></div>
+        </div></div>`;
+    });
+
+    if (!data.cruzados && !data.pioneros && !data.universitarios) {
+        html += '<div style="text-align:center;"><button class="btn btn-gold" onclick="seedBranches()">Cargar datos iniciales</button></div>';
+    }
+    html += '</div>';
+    c.innerHTML = html;
+}
+
+async function openBranchForm(key) {
+    const data = await api('GET', '/branches') || {};
+    const b = data[key] || {};
+    const labels = { cruzados: 'Cruzados', pioneros: 'Pioneros', universitarios: 'Universitarios' };
+    const body = `
+        <div class="field"><label>Día</label><input id="f-day" value="${esc(b.day||'')}" placeholder="Ej: Sábados"></div>
+        <div class="field"><label>Frecuencia</label><input id="f-freq" value="${esc(b.frequency||'')}" placeholder="Ej: Quincenal"></div>
+        <div class="field"><label>Lugar</label><input id="f-loc" value="${esc(b.location||'')}" placeholder="Ej: Centro JM, Managua"></div>
+        <div class="field"><label>Guía responsable</label><input id="f-leader" value="${esc(b.leader||'')}"></div>
+        <div class="field"><label>Contacto (WhatsApp)</label><input id="f-contact" value="${esc(b.contact||'')}" placeholder="+505..."></div>`;
+    const footer = `<button class="btn btn-secondary" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="saveBranch('${key}')">Guardar</button>`;
+    openModal('Editar ' + labels[key], body, footer);
+}
+
+async function saveBranch(key) {
+    const update = {};
+    update[key] = { day: document.getElementById('f-day').value, frequency: document.getElementById('f-freq').value, location: document.getElementById('f-loc').value, leader: document.getElementById('f-leader').value, contact: document.getElementById('f-contact').value };
+    await api('PUT', '/branches', update);
+    closeModal(); toast('Etapa actualizada'); renderBranches();
+}
+
+async function seedBranches() {
+    await api('POST', '/branches', {
+        cruzados: { day: 'Sábados', frequency: 'Quincenal', location: 'Centro JM, Managua', leader: 'Hector Peralta', contact: '' },
+        pioneros: { day: 'Sábados', frequency: 'Quincenal', location: 'Centro JM, Managua', leader: 'Ricardo Picado', contact: '' },
+        universitarios: { day: 'Viernes o sábados', frequency: 'Quincenal', location: 'Rotativo / Centro JM', leader: 'Yunahpu Traumann', contact: '' },
+    });
+    toast('Etapas cargadas'); renderBranches();
+}
+
+// ========= SUBMISSIONS =========
+async function renderSubmissions() {
+    const items = await api('GET', '/submissions') || [];
+    const c = document.getElementById('content');
+    const unread = items.filter(s => !s.read).length;
+
+    let html = `<div class="panel"><div class="panel-header"><h2>Mensajes recibidos (${items.length})${unread?' · <span class="badge badge-blue">'+unread+' sin leer</span>':''}</h2></div>`;
+    if (!items.length) {
+        html += '<div class="panel-empty"><p>No hay mensajes todavía. Los formularios de la web enviarán mensajes aquí.</p></div>';
+    } else {
+        items.forEach(s => {
+            const d = s.date ? new Date(s.date).toLocaleDateString('es-NI', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' }) : '';
+            html += `<div class="item-row">
+                <div class="item-info">
+                    <div class="item-title">${!s.read?'<span class="unread-dot"></span>':''}${esc(s.name||'Sin nombre')}</div>
+                    <div class="item-meta">${esc(s.phone||'')} · ${esc(s.interest||'')} · ${esc(s.source||'')} · ${d}</div>
+                    ${s.extra?'<div class="item-meta" style="margin-top:0.25rem;">'+esc(s.extra)+'</div>':''}
+                    ${s.notes?'<div class="item-meta" style="color:var(--blue);margin-top:0.25rem;">Nota: '+esc(s.notes)+'</div>':''}
+                </div>
+                <div class="item-actions">
+                    ${!s.read?'<button class="btn btn-secondary btn-sm" onclick="markRead(\''+s.id+'\')">Leído</button>':''}
+                    <button class="btn btn-secondary btn-sm" onclick="addNote('${s.id}')">Nota</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteItem('submissions','${s.id}')">Borrar</button>
+                </div>
+            </div>`;
+        });
+    }
+    html += '</div>';
+    c.innerHTML = html;
+}
+
+async function markRead(id) { await api('PUT', '/submissions/' + id, { read: true }); renderSubmissions(); }
+
+async function addNote(id) {
+    const note = prompt('Agregar nota:');
+    if (note !== null) {
+        await api('PUT', '/submissions/' + id, { notes: note });
+        toast('Nota guardada'); renderSubmissions();
+    }
+}
+
+// ========= SETTINGS =========
+async function renderSettings() {
+    const data = await api('GET', '/settings') || {};
+    const c = document.getElementById('content');
+
+    c.innerHTML = `<div class="panel"><div class="panel-header"><h2>Configuración del Sitio</h2></div><div class="panel-body">
+        <div class="field"><label>WhatsApp (con código de país)</label><input id="s-wa" value="${esc(data.whatsapp||'')}" placeholder="+50500000000"></div>
+        <div class="field"><label>Instagram (URL)</label><input id="s-ig" value="${esc(data.instagram||'')}" placeholder="https://instagram.com/..."></div>
+        <div class="field"><label>Facebook (URL)</label><input id="s-fb" value="${esc(data.facebook||'')}" placeholder="https://facebook.com/..."></div>
+        <div class="field"><label>Email de contacto</label><input id="s-email" value="${esc(data.email||'')}" placeholder="correo@ejemplo.com"></div>
+        <div style="margin-top:1rem;"><button class="btn btn-primary" onclick="saveSettings()">Guardar configuración</button></div>
+    </div></div>`;
+}
+
+async function saveSettings() {
+    const data = { whatsapp: document.getElementById('s-wa').value, instagram: document.getElementById('s-ig').value, facebook: document.getElementById('s-fb').value, email: document.getElementById('s-email').value };
+    await api('PUT', '/settings', data);
+    toast('Configuración guardada');
+}
+
+// ========= SHARED =========
+async function deleteItem(entity, id) {
+    if (!confirm('¿Eliminar este elemento?')) return;
+    await api('DELETE', '/' + entity + '/' + id);
+    toast('Eliminado');
+    loadTab(currentTab);
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+// ========= INIT =========
+if (TOKEN) {
+    api('GET', '/settings').then(res => {
+        if (res !== null) showApp();
+        else { TOKEN = ''; sessionStorage.removeItem('jm_admin_token'); }
+    }).catch(() => {});
+}
+</script>
+</body>
+</html>

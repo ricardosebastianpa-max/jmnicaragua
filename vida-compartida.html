@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Compartida | JM Schoenstatt Nicaragua</title>
+    <meta name="description" content="Misiones urbanas de la JM Schoenstatt Nicaragua. La fe que no ensucia los zapatos es un pasatiempo.">
+    <meta property="og:title" content="Vida Compartida — JM Schoenstatt Nicaragua">
+    <meta property="og:description" content="Volcamos la formación interna hacia las calles y la necesidad real urbana en Nicaragua.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-charcoal">
+
+    <!-- Navbar -->
+    <nav class="navbar" style="background: rgba(17,17,17,0.85); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <a href="index.html" class="logo" style="color: var(--ivory);">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+        <div class="nav-links">
+            <a href="la-jm.html" style="color: var(--ivory);">Qué somos</a>
+            <a href="caminos.html" style="color: var(--ivory);">Etapas</a>
+            <a href="encuentros.html" style="color: var(--ivory);">Agenda</a>
+            <a href="equipo.html" style="color: var(--ivory);">Equipo</a>
+            <a href="recursos.html" style="color: var(--ivory);">Recursos</a>
+            <a href="vida-compartida.html" style="color: var(--old-gold);">Vida Compartida</a>
+        </div>
+        <button class="menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('active')"><i data-lucide="menu" color="#FAF9F6"></i></button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="menu-btn" style="position: absolute; top: 1.5rem; right: 4%; color: var(--ivory);" onclick="document.getElementById('mobileNav').classList.remove('active')"><i data-lucide="x"></i></button>
+        <a href="la-jm.html">Qué somos</a>
+        <a href="caminos.html">Etapas</a>
+        <a href="encuentros.html">Agenda</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="vida-compartida.html" style="color: var(--old-gold);">Vida Compartida</a>
+    </div>
+
+    <!-- Urban Mission Hero -->
+    <section class="hero" style="min-height: 80vh; background-color: var(--charcoal);">
+        <div class="hero-bg">
+            <div class="hero-bg-empty" style="background: linear-gradient(160deg, var(--charcoal) 0%, var(--blue-deep) 60%, var(--marian-blue) 100%);"></div>
+        </div>
+        <div class="hero-content settled">
+            <span class="chip" style="color: var(--ivory); border-color: rgba(255,255,255,0.2);"><i data-lucide="flame" size="14"></i> Misiones en Nicaragua</span>
+            <h1 class="hero-headline text-ivory">La fe que no ensucia<br>los zapatos es un pasatiempo.</h1>
+            <p class="hero-subtitle">No somos una ONG. Somos un movimiento apostólico. Volcamos la formación interna hacia las calles y la necesidad real urbana.</p>
+        </div>
+    </section>
+
+    <!-- The Tension -->
+    <section class="bg-charcoal section-pad divider-bottom" style="background: var(--charcoal-light);">
+        <div class="grid-editorial">
+            <div>
+                <span class="overline" style="color: var(--ivory); opacity: 0.6;"><i data-lucide="hand-heart" size="16"></i> Vida Activa</span>
+            </div>
+            <div>
+                <h2 class="section-title text-ivory">Salir del Centro.</h2>
+                <p class="section-text text-ivory" style="margin-bottom: 2rem;">Acá no vale sentarse en círculo a hablar de grandes ideales si el fin de semana ignoramos la pobreza o el dolor que tenemos a pocas calles. <br><br><strong>Vida Compartida</strong> es el nombre de nuestra exigencia misional: gastar la vida sirviendo, dando la cara en asilos, comedores y zonas de alta tensión social a lo largo del país.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Strip (Empty photo containers) -->
+    <section class="bg-charcoal section-pad" style="border-bottom: 1px solid var(--surface-border-dark);">
+        <div style="padding: 0 4%; margin-bottom: 2rem;">
+            <span class="accent-hand text-gold" style="font-size: 1.5rem; transform: rotate(-1deg);">La misión en fotos</span>
+        </div>
+        <div class="gallery-strip animate-in stagger-2">
+            <div class="gallery-item" style="min-width: 320px; height: 380px;">
+                <div class="img-placeholder" style="width: 100%; height: 100%; border-radius: 8px;"></div>
+                <span class="gallery-caption">Reparto Urbano. Universitarios.</span>
+            </div>
+            <div class="gallery-item" style="min-width: 320px; height: 380px;">
+                <div class="img-placeholder" style="width: 100%; height: 100%; border-radius: 8px;"></div>
+                <span class="gallery-caption">Visita a Asilos. Pioneros.</span>
+            </div>
+            <div class="gallery-item" style="min-width: 320px; height: 380px;">
+                <div class="img-placeholder" style="width: 100%; height: 100%; border-radius: 8px;"></div>
+                <span class="gallery-caption">Construcción y Reparación.</span>
+            </div>
+            <div class="gallery-item" style="min-width: 320px; height: 380px;">
+                <div class="img-placeholder" style="width: 100%; height: 100%; border-radius: 8px;"></div>
+                <span class="gallery-caption">Recreación Infantil. Cruzados.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raw Invitation -->
+    <section class="bg-ivory section-pad-large" style="text-align: center;">
+        <span class="overline"><i data-lucide="zap" size="16"></i> MISIONÁ</span>
+        <h2 class="section-title">Vení a trabajar.</h2>
+        <p class="section-text" style="color: var(--charcoal); margin: 0 auto 2rem auto;">Incluso si es tu primer contacto con nosotros, podés pedir sumarte directamente a un fin de semana misional. Escribinos para avisarte del próximo operativo.</p>
+        <a href="dar-el-paso.html" class="btn-primary">Ver Agenda de Misión</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-marian">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo" style="color: var(--ivory); font-size: 1.5rem; margin-bottom: 1rem;">Juventud Masculina<span>Schoenstatt Nicaragua</span></a>
+                <p style="font-size: 0.9rem; max-width: 300px; color: var(--ivory); opacity: 0.7;">Forjando el carácter de hombres libres desde el Santuario hacia la calle. Movimiento Católico Mariano.</p>
+            </div>
+            <div><h4>Caminos</h4><a href="cruzados.html">Cruzados (8 - 12 años)</a><a href="pioneros.html">Pioneros (13 - 17 años)</a><a href="universitarios.html">Rama Mayor (18+)</a></div>
+            <div><h4>Conectar</h4><a href="equipo.html">Nuestro Equipo</a><a href="vida-compartida.html">Vida Compartida</a><a href="dar-el-paso.html">Contactar a Jefatura</a></div>
+            <div><h4>Explorar</h4><a href="la-jm.html">Qué Somos</a><a href="encuentros.html">La Agenda</a><a href="recursos.html">Recursos</a></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 JM Schoenstatt Nicaragua.</span><span>Un ecosistema de formación activo.</span></div>
+    </footer>
+    <script>lucide.createIcons();</script>
+<script src="main.js"></script>
+</body>
+</html>
