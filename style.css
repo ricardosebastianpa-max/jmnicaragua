@@ -641,7 +641,9 @@ input:focus-visible, textarea:focus-visible { outline: none; border-bottom-color
 /* === GLOBAL FOOTER === */
 .site-footer { padding: 5rem 8% 3rem 8%; font-family: var(--font-sans); margin-top: auto; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto 4rem auto; align-items: flex-start; }
-.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 0.85rem; opacity: 0.5; color: var(--ivory); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; opacity: 0.5; color: var(--ivory); }
+.footer-admin-link { font-size: 0.75rem; opacity: 0.5; color: var(--ivory); text-decoration: none; transition: opacity var(--transition-fast); display: inline-flex; align-items: center; gap: 0.35rem; }
+.footer-admin-link:hover { opacity: 1; color: var(--old-gold); }
 .site-footer a.logo { margin-bottom: 1.5rem; display: inline-flex; }
 .footer-grid h4 { color: var(--old-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; opacity: 0.8; font-family: var(--font-sans); }
 .site-footer a { color: var(--ivory); text-decoration: none; opacity: 0.75; transition: opacity var(--transition-fast), color var(--transition-fast); display: block; margin-bottom: 1rem; font-size: 1rem; font-weight: 400; }
