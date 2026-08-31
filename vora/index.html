@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f4f1" />
+  <title>VORA — Modern Eyewear</title>
+  <meta name="description" content="VORA modern eyewear. Explora la colección y envía tu pedido directo por WhatsApp." />
+  <style>
+    :root{
+      --bg:#f4f3ef;--ink:#101010;--muted:#77736d;--line:#d9d6d0;--paper:#fbfaf7;--black:#0b0b0b;
+      --serif: "Times New Roman", Times, Georgia, serif; --sans: Arial, Helvetica, sans-serif;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    button,a{font:inherit} img{display:block;width:100%}
+    .shell{max-width:1180px;margin:0 auto;padding:0 18px}
+    .top{position:sticky;top:0;z-index:30;background:rgba(244,243,239,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,16,16,.08)}
+    .topin{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .wordmark{font-family:var(--serif);font-size:34px;letter-spacing:.12em;line-height:1;text-decoration:none;color:var(--ink)}
+    .cartbtn{border:1px solid var(--ink);border-radius:999px;background:transparent;padding:10px 14px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .count{width:20px;height:20px;border-radius:50%;background:var(--ink);color:white;font-size:11px;display:grid;place-items:center}
+    .hero{min-height:76svh;display:grid;align-items:end;padding:60px 0 42px;border-bottom:1px solid var(--line)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:11px;margin-bottom:16px;color:var(--muted)}
+    h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,11vw,142px);line-height:.86;letter-spacing:-.045em;margin:0;max-width:980px}
+    .herolower{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-top:38px}
+    .tagline{font-family:var(--serif);font-size:clamp(22px,3.4vw,42px);max-width:650px;line-height:1.05;margin:0}
+    .micro{max-width:270px;color:var(--muted);font-size:13px;line-height:1.55}
+    .section{padding:72px 0}
+    .sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px;gap:20px}
+    h2{font-family:var(--serif);font-size:clamp(34px,5vw,62px);font-weight:400;margin:0;letter-spacing:-.03em}
+    .sectionhead p{max-width:360px;color:var(--muted);font-size:13px;line-height:1.5;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .card{background:var(--paper);cursor:pointer;overflow:hidden;border:1px solid rgba(16,16,16,.06)}
+    .photo{aspect-ratio:4/5;overflow:hidden;background:#eee}
+    .photo img{height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+    .card:hover .photo img{transform:scale(1.025)}
+    .meta{padding:18px 16px 20px;display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:start}
+    .name{font-family:var(--serif);font-size:28px;letter-spacing:.02em}
+    .price{font-size:13px;text-align:right;white-space:nowrap}.old{color:var(--muted);text-decoration:line-through;margin-left:6px}
+    .desc{color:var(--muted);font-size:12px;line-height:1.45}.add{grid-column:1/-1;margin-top:6px;border:none;background:var(--ink);color:white;padding:13px 16px;border-radius:999px;cursor:pointer}
+    .editorial{padding:0 0 74px}.editorial .split{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}.editorial .image{min-height:500px;background:#ddd}.editorial img{height:100%;object-fit:cover}.quote{background:var(--black);color:white;padding:42px;display:flex;flex-direction:column;justify-content:space-between}.quote strong{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6vw,76px);line-height:.95}.quote span{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#b9b9b9}
+    .footer{border-top:1px solid var(--line);padding:36px 0 52px}.footerin{display:flex;justify-content:space-between;gap:22px;align-items:end}.footer .wordmark{font-size:28px}.footnote{font-size:11px;color:var(--muted);text-align:right;line-height:1.55}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:.25s;z-index:50}.overlay.on{opacity:1;pointer-events:auto}
+    .drawer{position:fixed;z-index:60;right:0;top:0;height:100%;width:min(430px,94vw);background:var(--paper);transform:translateX(102%);transition:.32s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}.drawer.on{transform:none}
+    .drawerhead{padding:20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.drawerhead h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:0}.x{border:none;background:transparent;font-size:28px;cursor:pointer}.items{padding:12px 20px;overflow:auto;flex:1}.item{display:grid;grid-template-columns:74px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}.item img{width:74px;height:88px;object-fit:cover}.item b{font-family:var(--serif);font-size:20px;font-weight:400}.item small{display:block;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border:1px solid var(--line);background:transparent;border-radius:50%;cursor:pointer}.drawerfoot{padding:18px 20px 24px;border-top:1px solid var(--line)}.total{display:flex;justify-content:space-between;margin-bottom:14px;font-size:14px}.wa{width:100%;border:none;background:#111;color:white;border-radius:999px;padding:15px 16px;cursor:pointer}.empty{padding:30px 0;color:var(--muted);font-family:var(--serif);font-size:25px}
+    .modal{position:fixed;inset:0;z-index:70;background:var(--paper);display:none;overflow:auto}.modal.on{display:block}.modaltop{position:sticky;top:0;z-index:4;height:64px;background:rgba(251,250,247,.9);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid var(--line)}.modalmain{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;min-height:calc(100svh - 64px)}.gallery{display:grid;grid-template-columns:1fr;gap:2px;background:#ddd}.gallery img{aspect-ratio:4/5;object-fit:cover}.details{padding:56px 42px;position:sticky;top:64px;height:max-content}.details h3{font-family:var(--serif);font-size:58px;font-weight:400;letter-spacing:-.03em;margin:0 0 12px}.details .p{font-size:18px}.details ul{list-style:none;padding:0;margin:34px 0;color:var(--muted);line-height:1.85}.details li{border-bottom:1px solid var(--line);padding:7px 0}.details .add{width:100%}.tiny{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;margin-top:18px;text-align:center}
+    @media(max-width:720px){.topin{height:62px}.wordmark{font-size:28px}.hero{min-height:67svh;padding-top:32px}.herolower{display:block}.micro{margin-top:22px}.section{padding:54px 0}.sectionhead{align-items:start;display:block}.sectionhead p{margin-top:12px}.grid{grid-template-columns:1fr 1fr;gap:8px}.meta{display:block;padding:14px 12px}.name{font-size:22px}.price{text-align:left;margin-top:5px}.desc{display:none}.add{font-size:12px;padding:11px;margin-top:12px}.editorial .split{grid-template-columns:1fr}.editorial .image{min-height:420px}.quote{min-height:390px;padding:28px}.footerin{display:block}.footnote{text-align:left;margin-top:18px}.modalmain{grid-template-columns:1fr}.details{position:static;padding:30px 18px 42px}.details h3{font-size:44px}.gallery img{aspect-ratio:4/5}.cartbtn{padding:8px 11px;font-size:12px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="shell topin"><a class="wordmark" href="#">VORA</a><button class="cartbtn" id="cartOpen">BAG <span class="count" id="cartCount">0</span></button></div></header>
+  <main>
+    <section class="hero"><div class="shell"><div class="eyebrow">VORA / NICARAGUA</div><h1>THE NEW<br>STANDARD.</h1><div class="herolower"><p class="tagline">Designed to stand out — modern eyewear.</p><p class="micro">Lentes con presencia. Siluetas modernas, protección UV400 y una estética hecha para destacar.</p></div></div></section>
+    <section class="section" id="collection"><div class="shell"><div class="sectionhead"><h2>Selected frames</h2><p>Explorá la colección, elegí tus modelos y enviá la selección completa por WhatsApp.</p></div><div class="grid" id="productGrid"></div></div></section>
+    <section class="editorial"><div class="shell split"><div class="image"><img src="assets/ibiza-product.svg" alt="Detalle VORA Ibiza"></div><div class="quote"><strong>MODERN<br>EDGE.</strong><span>Why VORA?</span></div></div></section>
+  </main>
+  <footer class="footer"><div class="shell footerin"><div class="wordmark">VORA</div><div class="footnote">MODERN EYEWEAR · NICARAGUA<br>Pedido directo por WhatsApp</div></div></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer"><div class="drawerhead"><h3>Your selection</h3><button class="x" id="cartClose">×</button></div><div class="items" id="cartItems"></div><div class="drawerfoot"><div class="total"><span>Total estimado</span><strong id="cartTotal">C$0</strong></div><button class="wa" id="whatsappBtn">Pedir por WhatsApp</button></div></aside>
+
+  <section class="modal" id="modal"><div class="modaltop"><span class="wordmark" style="font-size:24px">VORA</span><button class="x" id="modalClose">×</button></div><div class="modalmain"><div class="gallery" id="modalGallery"></div><div class="details"><div class="eyebrow">VORA EYEWEAR</div><h3 id="modalName"></h3><div class="p"><span id="modalPrice"></span> <span class="old" id="modalOld"></span></div><ul id="modalFeatures"></ul><button class="add" id="modalAdd">Añadir a mi selección</button><div class="tiny">Pedido finalizado por WhatsApp</div></div></section>
+
+<script>
+const products=[
+ {id:'ibiza',name:'IBIZA',price:1389,old:1500,hero:'assets/ibiza-product.svg',images:['assets/ibiza-product.svg','assets/ibiza-product.svg','assets/ibiza-product.svg'],features:['Vintage inspired','Women’s collection','UV400 protection','Warm tortoise finish']},
+ {id:'roma',name:'ROMA',price:1349,old:1500,hero:'assets/roma-02.svg',images:['assets/roma-02.svg','assets/roma-02.svg'],features:['Refined rectangular profile','Women’s collection','UV400 protection','Modern retro profile']}
+];
+const money=n=>'C$'+n.toLocaleString('en-US');
+let cart=JSON.parse(localStorage.getItem('vora-cart')||'{}');
+let current=null;
+const grid=document.getElementById('productGrid');
+grid.innerHTML=products.map(p=>`<article class="card" data-open="${p.id}"><div class="photo"><img src="${p.hero}" alt="VORA ${p.name}"></div><div class="meta"><div><div class="name">${p.name}</div><div class="desc">${p.features.slice(0,2).join(' · ')}</div></div><div class="price">${money(p.price)} <span class="old">${money(p.old)}</span></div><button class="add" data-add="${p.id}">Añadir</button></div></article>`).join('');
+function save(){localStorage.setItem('vora-cart',JSON.stringify(cart));renderCart()}
+function add(id){cart[id]=(cart[id]||0)+1;save();openCart()}
+function renderCart(){
+ const ids=Object.keys(cart).filter(id=>cart[id]>0); const count=ids.reduce((s,id)=>s+cart[id],0); document.getElementById('cartCount').textContent=count;
+ const box=document.getElementById('cartItems'); if(!ids.length){box.innerHTML='<div class="empty">Tu selección está vacía.</div>';document.getElementById('cartTotal').textContent='C$0';return}
+ let total=0;box.innerHTML=ids.map(id=>{const p=products.find(x=>x.id===id),q=cart[id];total+=p.price*q;return `<div class="item"><img src="${p.hero}" alt=""><div><b>${p.name}</b><small>${money(p.price)} c/u</small></div><div class="qty"><button data-minus="${id}">−</button><span>${q}</span><button data-plus="${id}">+</button></div></div>`}).join(''); document.getElementById('cartTotal').textContent=money(total);
+}
+const overlay=document.getElementById('overlay'), drawer=document.getElementById('drawer');
+function openCart(){drawer.classList.add('on');overlay.classList.add('on')} function closeCart(){drawer.classList.remove('on');overlay.classList.remove('on')}
+document.getElementById('cartOpen').onclick=openCart;document.getElementById('cartClose').onclick=closeCart;overlay.onclick=closeCart;
+grid.onclick=e=>{const addBtn=e.target.closest('[data-add]');if(addBtn){e.stopPropagation();add(addBtn.dataset.add);return} const card=e.target.closest('[data-open]');if(card)openProduct(card.dataset.open)};
+document.getElementById('cartItems').onclick=e=>{const plus=e.target.dataset.plus,minus=e.target.dataset.minus;if(plus){cart[plus]=(cart[plus]||0)+1;save()}if(minus){cart[minus]-=1;if(cart[minus]<=0)delete cart[minus];save()}};
+const modal=document.getElementById('modal');
+function openProduct(id){current=products.find(p=>p.id===id);document.getElementById('modalName').textContent=current.name;document.getElementById('modalPrice').textContent=money(current.price);document.getElementById('modalOld').textContent=money(current.old);document.getElementById('modalFeatures').innerHTML=current.features.map(f=>`<li>${f}</li>`).join('');document.getElementById('modalGallery').innerHTML=current.images.map((src,i)=>`<img src="${src}" alt="${current.name} ${i+1}">`).join('');modal.classList.add('on');document.body.style.overflow='hidden'}
+function closeProduct(){modal.classList.remove('on');document.body.style.overflow=''} document.getElementById('modalClose').onclick=closeProduct;document.getElementById('modalAdd').onclick=()=>{if(current){cart[current.id]=(cart[current.id]||0)+1;save();closeProduct();openCart()}};
+document.getElementById('whatsappBtn').onclick=()=>{const ids=Object.keys(cart).filter(id=>cart[id]>0);if(!ids.length)return;let total=0;let lines=ids.map(id=>{const p=products.find(x=>x.id===id),q=cart[id];total+=p.price*q;return `${q}x ${p.name} — ${money(p.price*q)}`});const text=`Hola VORA, quiero pedir:\n\n${lines.join('\n')}\n\nTotal estimado: ${money(total)}`;window.location.href='https://wa.me/50585878114?text='+encodeURIComponent(text)};
+renderCart();
+</script>
+</body></html>
