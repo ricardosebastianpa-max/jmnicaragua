@@ -1,0 +1,62 @@
+{
+  "_instrucciones": "Datos locales de la JM Nicaragua que NO están en la investigación. Mientras 'texto' sea null, el sitio muestra 'Por confirmar: <etiqueta>'. Al confirmarlo, escribí el texto final en 'texto' (sin emojis, en voseo) y el sitio lo muestra solo.",
+  "contacto": {
+    "whatsapp": "50582344190",
+    "whatsappVisible": "+505 8234 4190",
+    "instagram": "jmschoenstattnic"
+  },
+  "pendientes": {
+    "reunion": {
+      "etiqueta": "cómo es una reunión, paso a paso",
+      "texto": null
+    },
+    "lugar": {
+      "etiqueta": "lugar exacto de reunión en Managua",
+      "texto": null
+    },
+    "horario": {
+      "etiqueta": "día y hora de cada etapa",
+      "texto": null
+    },
+    "costo": {
+      "etiqueta": "si hay costo y cuánto",
+      "texto": null
+    },
+    "acompanan": {
+      "etiqueta": "quiénes acompañan a cada grupo (jefes y asesor)",
+      "texto": null
+    },
+    "cuidado": {
+      "etiqueta": "cómo se cuida a los menores",
+      "texto": null
+    },
+    "autorizaciones": {
+      "etiqueta": "autorizaciones y documentos para campamentos",
+      "texto": null
+    },
+    "religioso": {
+      "etiqueta": "respuesta de la JM a '¿tengo que ser muy religioso?'",
+      "texto": null
+    },
+    "amigo": {
+      "etiqueta": "si se puede llegar con un amigo",
+      "texto": null
+    },
+    "despues": {
+      "etiqueta": "qué pasa después de inscribirse y en cuánto tiempo responden",
+      "texto": null
+    },
+    "inicioNicaragua": {
+      "etiqueta": "año en que empezó la JM en Managua",
+      "texto": null
+    },
+    "reinisch": {
+      "etiqueta": "fecha, lugar y relato del campamento Reinisch",
+      "texto": null
+    },
+    "responsable": {
+      "etiqueta": "nombre del responsable que atiende a los papás",
+      "texto": null
+    }
+  }
+}
