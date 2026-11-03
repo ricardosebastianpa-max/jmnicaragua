@@ -9,15 +9,23 @@ export default async (req: Request) => {
     return Response.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
+  // Honeypot: real people never fill the hidden "website" field.
+  if (body.website) {
+    return Response.json({ ok: true });
+  }
+
+  const clip = (value: unknown, max: number) =>
+    String(value ?? "").trim().slice(0, max);
+
   const store = getStore({ name: "jm-data", consistency: "strong" });
 
   const submission = {
     id: crypto.randomUUID(),
-    name: String(body.name || ""),
-    phone: String(body.phone || ""),
-    interest: String(body.interest || ""),
-    source: String(body.source || "website"),
-    extra: String(body.extra || ""),
+    name: clip(body.name, 120),
+    phone: clip(body.phone, 40),
+    interest: clip(body.interest, 60),
+    source: clip(body.source, 40) || "website",
+    extra: clip(body.extra, 1000),
     date: new Date().toISOString(),
     read: false,
     notes: "",
@@ -28,7 +36,16 @@ export default async (req: Request) => {
   submissions.unshift(submission);
   await store.setJSON("submissions", submissions);
 
-  return Response.json({ ok: true, id: submission.id });
+  // "Ya somos X llamas": sign-ups from the landing plus an optional base
+  // (members who joined before the landing existed), set as LLAMAS_BASE.
+  let count: number | undefined;
+  if (submission.source === "inscripciones") {
+    const base = Number(Netlify.env.get("LLAMAS_BASE")) || 0;
+    count =
+      base + submissions.filter((s) => s.source === "inscripciones").length;
+  }
+
+  return Response.json({ ok: true, id: submission.id, count });
 };
 
 export const config: Config = {
