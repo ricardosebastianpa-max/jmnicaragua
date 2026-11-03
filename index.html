@@ -4,18 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <title>JM Schoenstatt Nicaragua · Grupos de jóvenes católicos en Managua</title>
-  <meta name="description" content="La Juventud Masculina de Schoenstatt en Managua: grupos de amigos para crecer en la fe, por etapas (primaria, secundaria y universidad). Cada 15 días y sin costo.">
+  <meta name="description" content="La Juventud Masculina de Schoenstatt en Managua: grupos de amigos para crecer en la fe, por etapas de vida: primaria, secundaria y universidad. Cada 15 días.">
   <meta property="og:title" content="JM Schoenstatt Nicaragua">
-  <meta property="og:description" content="Un grupo de amigos para crecer en la fe. Cada 15 días en Managua, sin costo.">
+  <meta property="og:description" content="Ite, incendite mundum. Un grupo de amigos para crecer en la fe, en Managua.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_NI">
-  <meta name="theme-color" content="#0C2A6E">
+  <meta property="og:image" content="/assets/img/grupo/cruzados-bandera.jpg">
+  <meta name="theme-color" content="#070D1E">
   <meta name="color-scheme" content="dark">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/sitio.css?v=6">
-  <script>document.documentElement.classList.replace('sin-js', 'con-js');</script>
+  <link rel="stylesheet" href="/assets/sitio.css?v=7">
+  <script>
+    document.documentElement.classList.replace('sin-js', 'con-js');
+    // La intro se muestra una vez por visita y nunca con movimiento reducido
+    try {
+      if (!sessionStorage.getItem('jm-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('con-intro');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <a class="saltar" href="#unite">Ir directo a la inscripción</a>
@@ -23,6 +32,20 @@
   <div class="mecha" aria-hidden="true">
     <div class="mecha__fuego"></div>
     <div class="mecha__llama"><svg viewBox="0 0 100 160"><use href="/assets/icons/sprite.svg#llama"/></svg></div>
+  </div>
+
+  <!-- Intro: el lema sobre el video del campamento; luego el fuego revela la página -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <video class="intro__video" muted playsinline autoplay loop preload="auto" poster="/assets/video/fondo-poster.jpg">
+      <source src="/assets/video/fondo.mp4" type="video/mp4">
+    </video>
+    <div class="intro__velo"></div>
+    <div class="intro__texto">
+      <p class="intro__lema" lang="la"><span>Ite,</span> <span>incendite</span> <span>mundum</span></p>
+      <p class="intro__traduccion">Vayan e incendien el mundo</p>
+    </div>
+    <div class="intro__fuego"></div>
+    <button type="button" class="intro__saltar" id="intro-saltar" tabindex="-1">Saltar</button>
   </div>
 
   <nav class="nav" aria-label="Principal">
@@ -41,6 +64,9 @@
 
     <!-- Apertura -->
     <header class="apertura">
+      <video class="apertura__video" muted playsinline autoplay loop preload="none" poster="/assets/video/fondo-poster.jpg" aria-hidden="true">
+        <source src="/assets/video/fondo.mp4" type="video/mp4">
+      </video>
       <div class="apertura__arte" aria-hidden="true">
         <svg class="apertura__rayos" viewBox="0 0 400 400">
           <g fill="currentColor">
@@ -53,7 +79,7 @@
       <div class="contenedor apertura__contenido">
         <p class="apertura__lema"><span lang="la">Ite, incendite mundum</span>Vayan e incendien el mundo</p>
         <h1 class="titulo-mix titulo-mix--grande"><span class="mix-sans">Juventud Masculina de Schoenstatt</span> <span class="mix-serif">Un grupo de amigos para crecer en la fe.</span></h1>
-        <p class="apertura__intro">Somos jóvenes católicos de Managua. Nos juntamos cada 15 días en grupos según dónde estudiás: primaria, secundaria o universidad. No tiene costo.</p>
+        <p class="apertura__intro">Somos jóvenes católicos de Managua. Nos reunimos en grupos según nuestra etapa de vida: primaria, secundaria o universidad.</p>
         <div class="apertura__acciones">
           <a class="boton" href="#unite">Quiero unirme</a>
           <a class="boton boton--linea" href="#papas">Soy papá o mamá</a>
@@ -61,7 +87,7 @@
       </div>
     </header>
 
-    <!-- 1. ¿Qué es? -->
+    <!-- ¿Qué es? -->
     <section class="seccion" aria-labelledby="que-t">
       <div class="contenedor bloque">
         <div class="bloque__cabeza" data-revela>
@@ -77,7 +103,7 @@
           <li>
             <svg viewBox="0 0 290 470" aria-hidden="true"><use href="/assets/icons/sprite.svg#logo"/></svg>
             <h3>La JM</h3>
-            <p>La Juventud Masculina: la parte de Schoenstatt para niños y jóvenes varones. Existe desde 1914, hoy está en cuatro continentes y en Managua abrió en 2023.</p>
+            <p>La Juventud Masculina: la parte de Schoenstatt para niños y jóvenes varones. Existe desde 1914 y hoy está en cuatro continentes: Europa, América, Oceanía y África. En Managua abrió en 2023.</p>
           </li>
           <li>
             <svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-amistad"/></svg>
@@ -88,7 +114,7 @@
       </div>
     </section>
 
-    <!-- 2. Lo práctico -->
+    <!-- Lo práctico -->
     <section class="seccion seccion--clara" aria-labelledby="practico-t">
       <div class="contenedor bloque">
         <div class="bloque__cabeza" data-revela>
@@ -97,35 +123,39 @@
         </div>
         <ul class="practico" data-revela>
           <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-cuando"/></svg><span class="rotulo">Cuándo</span><strong>Cada 15 días</strong><span>De 3:00 a 6:00 p. m.</span></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-fe"/></svg><span class="rotulo">Días</span><strong>Sábado o domingo</strong><span>Según tu etapa (mirá abajo)</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-fe"/></svg><span class="rotulo">Días</span><strong>Sábado o domingo</strong><span>Según tu etapa</span></li>
           <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-donde"/></svg><span class="rotulo">Dónde</span><strong>En Managua</strong><span>En las casas de los miembros, por turnos</span></li>
           <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-ideal"/></svg><span class="rotulo">Costo</span><strong>Gratis</strong><span>No se paga nada</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- 3. Qué hacemos -->
-    <section class="seccion" aria-labelledby="hacemos-t">
+    <!-- Así es una reunión -->
+    <section class="seccion" aria-labelledby="reunion-t">
       <div class="contenedor bloque">
         <div class="bloque__cabeza" data-revela>
-          <h2 class="titulo" id="hacemos-t">¿Qué hacemos en un grupo?</h2>
-          <p class="bajada">La JM se describe así: con los dos pies en la tierra y vueltos hacia Dios.</p>
+          <h2 class="titulo" id="reunion-t">Así es una reunión</h2>
+          <p class="bajada">Tres horas que se pasan volando.</p>
+          <figure class="foto-real foto-real--cabeza"><img src="/assets/img/grupo/mesa.jpg" alt="Un grupo de vida trabajando alrededor de una mesa en el patio de una casa" width="1400" height="788" loading="lazy" decoding="async"></figure>
         </div>
-        <ul class="pilares" data-revela>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-amistad"/></svg><h3>Amistad</h3><p>Hacés amigos de verdad, que caminan con vos.</p></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-formacion"/></svg><h3>Formación</h3><p>Charlas para conocerte, crecer y aprender a decidir bien.</p></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-fe"/></svg><h3>Fe</h3><p>Rezamos juntos y aprendemos a vivir la fe con María.</p></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-aventura"/></svg><h3>Aventura</h3><p>Campamentos, paseos, juegos y misiones.</p></li>
-        </ul>
+        <ol class="reunion" data-revela>
+          <li><span class="reunion__num">1</span><div><h3>Empezamos orando</h3><p>Nos consagramos a María.</p></div></li>
+          <li><span class="reunion__num">2</span><div><h3>Un tema</h3><p>Alguien lo prepara y lo comparte.</p></div></li>
+          <li><span class="reunion__num">3</span><div><h3>Revisamos objetivos</h3><p>Vemos cómo vamos creciendo cada uno.</p></div></li>
+          <li><span class="reunion__num">4</span><div><h3>Charlamos y discutimos</h3><p>Sin miedo a preguntar ni a opinar.</p></div></li>
+          <li><span class="reunion__num">5</span><div><h3>Jugamos un montón</h3><p>Descargamos y comemos juntos.</p></div></li>
+          <li><span class="reunion__num">6</span><div><h3>Oramos y nos proponemos algo</h3><p>Un propósito concreto para la semana.</p></div></li>
+          <li class="reunion__final"><span class="reunion__num"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-que"/></svg></span><div><h3>Salimos a vivirlo</h3><p>Lo que hablamos se pone en práctica en la vida.</p></div></li>
+        </ol>
       </div>
     </section>
 
-    <!-- 4. Etapas -->
+    <!-- Etapas -->
     <section class="seccion" id="etapas" aria-labelledby="etapas-t" style="padding-bottom: 0">
       <div class="contenedor bloque">
         <div class="bloque__cabeza" data-revela>
           <h2 class="titulo" id="etapas-t">¿En qué grupo te toca?</h2>
-          <p class="bajada">Depende de dónde estudiás. Cada etapa tiene su propio jefe, su día y su ícono.</p>
+          <p class="bajada">Depende de tu etapa de vida. Cada grupo tiene su lema, su jefe, su día y su ícono.</p>
         </div>
       </div>
       <div class="etapas">
@@ -133,8 +163,9 @@
           <svg class="etapa__icono" viewBox="0 0 742 845" aria-hidden="true"><use href="/assets/icons/sprite.svg#cruzados"/></svg>
           <div>
             <p class="rotulo etapa__nivel">Si estás en primaria</p>
-            <h3 class="etapa__nombre" id="et-cruzados">Cruzados de María</h3>
-            <p class="etapa__sentido">Su nombre viene de que ponen su día a día en manos de la Virgen María.</p>
+            <h3 class="etapa__nombre" id="et-cruzados">Cruzados</h3>
+            <p class="etapa__lema">«Bajo la protección de María, ¡todo para todos!»</p>
+            <p class="etapa__sentido">Los más chicos de la JM viven como caballeros: tienen bandera, himno, oración y su propio grito. En los campamentos van ganando su pañolín, su blasón, su cruz y su estrella. Su símbolo es la espada.</p>
             <dl class="etapa__datos"><div><dt>Día</dt><dd>Domingos, 3:00 a 6:00 p. m.</dd></div><div><dt>Jefe</dt><dd>Juan Pablo Padilla</dd></div></dl>
             <a class="etapa__boton" href="#unite" data-etapa="cruzados">Inscribirme en Cruzados</a>
           </div>
@@ -144,7 +175,8 @@
           <div>
             <p class="rotulo etapa__nivel">Si estás en secundaria</p>
             <h3 class="etapa__nombre" id="et-pioneros">Pioneros</h3>
-            <p class="etapa__sentido">Un pionero es el que va adelante abriendo camino. Tienen doce leyes que los guían.</p>
+            <p class="etapa__lema">«¡Siempre adelante!»</p>
+            <p class="etapa__sentido">Los que van a la avanzada y abren camino a un mundo nuevo. Se guían por doce leyes que miran hacia Dios, el mundo, los demás y uno mismo. Su pañolín es triangular, como el Ojo del Padre, y su bandera dice que el grupo nunca se cierra.</p>
             <dl class="etapa__datos"><div><dt>Día</dt><dd>Domingos, 3:00 a 6:00 p. m.</dd></div><div><dt>Jefe</dt><dd>Ricardo Picado</dd></div></dl>
             <a class="etapa__boton" href="#unite" data-etapa="pioneros">Inscribirme en Pioneros</a>
           </div>
@@ -154,15 +186,16 @@
           <div>
             <p class="rotulo etapa__nivel">Si estás en la universidad</p>
             <h3 class="etapa__nombre" id="et-universitarios">Universitarios</h3>
-            <p class="etapa__sentido">Además de su grupo, hacen apostolado: salen a ayudar y a compartir la fe con otros.</p>
-            <dl class="etapa__datos"><div><dt>Día</dt><dd>Sábados, 3:00 a 6:00 p. m.</dd></div><div><dt>Jefe</dt><dd>Yunapu Trauman</dd></div></dl>
+            <p class="etapa__lema">«Mater, por ti, ¡hombres nuevos!»</p>
+            <p class="etapa__sentido">Universitarios que se forman para liderar: sostienen su grupo, salen a misiones y apostolados, y de ellos salen los jefes que guían a los más chicos. La JM forma a sus propios líderes.</p>
+            <dl class="etapa__datos"><div><dt>Día</dt><dd>Sábados, 3:00 a 6:00 p. m.</dd></div><div><dt>Jefe</dt><dd>Yunahpu Traumann</dd></div></dl>
             <a class="etapa__boton" href="#unite" data-etapa="universitarios">Inscribirme en Universitarios</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- 5. Cómo unirte -->
+    <!-- Unirte es fácil -->
     <section class="seccion" aria-labelledby="pasos-t">
       <div class="contenedor bloque">
         <div class="bloque__cabeza" data-revela>
@@ -171,42 +204,63 @@
           <a class="boton" href="#unite" style="margin-top: 1.75rem">Empezar</a>
         </div>
         <ol class="pasos" data-revela>
-          <li><span class="pasos__num">1</span><div><h3>Llenás el formulario</h3><p>Te toma un minuto. También podés escribirnos por WhatsApp.</p></div></li>
-          <li><span class="pasos__num">2</span><div><h3>Te escribimos</h3><p>Te respondemos en cuanto podamos y te invitamos a la reunión más cercana de tu etapa.</p></div></li>
-          <li><span class="pasos__num">3</span><div><h3>Llegás a tu grupo</h3><p>Conocés a tu jefe y a tus compañeros. Podés llegar con amigos.</p></div></li>
+          <li><span class="pasos__num">1</span><div><h3>Llenás el formulario</h3><p>Te toma un minuto.</p></div></li>
+          <li><span class="pasos__num">2</span><div><h3>Se abre WhatsApp</h3><p>Tu mensaje ya va escrito. Solo tocás enviar.</p></div></li>
+          <li><span class="pasos__num">3</span><div><h3>Te invitamos</h3><p>Te respondemos en cuanto podamos y te invitamos a la reunión más cercana de tu grupo. Podés llegar con amigos.</p></div></li>
         </ol>
       </div>
     </section>
 
-    <!-- 6. Lo que creemos -->
+    <!-- Lo que nos mueve -->
     <section class="seccion alianza-poster" aria-labelledby="creemos-t">
       <div class="contenedor">
         <p class="rotulo creemos__intro">Lo que nos mueve</p>
         <h2 class="titulo-mix titulo-mix--cita" id="creemos-t"><span class="mix-sans">Nada sin ti,</span> <span class="mix-serif">nada sin nosotros.</span></h2>
         <p class="bajada bajada--centro">Es la frase que resume nuestra fe: un trato de amor con María, la mamá de Jesús. Ella pone su ayuda; nosotros, nuestro esfuerzo.</p>
-        <ul class="trio" data-revela>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-alianza"/></svg><h3>Alianza de Amor</h3><p>Ese trato con María. Lo renovamos el 18 de cada mes, que llamamos Día de Alianza.</p></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-capital"/></svg><h3>Capital de Gracias</h3><p>Lo bueno que hacés cada día (estudiar, ayudar, rezar) y le ofrecés a María.</p></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-ideal"/></svg><h3>Ideal personal</h3><p>Descubrir para qué te hizo Dios y resumirlo en una frase que te guía.</p></li>
-        </ul>
+        <div class="mater">
+          <figure class="mater__imagen" data-revela><img src="/assets/img/mater.jpg" alt="La Mater: María con el Niño Jesús en brazos" width="700" height="984" loading="lazy" decoding="async"></figure>
+          <div class="mater__texto">
+            <p class="mater__titulo">La Mater</p>
+            <p>Así le decimos a María. Es la imagen que está en todos los santuarios de Schoenstatt del mundo: María abrazando a Jesús contra su corazón. Su nombre completo es Madre Tres Veces Admirable; por eso la ves escrita MTA.</p>
+            <ul class="trio trio--columna" data-revela>
+              <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-alianza"/></svg><h3>Alianza de Amor</h3><p>Ese trato con María. Lo renovamos el 18 de cada mes.</p></li>
+              <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-capital"/></svg><h3>Capital de Gracias</h3><p>Lo bueno que hacés cada día, ofrecido a María.</p></li>
+              <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-ideal"/></svg><h3>Ideal personal</h3><p>Descubrir para qué te hizo Dios.</p></li>
+            </ul>
+          </div>
+        </div>
         <div class="stickers-bloque">
           <p class="rotulo">Frases que vas a escuchar</p>
           <div class="stickers" data-revela>
-            <span class="sticker sticker--brasa">Vayan e incendien el mundo</span>
-            <span class="sticker sticker--crema">¡Que viva tu Alianza!</span>
-            <span class="sticker sticker--redondo" title="Madre Tres Veces Admirable: así llamamos a María">MTA</span>
-            <span class="sticker sticker--serif">La Madre se encargará</span>
-            <span class="sticker sticker--pioneros"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg>Doce leyes</span>
+            <span class="sticker sticker--brasa">¡Viva la Mater!</span>
+            <span class="sticker sticker--redondo" title="Madre Tres Veces Admirable">MTA</span>
+            <span class="sticker sticker--crema">Ofrecé tu capital</span>
             <span class="sticker sticker--oro">El 18: Día de Alianza</span>
-            <span class="sticker sticker--cruzados">Todo o nada</span>
-            <span class="sticker sticker--noche">¡Cruzada de María… marchamos!</span>
+            <span class="sticker sticker--serif">El Padre Kentenich dijo…</span>
+            <span class="sticker sticker--noche">¡Nada sin ti, nada sin nosotros!</span>
+            <span class="sticker sticker--cruzados">¡Todo para todos!</span>
+            <span class="sticker sticker--pioneros"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg>¡Siempre adelante!</span>
+            <span class="sticker sticker--univ">Por ti, ¡hombres nuevos!</span>
+            <span class="sticker sticker--cancion"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-musica"/></svg>Hazme un apóstol de Schoenstatt</span>
           </div>
-          <p class="nota-etapas">MTA significa Madre Tres Veces Admirable, el nombre con que llamamos a María. <a class="enlace" href="/simbolos/">Ver todos los símbolos y frases</a></p>
+          <p class="nota-etapas"><a class="enlace" href="/simbolos/">Ver todos los símbolos y frases</a></p>
         </div>
       </div>
     </section>
 
-    <!-- 7. Historia en un minuto -->
+    <!-- Cruz de la Unidad -->
+    <section class="seccion unidad" aria-labelledby="unidad-t">
+      <div class="contenedor unidad__grid">
+        <figure class="unidad__cruz" data-revela><img src="/assets/img/cruz-unidad.jpg" alt="La Cruz de la Unidad: Cristo en la cruz y María a su lado, mirándose" width="381" height="492" loading="lazy" decoding="async"></figure>
+        <div class="unidad__texto">
+          <p class="rotulo">La Cruz de la Unidad</p>
+          <h2 class="unidad__titulo" id="unidad-t"><span class="unidad__linea">Una Madre</span> <span class="unidad__enamorada">enamorada</span> <span class="unidad__linea">de su Hijo.</span></h2>
+          <p class="parrafo">En esta cruz Jesús y María están vivos y se miran. Ella recoge en un cáliz la sangre de su Hijo: está con él hasta el final. Es nuestra cruz, la que nos recuerda que nunca estamos solos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Historia en un minuto -->
     <section class="seccion raiz" aria-labelledby="raiz-t">
       <div class="contenedor">
         <div class="bloque__cabeza bloque__cabeza--ancha" data-revela>
@@ -234,40 +288,83 @@
       </div>
     </section>
 
-    <!-- 8. Héroes -->
+    <!-- Héroes -->
     <section class="seccion" aria-labelledby="heroes-t">
       <div class="contenedor">
         <div class="bloque__cabeza bloque__cabeza--ancha" data-revela>
           <h2 class="titulo" id="heroes-t">Nuestros héroes</h2>
-          <p class="bajada">Jóvenes y adultos de Schoenstatt que vivieron su fe con valentía, incluso en la guerra. Nos inspiran.</p>
+          <p class="bajada">Jóvenes y adultos de Schoenstatt que vivieron su fe hasta el final. Varios ya están en proceso para que la Iglesia los declare santos: la prueba de que este camino lleva a aspirar a la santidad.</p>
         </div>
       </div>
       <ul class="heroes-carrusel" tabindex="0" aria-label="Héroes de la JM">
-        <li class="tarjeta-heroe tarjeta-heroe--a"><span class="tarjeta-heroe__mono" aria-hidden="true">JE</span><p class="rotulo">Alemania · 1898–1918</p><h3>José Engling</h3><p>Estudiante con pocos recursos y mala salud. Fue fiel a María hasta morir en la guerra.</p></li>
-        <li class="tarjeta-heroe tarjeta-heroe--b"><span class="tarjeta-heroe__mono" aria-hidden="true">FR</span><p class="rotulo">Austria · 1903–1942</p><h3>Franz Reinisch</h3><p>Sacerdote que se negó a jurarle lealtad a Hitler. Nuestro campamento lleva su nombre.</p></li>
-        <li class="tarjeta-heroe tarjeta-heroe--c"><span class="tarjeta-heroe__mono" aria-hidden="true">KL</span><p class="rotulo">Alemania · 1915–1945</p><h3>Karl Leisner</h3><p>Preso por los nazis, lo ordenaron sacerdote en secreto. La Iglesia lo declaró beato.</p></li>
-        <li class="tarjeta-heroe tarjeta-heroe--d"><span class="tarjeta-heroe__mono" aria-hidden="true">MH</span><p class="rotulo">Chile · 1931–1964</p><h3>Mario Hiriart</h3><p>Ingeniero que ayudó a fundar la JM en Chile. Es modelo del joven que Schoenstatt quiere formar.</p></li>
-        <li class="tarjeta-heroe tarjeta-heroe--e"><span class="tarjeta-heroe__mono" aria-hidden="true">JP</span><p class="rotulo">Brasil · 1904–1985</p><h3>João Pozzobon</h3><p>Papá de familia. Caminó 140,000 km llevando una imagen de la Virgen de casa en casa.</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/engling.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Alemania · 1898–1918</p><h3>José Engling</h3><p>Estudiante con pocos recursos y mala salud. Fue fiel a María hasta morir en la guerra. Su proceso para ser santo está abierto.</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/brunner.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Alemania · 1897–1917</p><h3>Max Brunner</h3><p>Uno de los primeros congregantes. Antes de ir a la guerra le dedicó su vida a María.</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/wormer.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Alemania · 1897–1917</p><h3>Hans Wormer</h3><p>Compañero de Engling. Su lema, grabado en su ataúd: «Todo o nada».</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/reinisch.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Austria · 1903–1942</p><h3>Franz Reinisch</h3><p>Sacerdote que se negó a jurarle lealtad a Hitler. Nuestro campamento lleva su nombre.</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/leisner.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Alemania · 1915–1945 · Beato</p><h3>Karl Leisner</h3><p>Preso por los nazis, lo ordenaron sacerdote en secreto. La Iglesia ya lo declaró beato.</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/hiriart.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Chile · 1931–1964 · Venerable</p><h3>Mario Hiriart</h3><p>Ingeniero que ayudó a fundar la JM en Chile. Es modelo del joven que Schoenstatt quiere formar.</p></li>
+        <li class="tarjeta-heroe"><img src="/assets/img/heroes/pozzobon.jpg" alt="" loading="lazy" decoding="async"><p class="rotulo">Brasil · 1904–1985 · Venerable</p><h3>João Pozzobon</h3><p>Papá de familia. Caminó 140,000 km llevando una imagen de la Virgen de casa en casa.</p></li>
       </ul>
       <div class="contenedor"><p class="nota-etapas">Beato y Venerable son pasos que da la Iglesia antes de declarar santo a alguien. <a class="enlace" href="/historia/#heroes">Conocé sus historias</a></p></div>
     </section>
 
-    <!-- 9. En el mundo -->
-    <section class="seccion mundo" aria-labelledby="mundo-t">
-      <div class="contenedor bloque">
-        <div class="bloque__cabeza" data-revela>
-          <h2 class="titulo" id="mundo-t">No estás solo</h2>
-          <p class="bajada">La JM es una sola familia en muchos países.</p>
+    <!-- Hacemos cosas increíbles -->
+    <section class="seccion mundo" aria-labelledby="increible-t">
+      <div class="contenedor">
+        <div class="bloque__cabeza bloque__cabeza--ancha" data-revela>
+          <h2 class="titulo-mix titulo-mix--seccion" id="increible-t"><span class="mix-sans">¡Hacemos cosas</span> <span class="mix-serif">increíbles!</span></h2>
+          <p class="bajada">La JM está en cuatro continentes, con cientos de jóvenes en cada país. Esto es lo que hacen juntos.</p>
         </div>
-        <ul class="cifras-iconos cifras-iconos--tres" data-revela>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-mundo"/></svg><strong class="cifra">4</strong><span>continentes donde hay JM</span></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-que"/></svg><strong class="cifra">532</strong><span>jóvenes de 18 países en el encuentro mundial de 2023</span></li>
-          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-camino"/></svg><strong class="cifra">420 km</strong><span>caminando por los Andes en la peregrinación de 2026</span></li>
+        <ul class="hazanas" data-revela>
+          <li class="hazana hazana--grande"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-camino"/></svg><strong>420 km a pie</strong><p>La Cruzada de María: 16 días caminando por los Andes, de Argentina a Chile, hasta 3,850 metros de altura.</p></li>
+          <li class="hazana"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-antorcha"/></svg><strong>1,800 km de antorcha</strong><p>En 2014, 84 jóvenes la llevaron por relevos hasta Schoenstatt. Todavía arde allá.</p></li>
+          <li class="hazana"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-aventura"/></svg><strong>A más de 5,000 metros</strong><p>La JM de Ecuador subió al volcán Chimborazo y renovó allá arriba su Alianza con María.</p></li>
+          <li class="hazana"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-mundo"/></svg><strong>Ignis</strong><p>El encuentro mundial de la JM. Su nombre significa «fuego» en latín.</p></li>
+          <li class="hazana"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-formacion"/></svg><strong>Escuela de Jefes</strong><p>Universitarios de seis países se formaron como líderes junto al primer santuario, en Alemania.</p></li>
+          <li class="hazana hazana--local"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-musica"/></svg><strong>Tenemos música</strong><p>En nuestro grupo se canta y se toca. La canción que no falla: «Hazme un apóstol de Schoenstatt».</p></li>
         </ul>
       </div>
     </section>
 
-    <!-- 10. Para papás -->
+    <!-- Una gran familia -->
+    <section class="seccion" aria-labelledby="familia-t">
+      <div class="contenedor bloque">
+        <div class="bloque__cabeza" data-revela>
+          <h2 class="titulo" id="familia-t">Somos parte de una familia grande</h2>
+          <p class="bajada">Schoenstatt tiene un lugar para cada persona. Hay más de 200 santuarios en el mundo, réplicas de la capillita donde empezó todo.</p>
+        </div>
+        <ul class="ramas" data-revela>
+          <li><span>Juventud Femenina</span><small>para niñas y muchachas</small></li>
+          <li><span>Familias</span><small>para matrimonios</small></li>
+          <li><span>Madres</span><small>también para madres solteras</small></li>
+          <li><span>Hombres</span><small>que rezan juntos el rosario</small></li>
+          <li><span>Peregrinos</span><small>para quienes quieren peregrinar a la Virgen</small></li>
+          <li class="ramas__jm"><span>Juventud Masculina</span><small>la nuestra</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- En Managua -->
+    <section class="seccion" aria-labelledby="nic-t">
+      <div class="contenedor">
+        <div class="bloque__cabeza bloque__cabeza--ancha" data-revela>
+          <h2 class="titulo" id="nic-t">Así somos en Managua</h2>
+          <p class="bajada">Schoenstatt llegó a Nicaragua en 2016 y la JM abrió en 2023. Estas son nuestras reuniones, nuestras banderas y nuestros amigos.</p>
+        </div>
+        <div class="galeria" data-revela>
+          <figure class="galeria__a"><img src="/assets/img/grupo/cruzados-bandera.jpg" alt="Grupo de Cruzados sonriendo con su bandera en un jardín" width="1280" height="720" loading="lazy" decoding="async"></figure>
+          <figure class="galeria__b"><img src="/assets/img/grupo/bandera-capa.jpg" alt="Un Cruzado se señala la bandera que lleva como capa" width="1280" height="853" loading="lazy" decoding="async"></figure>
+          <figure class="galeria__c"><img src="/assets/img/grupo/amigos.jpg" alt="Seis jóvenes abrazados en una cocina, celebrando" width="1000" height="852" loading="lazy" decoding="async"></figure>
+          <figure class="galeria__d"><img src="/assets/img/grupo/charla.jpg" alt="Universitarios conversando en una sala con el asesor" width="1400" height="788" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="ocho" data-revela>
+          <p class="titulo-mix ocho__fecha"><span class="mix-sans">8 de</span> <span class="mix-serif">diciembre</span></p>
+          <p class="parrafo">La Purísima, patrona de Nicaragua. En 1914, ese mismo día, diecisiete jóvenes se consagraron a María en la capilla de Schoenstatt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para papás -->
     <section class="seccion papas" id="papas" aria-labelledby="papas-t">
       <div class="contenedor bloque">
         <div class="bloque__cabeza">
@@ -279,14 +376,14 @@
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Qué es</dt><dd class="ficha__valor">Un grupo de la Iglesia católica para niños y jóvenes varones, parte del Movimiento de Schoenstatt.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Cuándo</dt><dd class="ficha__valor">Cada 15 días, de 3:00 a 6:00 p. m. Domingos: primaria y secundaria. Sábados: universidad.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Dónde</dt><dd class="ficha__valor">En casas de los miembros en Managua, por turnos.</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Quién los guía</dt><dd class="ficha__valor">Cada grupo tiene un jefe: Juan Pablo Padilla (primaria), Ricardo Picado (secundaria) y Yunapu Trauman (universidad). El asesor de todos es Juan Jarquín.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Quién los guía</dt><dd class="ficha__valor">Cada grupo tiene un jefe: Juan Pablo Padilla (Cruzados), Ricardo Picado (Pioneros) y Yunahpu Traumann (Universitarios). El asesor de todos es Juan Jarquín.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Costo</dt><dd class="ficha__valor">Gratis.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Contacto</dt><dd class="ficha__valor"><a class="enlace" data-whatsapp="Hola, soy papá/mamá y quiero información sobre la JM." href="https://wa.me/50582344190">WhatsApp <span class="cifra">+505 8234 4190</span></a>. Preguntá por don Juan.</dd></div>
         </dl>
       </div>
     </section>
 
-    <!-- 11. Preguntas -->
+    <!-- Preguntas -->
     <section class="seccion" aria-labelledby="preguntas-t">
       <div class="contenedor bloque">
         <div class="bloque__cabeza" data-revela>
@@ -300,18 +397,18 @@
           <details class="pregunta"><summary>¿Puedo llegar con un amigo?</summary><div class="pregunta__respuesta"><p>Sí. Podés llegar con tus amigos.</p></div></details>
           <details class="pregunta"><summary>¿Qué es un jefe?</summary><div class="pregunta__respuesta"><p>Un joven mayor de la JM que guía a un grupo. Cada etapa tiene el suyo.</p></div></details>
           <details class="pregunta"><summary>¿Y las mujeres?</summary><div class="pregunta__respuesta"><p>Schoenstatt tiene una rama para ellas: la Juventud Femenina.</p></div></details>
-          <details class="pregunta"><summary>¿Cómo es una reunión?</summary><div class="pregunta__respuesta"><p><span class="pendiente" data-pendiente="reunion">cómo es una reunión, paso a paso</span></p></div></details>
+          <details class="pregunta"><summary>¿Cómo es una reunión?</summary><div class="pregunta__respuesta"><p>Empezamos orando y consagrándonos a María. Alguien comparte un tema, revisamos nuestros objetivos de crecimiento, charlamos y discutimos, jugamos un montón, comemos, volvemos a orar, nos ponemos un propósito y salimos a vivirlo.</p></div></details>
         </div>
       </div>
     </section>
 
-        <!-- 11 Unite -->
+    <!-- Unite -->
     <section class="seccion unite" id="unite" aria-labelledby="unite-t">
       <div class="contenedor">
         <div class="unite__grid">
           <div>
             <h2 class="titulo-mix titulo-mix--grande" id="unite-t"><span class="mix-sans">Unite a tu</span> <span class="mix-serif">grupo de vida.</span></h2>
-            <p class="bajada" style="color: var(--crema)">Llená el formulario en un minuto o escribinos directo por WhatsApp. Te invitamos a la reunión más cercana de tu etapa.</p>
+            <p class="bajada" style="color: var(--crema)">Llená el formulario y se abre WhatsApp con tu mensaje listo para enviar. Te invitamos a la reunión más cercana de tu grupo.</p>
             <div class="unite__vias">
               <a class="unite__via" data-whatsapp href="https://wa.me/50582344190" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8.5L4 19.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
@@ -335,9 +432,9 @@
               </fieldset>
 
               <fieldset id="f-etapa" aria-describedby="e-etapa">
-                <legend>Etapa</legend>
+                <legend>Grupo</legend>
                 <div class="eleccion">
-                  <label class="opcion opcion--cruzados"><input type="radio" name="etapa" value="cruzados"><svg viewBox="0 0 742 845" aria-hidden="true"><use href="/assets/icons/sprite.svg#cruzados"/></svg><span class="opcion__texto"><span class="opcion__nombre">Cruzados de María</span><span class="opcion__nivel">Primaria</span></span></label>
+                  <label class="opcion opcion--cruzados"><input type="radio" name="etapa" value="cruzados"><svg viewBox="0 0 742 845" aria-hidden="true"><use href="/assets/icons/sprite.svg#cruzados"/></svg><span class="opcion__texto"><span class="opcion__nombre">Cruzados</span><span class="opcion__nivel">Primaria</span></span></label>
                   <label class="opcion opcion--pioneros"><input type="radio" name="etapa" value="pioneros"><svg viewBox="0 0 816 941" aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg><span class="opcion__texto"><span class="opcion__nombre">Pioneros</span><span class="opcion__nivel">Secundaria</span></span></label>
                   <label class="opcion opcion--universitarios"><input type="radio" name="etapa" value="universitarios"><svg viewBox="0 0 890 872" aria-hidden="true"><use href="/assets/icons/sprite.svg#universitarios"/></svg><span class="opcion__texto"><span class="opcion__nombre">Universitarios</span><span class="opcion__nivel">Universidad</span></span></label>
                 </div>
@@ -375,31 +472,28 @@
                   <p class="error" id="e-tutor-whatsapp" hidden></p>
                 </div>
                 <div class="campo">
-                  <label class="casilla"><input id="f-consentimiento" type="checkbox" aria-describedby="e-consentimiento"><span class="casilla__caja" aria-hidden="true"></span><span id="l-consentimiento">Mi papá, mamá o tutor sabe de esta inscripción, está de acuerdo y acepta que la JM le escriba por WhatsApp.</span></label>
+                  <label class="casilla"><input id="f-consentimiento" type="checkbox" aria-describedby="e-consentimiento"><span class="casilla__caja" aria-hidden="true"></span><span id="l-consentimiento">Mi papá, mamá o tutor sabe de esta inscripción y está de acuerdo.</span></label>
                   <p class="error" id="e-consentimiento" hidden></p>
                 </div>
               </fieldset>
 
-              <div class="trampa" aria-hidden="true"><label for="f-website">No llenar</label><input id="f-website" type="text" tabindex="-1" autocomplete="off"></div>
-
-              <p class="fallo" id="fallo" role="alert" hidden>No pudimos enviar la inscripción. Probá otra vez o <a class="enlace" id="fallo-whatsapp" href="https://wa.me/50582344190" target="_blank" rel="noopener">mandala por WhatsApp</a>.</p>
-              <button type="submit" class="boton" id="enviar"><span id="t-enviar">Quiero unirme</span></button>
+              <button type="submit" class="boton" id="enviar"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8.5L4 19.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span id="t-enviar">Enviar por WhatsApp</span></button>
+              <p class="ayuda" style="text-align: center; margin-top: 0.75rem">Se abre WhatsApp con tu mensaje listo. Solo tocás enviar.</p>
             </form>
 
             <div class="formulario listo" id="listo" hidden>
               <svg class="listo__llama" viewBox="0 0 100 160" aria-hidden="true"><use href="/assets/icons/sprite.svg#llama"/></svg>
-              <h3 class="grito listo__titulo" id="listo-titulo" tabindex="-1">Ya estás encendido</h3>
-              <p>Recibimos tu inscripción. Te invitamos a la sesión más cercana de tu etapa y te respondemos en cuanto podamos.</p>
+              <h3 class="listo__titulo" id="listo-titulo" tabindex="-1">¡Ya casi!</h3>
+              <p>Abrimos WhatsApp con tu mensaje. Si no se abrió, <a class="enlace" id="listo-reabrir" href="https://wa.me/50582344190">tocá acá</a>. Enviálo y te invitamos a la reunión más cercana.</p>
               <a class="boton" id="compartir" href="https://wa.me/" target="_blank" rel="noopener">Invitá a un amigo</a>
             </div>
           </div>
         </div>
       </div>
     </section>
+  </main>
 
-    </main>
-
-  <a class="boton cta-fija" href="#unite">Unite a un grupo</a>
+  <a class="boton cta-fija" href="#unite">Quiero unirme</a>
 
   <footer class="pie">
     <div class="contenedor pie__grid">
@@ -409,7 +503,7 @@
       </div>
       <ul class="pie__lista">
         <li><a href="/historia/">Historia y héroes</a></li>
-        <li><a href="/simbolos/">Símbolos, lemas y glosario</a></li>
+        <li><a href="/simbolos/">Símbolos, frases y glosario</a></li>
         <li><a href="#papas">Para papás</a></li>
         <li><a href="#unite">Unite</a></li>
       </ul>
@@ -421,6 +515,6 @@
     </div>
   </footer>
 
-  <script src="/assets/sitio.js?v=6" defer></script>
+  <script src="/assets/sitio.js?v=7" defer></script>
 </body>
 </html>

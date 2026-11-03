@@ -1003,3 +1003,169 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .lectura .titulo + .parrafo { margin-top: 1.5rem; }
 .cabecera__bajada { font-family: var(--texto); font-weight: 450; font-size: var(--t-md); letter-spacing: 0; text-transform: none; color: var(--crema); line-height: 1.5; max-width: 42ch; }
 .lectura .titulo { font-size: clamp(1.75rem, 6.4vw, 2.6rem); }
+
+/* =========================================================================
+   v7 · Intro, fotos reales y secciones nuevas
+   ========================================================================= */
+
+/* Intro: el lema sobre el video; el fuego sube y revela la página */
+.intro { display: none; }
+.con-intro .intro {
+  display: grid; place-items: center; position: fixed; inset: 0; z-index: 60;
+  background: var(--noche-profunda); overflow: hidden;
+  animation: intro-salida 600ms var(--ease-out) 4.6s forwards;
+}
+.con-intro body { overflow: hidden; }
+.intro.fin { display: none !important; }
+.intro__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: grayscale(0.4) contrast(1.1); }
+.intro__velo { position: absolute; inset: 0; background: radial-gradient(80% 60% at 50% 55%, rgb(7 13 30 / 0.35), rgb(7 13 30 / 0.9)), linear-gradient(to top, rgb(232 105 42 / 0.25), transparent 50%); }
+.intro__texto { position: relative; text-align: center; padding-inline: var(--margen); }
+.intro__lema { font-family: var(--voz); font-style: italic; font-size: clamp(3.6rem, 18vw, 9rem); line-height: 0.9; color: var(--crema); }
+.intro__lema span { display: block; opacity: 0; filter: blur(14px); transform: translateY(24px) scale(1.06); animation: intro-palabra 900ms var(--ease-out) forwards; }
+.intro__lema span:nth-child(1) { animation-delay: 250ms; }
+.intro__lema span:nth-child(2) { animation-delay: 650ms; }
+.intro__lema span:nth-child(3) { animation-delay: 1050ms; }
+.intro__traduccion {
+  margin-top: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.22em; font-size: clamp(0.8rem, 3.4vw, 1.1rem); color: var(--oro);
+  opacity: 0; animation: intro-aparece 800ms var(--ease-out) 1.8s forwards;
+}
+.intro__fuego {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, var(--crema) 0%, var(--oro) 12%, var(--brasa) 30%, #8E2D25 55%, var(--noche-profunda) 85%);
+  transform: translateY(105%); animation: intro-fuego 1.3s var(--ease-in-out) 3.2s forwards;
+}
+.intro__saltar {
+  position: absolute; right: var(--margen); bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  padding: 0.625rem 1rem; border: 1px solid rgb(246 239 228 / 0.4); border-radius: 999px; background: rgb(7 13 30 / 0.5);
+  color: var(--crema); font: inherit; font-size: var(--t-sm); font-weight: 600; cursor: pointer;
+}
+@keyframes intro-palabra { to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes intro-aparece { to { opacity: 1; } }
+@keyframes intro-fuego { 0% { transform: translateY(105%); } 100% { transform: translateY(-10%); } }
+@keyframes intro-salida { to { opacity: 0; visibility: hidden; } }
+/* Después del fuego, el resto de la apertura se revela */
+.con-intro .apertura__contenido > * { opacity: 0; animation: entrada 900ms var(--ease-out) forwards; }
+.con-intro .apertura__contenido > :nth-child(1) { animation-delay: 4.5s; }
+.con-intro .apertura__contenido > :nth-child(2) { animation-delay: 4.65s; }
+.con-intro .apertura__contenido > :nth-child(3) { animation-delay: 4.85s; }
+.con-intro .apertura__contenido > :nth-child(4) { animation-delay: 5s; }
+.intro-salteada .apertura__contenido > * { animation-delay: 0s !important; }
+
+/* Video de fondo en la apertura, teñido por el degradado del logo */
+.apertura__video { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; mix-blend-mode: luminosity; pointer-events: none; }
+.apertura__arte { z-index: 1; }
+.apertura__contenido { z-index: 2; }
+
+/* Fotos reales */
+.foto-real { margin: 0; overflow: hidden; border-radius: 6px; }
+.foto-real img { width: 100%; height: 100%; object-fit: cover; }
+.foto-real--cabeza { margin-top: 1.75rem; aspect-ratio: 16 / 10; width: 100%; }
+
+/* Así es una reunión */
+.reunion { display: grid; gap: 0; position: relative; }
+.reunion::before { content: ""; position: absolute; left: 1.375rem; top: 1.5rem; bottom: 1.5rem; width: 2px; background: linear-gradient(var(--oro), var(--brasa)); }
+.reunion li { position: relative; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; padding-block: 0.875rem; align-items: start; }
+.reunion__num { width: 2.75rem; height: 2.75rem; border-radius: 50%; display: grid; place-items: center; background: var(--noche-profunda); border: 2px solid var(--oro); font-family: var(--voz); font-size: 1.4rem; color: var(--oro); }
+.reunion__num svg { width: 1.25rem; height: 1.25rem; color: var(--noche); }
+.reunion__final .reunion__num { background: var(--brasa); border-color: var(--brasa); }
+.reunion h3 { font-weight: 800; font-size: var(--t-md); line-height: 1.25; padding-top: 0.45rem; }
+.reunion p { color: var(--crema-suave); font-size: var(--t-sm); }
+
+/* Etapas: lema */
+.etapa__lema { margin-top: 0.5rem; font-family: var(--voz); font-style: italic; font-size: clamp(1.35rem, 5.4vw, 1.6rem); line-height: 1.2; }
+.etapa--cruzados .etapa__lema, .etapa--pioneros .etapa__lema { color: var(--oro); }
+.etapa .etapa__sentido { margin-top: 0.875rem; max-width: 38ch; }
+
+/* La Mater */
+.mater { margin-top: clamp(2.5rem, 7vw, 4rem); display: grid; gap: 2rem; text-align: left; align-items: center; }
+.mater__imagen { margin: 0 auto; width: min(100%, 22rem); border-radius: 200px 200px 8px 8px; overflow: hidden; box-shadow: 0 0 0 1px rgb(242 181 68 / 0.5), 0 20px 60px -20px rgb(242 181 68 / 0.45); }
+.mater__imagen img { width: 100%; }
+.mater__titulo { font-family: var(--voz); font-style: italic; font-size: var(--t-3xl); line-height: 1; color: var(--oro); }
+.mater__texto > p:not(.mater__titulo) { margin-top: 1rem; color: var(--crema-suave); max-width: 46ch; }
+.trio--columna { grid-template-columns: 1fr !important; margin-top: 2rem; }
+@media (min-width: 60rem) { .mater { grid-template-columns: 5fr 7fr; gap: 4rem; } }
+.sticker--univ { background: linear-gradient(120deg, var(--univ-rojo), var(--univ-naranja)); color: var(--crema); }
+.sticker--cancion { background: var(--crema); color: var(--noche); text-transform: none; letter-spacing: 0; font-weight: 700; }
+.sticker--cancion svg { width: 1.2rem; height: 1.2rem; color: var(--brasa); }
+.sticker:nth-child(9) { --r: -3deg; } .sticker:nth-child(10) { --r: 2deg; }
+
+/* Cruz de la Unidad */
+.unidad { background: linear-gradient(180deg, var(--noche-profunda), var(--ciruela) 70%, var(--noche-profunda)); overflow: hidden; }
+.unidad__grid { display: grid; gap: 2.5rem; align-items: center; }
+.unidad__cruz { margin: 0 auto; width: min(78vw, 22rem); padding: 2rem; border-radius: 50%; aspect-ratio: 1; display: grid; place-items: center; background: radial-gradient(circle, var(--crema) 0%, var(--crema) 58%, rgb(242 181 68 / 0.6) 66%, transparent 72%); }
+.unidad__cruz img { width: 78%; mix-blend-mode: multiply; }
+@media (prefers-reduced-motion: no-preference) {
+  .unidad__cruz { animation: latido 5s ease-in-out infinite; }
+}
+@keyframes latido { 0%, 100% { filter: drop-shadow(0 0 0 rgb(242 181 68 / 0)); } 50% { filter: drop-shadow(0 0 40px rgb(242 181 68 / 0.55)); } }
+.unidad__texto .rotulo { color: var(--oro); }
+.unidad__titulo { margin-top: 0.75rem; font-weight: 800; font-size: clamp(1.6rem, 6.5vw, 2.4rem); line-height: 1.1; letter-spacing: -0.02em; }
+.unidad__linea { display: block; }
+.unidad__enamorada {
+  display: block; font-family: var(--voz); font-style: italic; font-weight: 400; letter-spacing: -0.01em;
+  font-size: clamp(3.4rem, 16vw, 6rem); line-height: 1.05; color: var(--oro);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .con-js .unidad__enamorada { clip-path: inset(-10% 100% -10% 0); transition: clip-path 1.6s var(--ease-in-out) 0.3s; }
+  .con-js .unidad.visible .unidad__enamorada { clip-path: inset(-10% -5% -10% 0); animation: brillo 3.2s ease-in-out 2s infinite; }
+}
+@keyframes brillo { 0%, 100% { text-shadow: 0 0 0 rgb(242 181 68 / 0); } 50% { text-shadow: 0 0 28px rgb(242 181 68 / 0.55); } }
+.unidad__texto .parrafo { margin-top: 1.25rem; color: var(--crema-suave); }
+@media (min-width: 60rem) { .unidad__grid { grid-template-columns: 5fr 7fr; gap: 4rem; } }
+
+/* Héroes con foto */
+.tarjeta-heroe { background: var(--marino); align-content: end; padding: 0; min-height: 0; }
+.tarjeta-heroe img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; filter: grayscale(1) sepia(0.25) contrast(1.05); }
+.tarjeta-heroe > :not(img) { padding-inline: 1.25rem; }
+.tarjeta-heroe .rotulo { margin-top: 1rem; color: var(--oro) !important; }
+.tarjeta-heroe h3 { margin-top: 0.25rem; }
+.tarjeta-heroe p:last-child { padding-bottom: 1.5rem; margin-top: 0.375rem; }
+.tarjeta-heroe::after { content: none; }
+
+/* Hacemos cosas increíbles */
+.titulo-mix--seccion .mix-sans { font-size: clamp(1.3rem, 5.6vw, 2rem); color: var(--crema); }
+.titulo-mix--seccion .mix-serif { font-size: clamp(3rem, 13vw, 5.4rem); font-style: italic; color: var(--oro); }
+.hazanas { display: grid; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 6px; overflow: hidden; }
+.hazana { background: var(--noche); padding: 1.5rem 1.25rem; display: grid; gap: 0.5rem; align-content: start; }
+.hazana svg { width: 2.5rem; height: 2.5rem; color: var(--brasa); margin-bottom: 0.25rem; }
+.hazana strong { font-weight: 800; font-size: var(--t-lg); line-height: 1.1; letter-spacing: -0.02em; }
+.hazana p { color: var(--crema-suave); font-size: var(--t-sm); max-width: 40ch; }
+.hazana--grande { background: linear-gradient(150deg, #7A2A26, var(--brasa)); }
+.hazana--grande svg { color: var(--crema); }
+.hazana--grande p { color: var(--crema); }
+.hazana--local { background: var(--marino); }
+.hazana--local svg { color: var(--oro); }
+@media (min-width: 48rem) { .hazanas { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 64rem) { .hazanas { grid-template-columns: repeat(3, 1fr); } .hazana--grande { grid-row: span 2; align-content: end; } .hazana--grande strong { font-size: var(--t-2xl); } }
+
+/* Ramas de la familia */
+.ramas { display: grid; gap: 0.75rem; }
+.ramas li { display: grid; gap: 0.15rem; padding: 1rem 1.25rem; border-radius: 6px; background: var(--marino); border-left: 0; }
+.ramas span { font-weight: 800; font-size: var(--t-md); }
+.ramas small { color: var(--crema-suave); font-size: var(--t-sm); }
+.ramas__jm { background: linear-gradient(120deg, var(--brasa), #A83C1E) !important; }
+.ramas__jm small { color: var(--crema); }
+@media (min-width: 40rem) { .ramas { grid-template-columns: 1fr 1fr; } }
+
+/* Galería de Managua */
+.galeria { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+.galeria figure { margin: 0; overflow: hidden; border-radius: 6px; }
+.galeria img { width: 100%; height: 100%; object-fit: cover; }
+.galeria__a { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.galeria__b, .galeria__c { aspect-ratio: 4 / 5; }
+.galeria__d { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+@media (min-width: 60rem) {
+  .galeria { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 18rem 18rem; }
+  .galeria__a { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
+  .galeria__b, .galeria__c { aspect-ratio: auto; }
+  .galeria__d { grid-column: 2 / 4; aspect-ratio: auto; }
+}
+.galeria + .ocho { margin-top: 2rem; }
+/* Historia: retratos */
+.ficha-heroe { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0 1.25rem; align-items: start; }
+.ficha-heroe__foto { grid-row: span 4; width: 5.5rem; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 4px; filter: grayscale(1) sepia(0.25); }
+.ficha-heroe > :not(.ficha-heroe__foto) { grid-column: 2; }
+@media (min-width: 48rem) { .ficha-heroe { grid-template-columns: 8rem 1fr; } .ficha-heroe__foto { width: 8rem; } }
+.fundador { margin: 2rem 0; display: grid; grid-template-columns: 7rem 1fr; gap: 1.25rem; align-items: end; }
+.fundador img { width: 7rem; border-radius: 4px; filter: grayscale(1) sepia(0.2); }
+.fundador figcaption { color: var(--crema-tenue); font-size: var(--t-sm); max-width: 30ch; }
