@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T09:49:22+00:00",
+  "title": "Design System: JM Schoenstatt Managua: Nadie se enciende solo",
+  "scope": "Solo el mundo 'Nadie se enciende solo' de /inscripciones/. Las páginas anteriores del sitio (index.html, la-jm.html, etc., con /style.css) usan otro sistema visual, más antiguo, que este archivo no describe.",
+  "extensions": {
+    "colorMeta": {
+      "brasa": {
+        "role": "primary",
+        "displayName": "Naranja brasa",
+        "canonical": "oklch(66.7% 0.174 43.7)",
+        "tonalRamp": [
+          "#190500",
+          "#421500",
+          "#6F2901",
+          "#A03E03",
+          "#D25710",
+          "#EC8659",
+          "#FFB391",
+          "#FFE0C8"
+        ]
+      },
+      "oro": {
+        "role": "secondary",
+        "displayName": "Oro de llama",
+        "canonical": "oklch(81.0% 0.144 79.3)",
+        "tonalRamp": [
+          "#130900",
+          "#352000",
+          "#5B3B00",
+          "#845700",
+          "#AF7600",
+          "#CB9C4A",
+          "#E8C388",
+          "#FFEBC2"
+        ]
+      },
+      "noche-profunda": {
+        "role": "neutral",
+        "displayName": "Noche profunda",
+        "canonical": "oklch(16.4% 0.037 266.9)",
+        "tonalRamp": [
+          "#090B0F",
+          "#21252D",
+          "#3C424F",
+          "#596173",
+          "#788299",
+          "#9DA5B8",
+          "#C2C9D8",
+          "#EAEEF9"
+        ]
+      },
+      "noche": {
+        "role": "neutral",
+        "displayName": "Azul noche",
+        "canonical": "oklch(20.4% 0.056 266.3)",
+        "tonalRamp": [
+          "#080B11",
+          "#1F2531",
+          "#394255",
+          "#55617C",
+          "#7382A4",
+          "#98A5C2",
+          "#BFC9E0",
+          "#E7EFFF"
+        ]
+      },
+      "marino": {
+        "role": "neutral",
+        "displayName": "Azul marino",
+        "canonical": "oklch(25.9% 0.057 261.9)",
+        "tonalRamp": [
+          "#080B11",
+          "#1E2531",
+          "#384255",
+          "#53627C",
+          "#7083A5",
+          "#96A6C2",
+          "#BDCAE0",
+          "#E6EFFF"
+        ]
+      },
+      "crema": {
+        "role": "neutral",
+        "displayName": "Crema",
+        "canonical": "oklch(95.5% 0.016 79.4)",
+        "tonalRamp": [
+          "#0F0A04",
+          "#29241C",
+          "#474138",
+          "#666057",
+          "#888178",
+          "#ABA49A",
+          "#CFC8BD",
+          "#F4EDE2"
+        ]
+      },
+      "crema-suave": {
+        "role": "neutral",
+        "displayName": "Crema suave",
+        "canonical": "rgb(246 239 228 / 0.74)",
+        "tonalRamp": [
+          "#0F0A04",
+          "#29241C",
+          "#474138",
+          "#666057",
+          "#888178",
+          "#ABA49A",
+          "#CFC8BD",
+          "#F4EDE2"
+        ]
+      },
+      "crema-tenue": {
+        "role": "neutral",
+        "displayName": "Crema tenue",
+        "canonical": "rgb(246 239 228 / 0.5)",
+        "tonalRamp": [
+          "#0F0A04",
+          "#29241C",
+          "#474138",
+          "#666057",
+          "#888178",
+          "#ABA49A",
+          "#CFC8BD",
+          "#F4EDE2"
+        ]
+      },
+      "linea": {
+        "role": "neutral",
+        "displayName": "Línea",
+        "canonical": "rgb(246 239 228 / 0.18)",
+        "tonalRamp": [
+          "#0F0A04",
+          "#29241C",
+          "#474138",
+          "#666057",
+          "#888178",
+          "#ABA49A",
+          "#CFC8BD",
+          "#F4EDE2"
+        ]
+      },
+      "brasa-clara": {
+        "role": "error",
+        "displayName": "Brasa clara",
+        "canonical": "oklch(74.0% 0.146 45.2)",
+        "tonalRamp": [
+          "#170601",
+          "#3E1906",
+          "#692F11",
+          "#97471D",
+          "#C7612E",
+          "#E18D65",
+          "#FBB799",
+          "#FFE3CD"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Solo el titular de portada, Anton en mayúsculas a todo el ancho."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de sección, frases de 'Qué es' y titulares de cierre en oro."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nombres de pilar y de grupo, años de la línea de tiempo."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Etiquetas de acción en Anton mayúsculas sobre brasa."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "Testimonios, máx. 30ch, comillas en brasa."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Todo texto corrido y los campos (≥16px)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas de campo, edades, autores; preguntas a 1.125rem."
+      },
+      "seal": {
+        "displayName": "Seal",
+        "purpose": "Exclusivamente el lema ITE, INCENDITE MUNDUM, en oro al 82%."
+      }
+    },
+    "shadows": [
+      {
+        "name": "halo-noche-bloque",
+        "value": "filter: drop-shadow(0 0 22px rgb(7 13 30 / 0.85))",
+        "purpose": "Titulares en Anton que cruzan la llama; una sombra por bloque."
+      },
+      {
+        "name": "halo-noche-texto",
+        "value": "text-shadow: 0 0 1.2em rgb(7 13 30 / 0.85)",
+        "purpose": "Texto en Inter que cruza la llama."
+      },
+      {
+        "name": "cta-flotante",
+        "value": "0 10px 30px -8px rgb(7 13 30 / 0.8)",
+        "purpose": "La única sombra de caja: el botón fijo."
+      },
+      {
+        "name": "brillo-llama",
+        "value": "filter: drop-shadow(0 0 18px rgb(242 181 68 / 0.75))",
+        "purpose": "La llama propia en la pantalla de éxito."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Apariciones, respuestas táctiles, apertura de preguntas."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "La llama que crece a escala 7 al enviar (1100ms)."
+      },
+      {
+        "name": "aparicion",
+        "value": "opacity 0 → 1 + translateY(14px) → 0, 0.9s ease-out",
+        "purpose": "Aparición única por sección con IntersectionObserver."
+      },
+      {
+        "name": "entrada-portada",
+        "value": "opacity + translateY(14px) + blur(4px), 1.1s ease-out, retardos 0 / 0.15s / 0.35s",
+        "purpose": "Lema, titular y subtítulo de portada."
+      },
+      {
+        "name": "presion",
+        "value": "scale(0.97–0.98), 160ms ease-out",
+        "purpose": "Respuesta al tocar botones, grupos y opciones."
+      },
+      {
+        "name": "parpadeo",
+        "value": "2.3s / 1.7s / 1.1s por capa, halo 3.1s, ease-in-out infinito",
+        "purpose": "Duraciones primas entre sí para que el fuego no se repita a la vista."
+      },
+      {
+        "name": "llama-scroll",
+        "value": "escala = 0.2 + 0.8 · (1 − (1 − p)^1.6); cielo brasa = p^1.2",
+        "purpose": "La llama crece con el progreso de lectura hasta el formulario."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce → sin apariciones, parpadeo, scroll suave ni secuencia de éxito",
+        "purpose": "Accesibilidad."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "opciones-fila",
+        "value": "30rem"
+      },
+      {
+        "name": "tablet",
+        "value": "48rem"
+      },
+      {
+        "name": "linea-fila",
+        "value": "56rem"
+      },
+      {
+        "name": "escritorio",
+        "value": "64rem"
+      }
+    ],
+    "texture": {
+      "name": "grano",
+      "value": "assets/img/grano.png, 180px, opacity 0.07, fixed",
+      "purpose": "Grano de película muy leve sobre toda la página."
+    }
+  },
+  "components": [
+    {
+      "name": "Botón llama",
+      "kind": "button",
+      "refersTo": "button-llama",
+      "description": "Acción principal: enviar la inscripción. Relleno brasa, etiqueta Anton en noche; hover oro.",
+      "html": "<button class=\"ds-boton-llama\" type=\"button\">Encender mi llama</button>",
+      "css": ".ds-boton-llama { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 22rem; min-height: 3.75rem; padding: 0.75rem 1.25rem; border: 0; border-radius: 4px; background: var(--brasa, #E8692A); color: var(--noche, #0B1530); font-family: Anton, \"Arial Narrow\", sans-serif; font-size: 1.5rem; line-height: 1; letter-spacing: 0.03em; text-transform: uppercase; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease; } .ds-boton-llama:hover { background: var(--oro, #F2B544); } .ds-boton-llama:focus-visible { outline: 2px solid var(--oro, #F2B544); outline-offset: 3px; } .ds-boton-llama:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Botón fijo",
+      "kind": "button",
+      "refersTo": "cta-fija",
+      "description": "CTA fija abajo al centro ('Quiero unirme'); la única sombra de caja del sistema.",
+      "html": "<a class=\"ds-cta-fija\" href=\"#\">Quiero unirme</a>",
+      "css": ".ds-cta-fija { display: flex; align-items: center; justify-content: center; width: min(100%, 26rem); height: 3.5rem; border-radius: 4px; background: var(--brasa, #E8692A); color: var(--noche, #0B1530); font-family: Anton, \"Arial Narrow\", sans-serif; font-size: 1.375rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; box-shadow: 0 10px 30px -8px rgb(7 13 30 / 0.8); transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease; } .ds-cta-fija:hover { background: var(--oro, #F2B544); } .ds-cta-fija:focus-visible { outline: 2px solid var(--oro, #F2B544); outline-offset: 3px; } .ds-cta-fija:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Selector de grupo",
+      "kind": "card",
+      "refersTo": "grupo",
+      "description": "Botón grande por grupo de edad: nombre en Anton, edad en oro; seleccionado con borde y tinte brasa.",
+      "html": "<div class=\"ds-grupos\"><button type=\"button\" class=\"ds-grupo\"><span class=\"ds-grupo__nombre\">Pioneros</span><span class=\"ds-grupo__edad\">13 a 17 años</span></button><button type=\"button\" class=\"ds-grupo\" aria-pressed=\"true\"><span class=\"ds-grupo__nombre\">Cruzados</span><span class=\"ds-grupo__edad\">9 a 12 años</span></button></div>",
+      "css": ".ds-grupos { display: grid; gap: 0.75rem; background: var(--noche-profunda, #070D1E); padding: 1rem; } .ds-grupo { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; width: 100%; min-height: 6.5rem; padding: 1.5rem 1.25rem; border: 1px solid var(--linea, rgb(246 239 228 / 0.18)); border-radius: 6px; background: rgb(11 21 48 / 0.9); color: var(--crema, #F6EFE4); font-family: Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif; text-align: left; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease, background-color 200ms ease; } .ds-grupo:hover { border-color: var(--brasa, #E8692A); } .ds-grupo:focus-visible { outline: 2px solid var(--oro, #F2B544); outline-offset: 3px; } .ds-grupo:active { transform: scale(0.98); } .ds-grupo[aria-pressed=\"true\"] { border-color: var(--brasa, #E8692A); background: rgb(232 105 42 / 0.14); } .ds-grupo__nombre { font-family: Anton, \"Arial Narrow\", sans-serif; text-transform: uppercase; font-size: 2.5rem; line-height: 1; letter-spacing: 0.01em; } .ds-grupo__edad { flex-shrink: 0; font-weight: 600; font-size: 0.9375rem; color: var(--oro, #F2B544); }"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de 3.25rem sobre noche profunda; foco oro, error brasa clara.",
+      "html": "<div class=\"ds-campo\"><label class=\"ds-label\" for=\"ds-wa\">Tu WhatsApp</label><div class=\"ds-tel\"><span class=\"ds-tel__prefijo\">+505</span><input id=\"ds-wa\" class=\"ds-input\" type=\"tel\" placeholder=\"8888 8888\"></div><p class=\"ds-ayuda\">Número de Nicaragua, 8 dígitos.</p></div>",
+      "css": ".ds-campo { background: rgb(11 21 48 / 0.84); padding: 1.25rem; color: var(--crema, #F6EFE4); font-family: Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif; max-width: 34rem; } .ds-label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9375rem; } .ds-tel { position: relative; } .ds-tel__prefijo { position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: var(--crema-suave, rgb(246 239 228 / 0.74)); pointer-events: none; } .ds-input { width: 100%; height: 3.25rem; padding: 0 0.875rem 0 3.75rem; border: 1px solid rgb(246 239 228 / 0.28); border-radius: 4px; background: var(--noche-profunda, #070D1E); color: var(--crema, #F6EFE4); font: inherit; font-size: 1.0625rem; transition: border-color 160ms ease; } .ds-input::placeholder { color: rgb(246 239 228 / 0.6); } .ds-input:focus { border-color: var(--oro, #F2B544); outline: none; box-shadow: 0 0 0 1px var(--oro, #F2B544); } .ds-input[aria-invalid=\"true\"] { border-color: var(--brasa-clara, #F58A57); } .ds-ayuda { margin: 0.4rem 0 0; font-size: 0.875rem; color: var(--crema-suave, rgb(246 239 228 / 0.74)); }"
+    },
+    {
+      "name": "Opción de grupo",
+      "kind": "chip",
+      "refersTo": "opcion",
+      "description": "Radio en forma de tarjeta dentro del formulario; marcada con borde brasa, tinte al 16% y edad en oro.",
+      "html": "<div class=\"ds-opciones\"><label class=\"ds-opcion\"><input type=\"radio\" name=\"ds-g\" checked><span class=\"ds-opcion__nombre\">Pioneros</span><span class=\"ds-opcion__edad\">13 a 17</span></label><label class=\"ds-opcion\"><input type=\"radio\" name=\"ds-g\"><span class=\"ds-opcion__nombre\">Universitarios</span><span class=\"ds-opcion__edad\">18 a 30</span></label></div>",
+      "css": ".ds-opciones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; background: var(--noche, #0B1530); padding: 1rem; font-family: Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif; color: var(--crema, #F6EFE4); } .ds-opcion { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem; min-height: 4.5rem; padding: 0.5rem 1rem; border: 1px solid rgb(246 239 228 / 0.28); border-radius: 4px; cursor: pointer; text-align: center; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease, background-color 160ms ease; } .ds-opcion:hover { border-color: var(--brasa, #E8692A); } .ds-opcion:active { transform: scale(0.97); } .ds-opcion input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; } .ds-opcion:has(input:focus-visible) { outline: 2px solid var(--oro, #F2B544); outline-offset: 2px; } .ds-opcion:has(input:checked) { border-color: var(--brasa, #E8692A); background: rgb(232 105 42 / 0.16); } .ds-opcion__nombre { font-family: Anton, \"Arial Narrow\", sans-serif; text-transform: uppercase; font-size: 1.25rem; letter-spacing: 0.02em; line-height: 1.1; } .ds-opcion__edad { font-size: 0.875rem; color: var(--crema-suave, rgb(246 239 228 / 0.74)); } .ds-opcion:has(input:checked) .ds-opcion__edad { color: var(--oro, #F2B544); }"
+    },
+    {
+      "name": "Pregunta",
+      "kind": "custom",
+      "description": "Pregunta frecuente en details/summary con divisores finos y un signo + brasa que se vuelve −.",
+      "html": "<div class=\"ds-dudas\"><details class=\"ds-duda\" open><summary>¿Cuánto cuesta?</summary><p>Te lo contamos por WhatsApp.</p></details><details class=\"ds-duda\"><summary>¿Mis papás tienen que saber?</summary><p>Sí, si sos menor de 18.</p></details></div>",
+      "css": ".ds-dudas { border-top: 1px solid var(--linea, rgb(246 239 228 / 0.18)); background: var(--noche-profunda, #070D1E); color: var(--crema, #F6EFE4); font-family: Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif; max-width: 44rem; } .ds-duda { border-bottom: 1px solid var(--linea, rgb(246 239 228 / 0.18)); background: rgb(7 13 30 / 0.7); } .ds-duda summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; padding: 1rem 0.25rem; font-weight: 600; font-size: 1.125rem; line-height: 1.35; cursor: pointer; } .ds-duda summary::-webkit-details-marker { display: none; } .ds-duda summary:focus-visible { outline: 2px solid var(--oro, #F2B544); outline-offset: 3px; } .ds-duda summary::after { content: \"\"; flex-shrink: 0; width: 1rem; height: 1rem; background: linear-gradient(var(--brasa, #E8692A), var(--brasa, #E8692A)) center / 100% 1.5px no-repeat, linear-gradient(var(--brasa, #E8692A), var(--brasa, #E8692A)) center / 1.5px 100% no-repeat; transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-duda[open] summary::after { transform: rotate(90deg); background: linear-gradient(var(--brasa, #E8692A), var(--brasa, #E8692A)) center / 100% 1.5px no-repeat; } .ds-duda p { margin: 0; padding: 0 0.25rem 1.5rem; color: var(--crema-suave, rgb(246 239 228 / 0.74)); line-height: 1.55; }"
+    },
+    {
+      "name": "Foto duotono",
+      "kind": "card",
+      "refersTo": "foto-duotono",
+      "description": "Marco 4:5 que lleva cualquier foto a sombras marino y luces brasa por CSS; con nombre de pilar en Anton.",
+      "html": "<figure class=\"ds-pilar\"><div class=\"ds-duotono\"><div class=\"ds-duotono__img\"></div></div><figcaption class=\"ds-pilar__titulo\">Amistad</figcaption><p class=\"ds-pilar__texto\">Amigos de verdad, de los que se quedan.</p></figure>",
+      "css": ".ds-pilar { margin: 0; width: 16rem; background: var(--noche-profunda, #070D1E); padding: 1rem; color: var(--crema, #F6EFE4); font-family: Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif; } .ds-duotono { position: relative; overflow: hidden; isolation: isolate; aspect-ratio: 4 / 5; border-radius: 6px; background: var(--brasa, #E8692A); } .ds-duotono__img { position: absolute; inset: 0; background: radial-gradient(60% 40% at 50% 70%, #fff, #777 45%, #111 90%); filter: grayscale(1) contrast(1.15) brightness(1.05); mix-blend-mode: multiply; } .ds-duotono::after { content: \"\"; position: absolute; inset: 0; background: var(--marino, #14233F); mix-blend-mode: lighten; pointer-events: none; } .ds-pilar__titulo { margin-top: 1.25rem; font-family: Anton, \"Arial Narrow\", sans-serif; text-transform: uppercase; font-size: 2.25rem; line-height: 1; letter-spacing: 0.01em; } .ds-pilar__texto { margin: 0.5rem 0 0; color: var(--crema-suave, rgb(246 239 228 / 0.74)); }"
+    },
+    {
+      "name": "La llama",
+      "kind": "custom",
+      "description": "Firma del sistema: llama SVG de tres capas (brasa, oro, crema) con halo y parpadeo por capas en duraciones primas.",
+      "html": "<div class=\"ds-noche\"><div class=\"ds-llama\"><div class=\"ds-llama__halo\"></div><svg viewBox=\"0 0 100 160\" class=\"ds-llama__svg\" aria-hidden=\"true\"><g class=\"ds-capa ds-capa--ext\"><path fill=\"#E8692A\" d=\"M50 2C53 24 70 40 79 62C88 85 87 118 73 139C65 151 58 157 50 157C40 157 31 152 24 142C11 124 11 97 22 77C25 90 31 97 38 99C31 76 37 50 50 2Z\"/></g><g class=\"ds-capa ds-capa--med\"><path fill=\"#F2B544\" d=\"M50 38C55 60 70 77 72 103C74 128 64 149 50 149C36 149 27 133 29 113C31 97 39 89 43 75C45 84 47 89 50 91C50 74 46 58 50 38Z\"/></g><g class=\"ds-capa ds-capa--nuc\"><path fill=\"#F6EFE4\" d=\"M50 90C56 105 63 116 63 129C63 141 57 148 50 148C43 148 37 141 37 131C37 118 45 109 50 90Z\"/></g></svg></div></div>",
+      "css": ".ds-noche { display: grid; place-items: end center; height: 14rem; background: radial-gradient(120% 75% at 50% 100%, rgb(242 140 60 / 0.5), transparent 80%), linear-gradient(to bottom, var(--noche-profunda, #070D1E), var(--noche, #0B1530)); } .ds-llama { position: relative; height: 10rem; aspect-ratio: 100 / 160; margin-bottom: 1rem; } .ds-llama__halo { position: absolute; left: -90%; right: -90%; bottom: -18%; height: 80%; background: radial-gradient(50% 50% at 50% 70%, rgb(242 181 68 / 0.45), rgb(232 105 42 / 0.18) 45%, transparent 75%); animation: ds-respiro 3.1s ease-in-out infinite; } .ds-llama__svg { position: relative; width: 100%; height: 100%; overflow: visible; } .ds-capa { transform-box: fill-box; transform-origin: 50% 100%; } .ds-capa--ext { animation: ds-ext 2.3s ease-in-out infinite; } .ds-capa--med { animation: ds-med 1.7s ease-in-out infinite; } .ds-capa--nuc { animation: ds-nuc 1.1s ease-in-out infinite; } @keyframes ds-ext { 0%, 100% { transform: scale(1, 1) skewX(0deg); } 21% { transform: scale(0.97, 1.04) skewX(1.6deg); } 47% { transform: scale(1.02, 0.97) skewX(-1.2deg); } 73% { transform: scale(0.985, 1.025) skewX(0.8deg); } } @keyframes ds-med { 0%, 100% { transform: scale(1, 1) skewX(0deg); } 30% { transform: scale(1.03, 0.95) skewX(-2deg); } 62% { transform: scale(0.96, 1.06) skewX(1.8deg); } } @keyframes ds-nuc { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(0.94, 1.07); } } @keyframes ds-respiro { 0%, 100% { opacity: 0.85; } 50% { opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-capa, .ds-llama__halo { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La fogata de noche",
+    "overview": "La página es una noche casi negra en la que una sola llama, fija abajo al centro, crece a medida que el visitante baja; el cielo pasa de azul noche a brasa con el progreso de lectura, y la llama queda completa cuando el formulario llega al centro de la pantalla. Leer es encenderse. Todo lo demás (titulares, fotos, grupos, preguntas) pasa por delante de ese fuego, una sección y un protagonista a la vez.\n\nEl color cálido es luz, no superficie: brasa y oro aparecen en la llama, en la acción y en el foco; los fondos son siempre noche o marino translúcido. Los titulares gritan en Anton, en mayúsculas, grandes y apretados; lo que se lee de verdad habla en Inter, en crema atenuado. Las fotos nunca llegan en color natural: un duotono por CSS las lleva a sombras marino y luces brasa, para que vivan dentro de la misma noche. Un grano de película muy leve cubre todo y quita el brillo digital.\n\nLa densidad es baja y vertical, pensada para un celular dentro del navegador de Instagram: secciones altas, una idea por pantalla, controles grandes para el pulgar y un botón fijo abajo. El sistema rechaza la landing de categoría: el hero con foto de grupo sonriente, las rejillas de tarjetas iguales con íconos y el botón genérico.",
+    "keyCharacteristics": [
+      "Una sola llama SVG fija como protagonista continuo, escalada por el scroll (de 0.2 a 1).",
+      "Cielo en dos capas: noche fija y una capa brasa cuya opacidad sigue al progreso.",
+      "Brasa y oro solo como luz: llama, acción, selección, foco y la línea fina.",
+      "Anton en mayúsculas para lo que se grita; Inter para lo que se lee.",
+      "Fotos siempre en duotono marino/brasa por CSS.",
+      "Grano de película al 7% sobre toda la página.",
+      "Esquinas casi rectas (4px controles, 6px medios); líneas finas en lugar de sombras de tarjeta."
+    ],
+    "rules": [
+      {
+        "name": "The Light-Only Rule",
+        "body": "Brasa y oro son luz, nunca superficie. Ninguna sección, panel ni bloque de fondo se pinta de brasa u oro; solo la llama, los botones de acción y los tintes de selección al 14–16% los usan.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Halo Rule",
+        "body": "El texto que cruza la llama lleva un halo de noche profunda al 85%: un `drop-shadow` por bloque para los titulares en Anton, un `text-shadow` de 1.2em para el texto en Inter. Nunca una caja de fondo por línea.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold-Ends Rule",
+        "body": "El oro marca los finales y las respuestas: la última frase de una secuencia, \"Hoy\", el título del formulario y el de éxito. Un titular de sección cualquiera va en crema.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shout-and-Speak Rule",
+        "body": "Anton siempre en mayúsculas, peso 400, interlineado 0.9–1.1, y solo para lo que se grita: titulares, nombres, años, números grandes y etiquetas de acción. Todo lo que se lee en más de una línea va en Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Seal Rule",
+        "body": "La única línea pequeña, espaciada y en mayúsculas es el lema institucional. No se inventan antetítulos ni \"eyebrows\" sobre los titulares.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Protagonist Rule",
+        "body": "Cada sección tiene un solo protagonista a la vez (una frase, un carrusel, una lista, un formulario). Sin columnas laterales ni bloques secundarios compitiendo.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-Card-Shadow Rule",
+        "body": "Ninguna tarjeta, panel ni campo lleva sombra. La separación se hace con translucidez de noche, una línea fina o un borde brasa. La sombra de caja existe solo en el botón fijo.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** dejar que la llama sea el único protagonista continuo; cualquier sección nueva debe leerse por delante de ella y, si tiene mucho texto, marcarse para que la llama baje a 0.26.",
+      "**Do** usar brasa (#E8692A) para la acción y oro (#F2B544) para el foco, el hover y los finales; texto sobre brasa siempre en noche (#0B1530).",
+      "**Do** poner un halo de noche profunda al 85% detrás de todo texto que cruce la llama: `drop-shadow` por bloque en Anton, `text-shadow` en Inter.",
+      "**Do** pasar toda foto por el duotono marino/brasa por CSS.",
+      "**Do** escribir titulares en Anton mayúsculas y todo texto corrido en Inter, con voseo nicaragüense (\"unite\", \"escribinos\", \"vos\").",
+      "**Do** mantener controles de al menos 3.25rem de alto y campos a ≥16px.",
+      "**Do** usar una aparición única por sección (opacidad + 14px, ease-out fuerte) y quitar todo movimiento con `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** pintar fondos de sección o paneles de brasa u oro; el calor es luz, no superficie.",
+      "**Don't** poner sombras de tarjeta; la única sombra de caja es la del botón fijo.",
+      "**Don't** usar fotos a todo color ni un hero con foto de grupo sonriente.",
+      "**Don't** armar rejillas de tarjetas iguales con íconos; los pilares se cuentan con fotos duotono y un nombre en Anton.",
+      "**Don't** inventar antetítulos o líneas pequeñas espaciadas sobre los titulares; ese tratamiento es exclusivo del lema ITE, INCENDITE MUNDUM.",
+      "**Don't** usar emojis.",
+      "**Don't** redondear en píldora ni pasar de 6px de radio.",
+      "**Don't** convertir la etiqueta \"Ejemplo · reemplazar\" en un componente: es una marca temporal de honestidad para contenido de ejemplo y desaparece cuando llega contenido real."
+    ]
+  }
+}
