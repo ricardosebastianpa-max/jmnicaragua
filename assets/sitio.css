@@ -1190,3 +1190,8 @@ img { height: auto; }
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   box-shadow: inset 0 0 60px rgb(7 13 30 / 0.45);
 }
+
+/* Héroes: la foto siempre arriba, la tarjeta crece hacia abajo */
+.tarjeta-heroe { display: flex; flex-direction: column; justify-content: flex-start; }
+.tarjeta-heroe img { flex-shrink: 0; }
+.tarjeta-heroe p:last-child { margin-bottom: 0; }
