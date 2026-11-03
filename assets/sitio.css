@@ -882,3 +882,124 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .etapa--universitarios { background: radial-gradient(circle 11rem at 5rem 5.5rem, var(--univ-rojo), rgb(194 23 15 / 0) 100%), linear-gradient(160deg, var(--univ-naranja), #F59A17 60%, var(--univ-oro)); }
 .tarjeta-heroe--d .rotulo, .tarjeta-heroe--e .rotulo { color: var(--crema); }
 .tarjeta-heroe--a .rotulo { color: var(--crema); }
+
+/* =========================================================================
+   v6 · Claridad y balance
+   Titulares de sección solo en Montserrat (claros, en minúsculas normales).
+   La mezcla serif + sans queda para la apertura, la frase de la Alianza y Unite.
+   ========================================================================= */
+
+.titulo {
+  font-family: var(--texto); font-weight: 800; text-transform: none;
+  font-size: clamp(1.9rem, 7.4vw, 3rem); line-height: 1.08; letter-spacing: -0.025em;
+  text-wrap: balance; color: var(--crema); max-width: 16ch;
+}
+.papas .titulo { color: var(--noche); }
+.bajada { font-size: var(--t-md); line-height: 1.5; }
+
+/* Grilla balanceada: cabeza a la izquierda, contenido a la derecha */
+.bloque { display: grid; gap: clamp(2rem, 6vw, 3rem); }
+.bloque__cabeza { display: grid; align-content: start; justify-items: start; }
+.bloque__cabeza .bajada { margin-top: 1rem; }
+.bloque__cabeza--ancha { margin-bottom: clamp(2rem, 6vw, 3rem); }
+@media (min-width: 60rem) {
+  .bloque { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; align-items: start; }
+  .bloque__cabeza { position: sticky; top: 2.5rem; }
+  .bloque__cabeza--ancha { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; align-items: end; }
+  .bloque__cabeza--ancha .bajada { margin-top: 0; }
+}
+
+/* Apertura: lema chico arriba del titular grande */
+.apertura__lema { font-size: var(--t-xs); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); margin-bottom: 1.25rem; }
+.apertura__lema span { font-family: var(--voz); font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 1.35em; color: var(--crema); }
+.apertura .titulo-mix--grande .mix-sans { color: var(--crema); font-size: clamp(0.95rem, 4.2vw, 1.35rem); letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+.apertura .titulo-mix--grande .mix-serif { font-size: clamp(2.6rem, 11.5vw, 5.4rem); line-height: 1; max-width: 13ch; }
+.apertura__intro { max-width: 40ch; }
+
+/* ¿Qué es? */
+.explica { display: grid; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 6px; overflow: hidden; }
+.explica li { background: var(--noche-profunda); padding: 1.5rem 1.25rem; display: grid; grid-template-columns: 2.75rem 1fr; gap: 0.25rem 1rem; }
+.explica svg { grid-row: span 2; width: 2.75rem; height: 2.75rem; color: var(--brasa); }
+.explica h3 { font-weight: 800; font-size: var(--t-md); line-height: 1.2; }
+.explica p { color: var(--crema-suave); max-width: 52ch; }
+
+/* Lo práctico */
+.seccion--clara { background: linear-gradient(180deg, var(--noche), var(--marino)); }
+.practico { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 6px; overflow: hidden; }
+.practico li { background: var(--noche); padding: 1.25rem; display: grid; gap: 0.3rem; align-content: start; }
+.practico svg { width: 2.25rem; height: 2.25rem; color: var(--oro); margin-bottom: 0.5rem; }
+.practico .rotulo { color: var(--crema-tenue); }
+.practico strong { font-weight: 800; font-size: var(--t-md); line-height: 1.15; }
+.practico li > span:last-child { font-size: var(--t-sm); color: var(--crema-suave); }
+
+/* Pilares dentro de la grilla */
+.bloque .pilares { margin-top: 0; }
+.pilares h3 { font-family: var(--texto); font-weight: 800; font-size: var(--t-md); }
+@media (min-width: 56rem) { .bloque .pilares { grid-template-columns: 1fr 1fr; } }
+
+/* Etapas: datos claros y botón */
+.etapa__nombre { font-family: var(--texto); font-weight: 800; font-size: clamp(1.9rem, 7.5vw, 2.4rem); line-height: 1.05; letter-spacing: -0.02em; }
+.etapa__nivel { font-size: var(--t-sm); letter-spacing: 0.06em; }
+.etapa__datos { margin-top: 1.25rem; display: grid; gap: 0.5rem; font-size: var(--t-sm); }
+.etapa__datos div { display: grid; grid-template-columns: 3.25rem 1fr; gap: 0.75rem; padding-top: 0.5rem; border-top: 1px solid rgb(246 239 228 / 0.3); }
+.etapa--universitarios .etapa__datos div { border-top-color: rgb(11 21 48 / 0.3); }
+.etapa__datos dt { font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--t-xs); padding-top: 0.15em; }
+.etapa__datos dd { font-weight: 600; }
+.etapa__boton {
+  display: inline-flex; margin-top: 1.5rem; min-height: 3rem; align-items: center; padding: 0.75rem 1.1rem;
+  border-radius: 4px; background: var(--crema); color: var(--noche); text-decoration: none;
+  font-weight: 800; font-size: var(--t-sm); transition: transform 160ms var(--ease-out);
+}
+.etapa__boton:active { transform: scale(0.97); }
+.etapa--universitarios .etapa__boton { background: var(--noche); color: var(--crema); }
+
+/* Pasos */
+.pasos { display: grid; gap: 1rem; counter-reset: paso; }
+.pasos li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.25rem; align-items: start; padding: 1.5rem 1.25rem; background: var(--marino); border-radius: 6px; }
+.pasos__num { width: 3.5rem; height: 3.5rem; border-radius: 50%; display: grid; place-items: center; background: var(--brasa); color: var(--noche); font-family: var(--voz); font-size: 2rem; line-height: 1; }
+.pasos h3 { font-weight: 800; font-size: var(--t-md); line-height: 1.2; }
+.pasos p { margin-top: 0.375rem; color: var(--crema-suave); }
+
+/* Lo que creemos: centrado, como afiche */
+.alianza-poster .contenedor { text-align: center; }
+.creemos__intro { color: var(--oro); }
+.titulo-mix--cita { margin: 1rem auto 0; }
+.titulo-mix--cita .mix-sans { font-size: clamp(1.4rem, 6.5vw, 2.4rem); color: var(--crema); }
+.titulo-mix--cita .mix-serif { font-size: clamp(2.8rem, 12.5vw, 5.6rem); font-style: italic; color: var(--oro); }
+.bajada--centro { margin: 1.25rem auto 0; max-width: 46ch; }
+.alianza-poster .trio { text-align: left; max-width: 64rem; margin-inline: auto; }
+.alianza-poster .trio h3 { font-family: var(--texto); font-weight: 800; font-size: var(--t-md); }
+.trio li { align-items: start; }
+.stickers-bloque { margin-top: clamp(3rem, 8vw, 4.5rem); }
+.stickers-bloque > .rotulo { color: var(--crema-tenue); }
+.stickers-bloque .stickers { margin-top: 1.25rem; justify-content: center; }
+.stickers-bloque .nota-etapas { margin-inline: auto; }
+
+/* Línea de tiempo con más aire para el texto */
+.hito__texto { color: var(--crema); }
+.hito__fecha { font-family: var(--voz); }
+
+/* Tarjetas de héroes: títulos en Montserrat */
+.tarjeta-heroe h3 { font-family: var(--texto); font-weight: 800; font-size: var(--t-lg); line-height: 1.1; }
+
+/* Cifras de a tres */
+.bloque .cifras-iconos { margin-top: 0; }
+@media (min-width: 56rem) { .cifras-iconos--tres { grid-template-columns: repeat(3, 1fr); } }
+.cifras-iconos span { max-width: 26ch; }
+
+/* Preguntas dentro de la grilla */
+.bloque .preguntas { margin-top: 0; }
+
+/* Unite: grilla balanceada también */
+.unite .titulo-mix--grande .mix-sans { color: var(--crema); }
+.unite .titulo-mix--grande .mix-serif { font-size: clamp(2.8rem, 12vw, 5rem); }
+/* Apertura en celular: más aire bajo el logo y el lema en dos líneas */
+.apertura__contenido { padding-top: min(92vw, 27rem); }
+.apertura__lema span { display: block; margin-bottom: 0.25rem; }
+@media (min-width: 64rem) { .apertura__contenido { padding-top: 0; } }
+
+/* Páginas internas: titulares de sección solo en Montserrat; bajada clara */
+.lectura .titulo { max-width: 20ch; }
+.lectura .titulo + .parrafo { margin-top: 1.5rem; }
+.cabecera__bajada { font-family: var(--texto); font-weight: 450; font-size: var(--t-md); letter-spacing: 0; text-transform: none; color: var(--crema); line-height: 1.5; max-width: 42ch; }
+.lectura .titulo { font-size: clamp(1.75rem, 6.4vw, 2.6rem); }
