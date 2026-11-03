@@ -758,8 +758,9 @@ section {
 
 /* ---------- 8. Formulario ---------- */
 
+/* Debajo del formulario queda un hogar vacío: ahí la llama completa se ve entera */
 .inscripcion {
-  padding-bottom: 4rem;
+  padding-bottom: 58svh;
 }
 
 .inscripcion .titulo-seccion {
@@ -772,7 +773,7 @@ section {
   margin-top: 2.25rem;
   max-width: 34rem;
   padding: 1.75rem 1.25rem 2rem;
-  background: rgb(11 21 48 / 0.68);
+  background: rgb(11 21 48 / 0.84);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-top: 2px solid var(--brasa);
@@ -830,10 +831,12 @@ input[aria-invalid="true"] { border-color: var(--brasa-clara); }
 .campo__ayuda:empty { display: none; }
 
 .campo__error {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
+  padding-left: 0.625rem;
+  border-left: 2px solid var(--brasa-clara);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--brasa-clara);
+  color: var(--crema);
 }
 
 /* Grupo: tres opciones grandes, una por fila en el celular */
