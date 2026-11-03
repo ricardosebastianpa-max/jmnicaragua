@@ -1195,3 +1195,4 @@ img { height: auto; }
 .tarjeta-heroe { display: flex; flex-direction: column; justify-content: flex-start; }
 .tarjeta-heroe img { flex-shrink: 0; }
 .tarjeta-heroe p:last-child { margin-bottom: 0; }
+@media (min-width: 40rem) { .ramas__jm { grid-column: 1 / -1; } }
