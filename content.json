@@ -1,5 +1,5 @@
 {
-  "_instrucciones": "Datos locales de la JM Nicaragua que NO están en la investigación. Mientras 'texto' sea null, el sitio muestra 'Por confirmar: <etiqueta>'. Al confirmarlo, escribí el texto final en 'texto' (sin emojis, en voseo) y el sitio lo muestra solo.",
+  "_instrucciones": "Datos locales de la JM Nicaragua que no están en la investigación. Los confirmados ya están escritos en las páginas; aquí quedan como registro. Mientras 'texto' sea null, el sitio muestra 'Por confirmar: <etiqueta>'.",
   "contacto": {
     "whatsapp": "50582344190",
     "whatsappVisible": "+505 8234 4190",
@@ -12,51 +12,39 @@
     },
     "lugar": {
       "etiqueta": "lugar exacto de reunión en Managua",
-      "texto": null
+      "texto": "Nos reunimos en las casas de los miembros, que se van rotando."
     },
     "horario": {
       "etiqueta": "día y hora de cada etapa",
-      "texto": null
+      "texto": "Cada 15 días, de 3:00 a 6:00 p. m.: los domingos Cruzados y Pioneros, los sábados Universitarios."
     },
     "costo": {
       "etiqueta": "si hay costo y cuánto",
-      "texto": null
+      "texto": "No tiene costo."
     },
     "acompanan": {
       "etiqueta": "quiénes acompañan a cada grupo (jefes y asesor)",
-      "texto": null
-    },
-    "cuidado": {
-      "etiqueta": "cómo se cuida a los menores",
-      "texto": null
-    },
-    "autorizaciones": {
-      "etiqueta": "autorizaciones y documentos para campamentos",
-      "texto": null
+      "texto": "Jefes: Juan Pablo Padilla (Cruzados), Ricardo Picado (Pioneros) y Yunapu Trauman (Universitarios). Asesor de toda la rama: Juan Jarquín."
     },
     "religioso": {
       "etiqueta": "respuesta de la JM a '¿tengo que ser muy religioso?'",
-      "texto": null
+      "texto": "No. Llegás como sos, con tus preguntas."
     },
     "amigo": {
       "etiqueta": "si se puede llegar con un amigo",
-      "texto": null
+      "texto": "Sí. Podés llegar con tus amigos."
     },
     "despues": {
       "etiqueta": "qué pasa después de inscribirse y en cuánto tiempo responden",
-      "texto": null
+      "texto": "Te invitamos a la sesión más cercana de tu etapa y te respondemos en cuanto podamos."
     },
     "inicioNicaragua": {
       "etiqueta": "año en que empezó la JM en Managua",
-      "texto": null
-    },
-    "reinisch": {
-      "etiqueta": "fecha, lugar y relato del campamento Reinisch",
-      "texto": null
+      "texto": "La Juventud Masculina abrió en Managua en 2023."
     },
     "responsable": {
       "etiqueta": "nombre del responsable que atiende a los papás",
-      "texto": null
+      "texto": "Don Juan."
     }
   }
 }

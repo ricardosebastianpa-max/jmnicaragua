@@ -4,11 +4,9 @@
    de azul noche a brasa) y los íconos de las tres etapas.
    ========================================================================= */
 
-@font-face { font-family: "Anton"; src: url("/assets/fonts/anton-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("/assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Instrument Serif"; src: url("/assets/fonts/instrument-serif-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Instrument Serif"; src: url("/assets/fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "Inter"; src: url("/assets/fonts/inter-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Inter"; src: url("/assets/fonts/inter-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 
 :root {
   /* Paleta de la JM Nicaragua */
@@ -20,9 +18,9 @@
   --brasa: #E8692A;
   --oro: #F2B544;
   --crema: #F6EFE4;
-  --crema-suave: rgb(246 239 228 / 0.76);
-  --crema-tenue: rgb(246 239 228 / 0.52);
-  --linea: rgb(246 239 228 / 0.16);
+  --crema-suave: rgb(246 239 228 / 0.86);
+  --crema-tenue: rgb(246 239 228 / 0.68);
+  --linea: rgb(246 239 228 / 0.2);
 
   /* Colores de las etapas, tomados de sus íconos */
   --cruzados: #8A1230;
@@ -36,20 +34,20 @@
   --degradado-logo: linear-gradient(155deg, var(--azul-logo) 0%, #1A2156 30%, var(--ciruela) 55%, #8E2D25 80%, var(--brasa) 100%);
 
   /* Tipografía: tres voces */
-  --grito: "Anton", "Arial Narrow", sans-serif;          /* mayúsculas, titulares */
+  --grito: "Instrument Serif", Georgia, serif;           /* titulares */
   --voz: "Instrument Serif", Georgia, serif;              /* latín, citas, acentos */
-  --texto: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --texto: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* Escala modular 1.25 sobre 17px */
+  /* Escala modular 1.25 sobre 16px */
   --t-xs: 0.75rem;
   --t-sm: 0.875rem;
-  --t-base: 1.0625rem;
-  --t-md: 1.328rem;
-  --t-lg: 1.66rem;
-  --t-xl: 2.075rem;
-  --t-2xl: clamp(2.3rem, 7.5vw, 2.6rem);
-  --t-3xl: clamp(2.6rem, 10vw, 4.05rem);
-  --t-4xl: clamp(3.6rem, 17vw, 6rem);
+  --t-base: 1rem;
+  --t-md: 1.25rem;
+  --t-lg: 1.5625rem;
+  --t-xl: 1.953rem;
+  --t-2xl: clamp(2.2rem, 8.6vw, 3.05rem);
+  --t-3xl: clamp(2.7rem, 11vw, 4.77rem);
+  --t-4xl: clamp(3.5rem, 16.5vw, 6rem);
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -80,7 +78,8 @@ body {
   color: var(--crema);
   font-family: var(--texto);
   font-size: var(--t-base);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 450;
   font-kerning: normal;
   caret-color: var(--oro);
 }
@@ -113,11 +112,23 @@ a, button, summary, label { touch-action: manipulation; }
 
 .grito {
   font-family: var(--grito);
-  text-transform: uppercase;
   font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: 0.012em;
+  line-height: 1.02;
+  letter-spacing: -0.012em;
   text-wrap: balance;
+}
+/* Montserrat dentro de un titular en serif: las dos voces conviven */
+.acento {
+  font-family: var(--texto);
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.56em;
+  line-height: 1;
+  color: var(--oro);
+  vertical-align: 0.12em;
+  white-space: nowrap;
 }
 .voz {
   font-family: var(--voz);
@@ -127,11 +138,11 @@ a, button, summary, label { touch-action: manipulation; }
   letter-spacing: -0.005em;
   text-wrap: balance;
 }
-.latin { font-family: var(--voz); font-style: italic; }
+.latin { font-family: var(--voz); font-style: italic; font-size: 1.15em; line-height: 1; }
 .rotulo {
   font-size: var(--t-xs);
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 650;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1.4;
 }
@@ -164,11 +175,11 @@ a, button, summary, label { touch-action: manipulation; }
 .divisor {
   display: flex; align-items: baseline; gap: 1rem;
   padding-top: 0.875rem;
-  border-top: 1px solid var(--linea);
+  background: linear-gradient(90deg, var(--brasa), #8E2D25 22%, var(--ciruela) 45%, var(--linea) 75%) top / 100% 2px no-repeat;
   color: var(--crema-tenue);
   margin-bottom: clamp(2.5rem, 7vw, 4.5rem);
 }
-.divisor__num { font-family: var(--grito); font-size: var(--t-md); line-height: 1; color: var(--brasa); font-variant-numeric: tabular-nums; }
+.divisor__num { font-family: var(--grito); font-weight: 400; font-size: var(--t-xl); line-height: 1; color: var(--brasa); font-variant-numeric: tabular-nums; }
 .divisor__nombre { margin-left: auto; }
 
 .titular { font-size: var(--t-3xl); max-width: 14ch; }
@@ -198,7 +209,7 @@ a, button, summary, label { touch-action: manipulation; }
   min-height: 3.5rem; padding: 0.75rem 1.5rem;
   border: 0; border-radius: 4px;
   background: var(--brasa); color: var(--noche);
-  font-family: var(--grito); font-size: 1.25rem; letter-spacing: 0.04em; line-height: 1; text-transform: uppercase;
+  font-family: var(--texto); font-weight: 800; font-size: 0.9375rem; letter-spacing: 0.08em; line-height: 1; text-transform: uppercase;
   text-decoration: none; cursor: pointer;
   -webkit-user-select: none; user-select: none;
   transition: transform 160ms var(--ease-out), background-color 200ms ease;
@@ -307,9 +318,9 @@ a, button, summary, label { touch-action: manipulation; }
   color: var(--crema); opacity: 0.16;
 }
 .apertura__contenido { position: relative; z-index: 1; }
-.apertura__lema { font-size: var(--t-4xl); color: var(--crema); }
+.apertura__lema { font-size: var(--t-4xl); font-style: italic; line-height: 0.95; color: var(--crema); }
 .apertura__lema span { display: block; }
-.apertura__traduccion { margin-top: 1.25rem; font-size: var(--t-xl); color: var(--oro); }
+.apertura__traduccion { margin-top: 1.5rem; font-family: var(--texto); font-weight: 800; font-size: var(--t-sm); letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
 .apertura__intro { margin-top: 1.5rem; max-width: 34ch; font-size: var(--t-md); line-height: 1.45; color: var(--crema); text-wrap: pretty; }
 .apertura__acciones { margin-top: 2.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
@@ -333,7 +344,7 @@ a, button, summary, label { touch-action: manipulation; }
   padding-block: 1.25rem; border-bottom: 1px solid var(--linea);
 }
 .corto__clave { color: var(--crema-tenue); }
-.corto__valor { font-family: var(--grito); text-transform: uppercase; font-size: var(--t-xl); line-height: 1; letter-spacing: 0.01em; }
+.corto__valor { font-family: var(--grito); font-weight: 400; font-size: var(--t-xl); line-height: 1.05; letter-spacing: -0.01em; }
 .corto__nota { grid-column: 2; margin-top: 0.375rem; color: var(--crema-suave); font-size: var(--t-sm); max-width: 44ch; }
 @media (min-width: 56rem) {
   .corto { grid-template-columns: repeat(4, 1fr); border-top: 0; }
@@ -399,7 +410,7 @@ a, button, summary, label { touch-action: manipulation; }
 .hito { flex: 0 0 min(76vw, 20rem); scroll-snap-align: start; padding: 2.25rem 2rem 0 0; position: relative; }
 .hito::before { content: ""; position: absolute; top: 0; left: 0; width: 0.875rem; height: 0.875rem; border-radius: 50%; background: var(--noche); border: 1px solid var(--crema-suave); }
 .hito--nic::before { background: var(--brasa); border-color: var(--brasa); }
-.hito__fecha { font-family: var(--grito); font-size: var(--t-3xl); line-height: 1; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; }
+.hito__fecha { font-family: var(--grito); font-weight: 400; font-size: var(--t-3xl); line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
 .hito__dia { display: block; margin-top: 0.5rem; color: var(--oro); }
 .hito__texto { margin-top: 0.875rem; color: var(--crema-suave); max-width: 30ch; text-wrap: pretty; }
 .hito--nic .hito__fecha { color: var(--oro); }
@@ -443,7 +454,7 @@ a, button, summary, label { touch-action: manipulation; }
 .mundo { background: var(--noche); }
 .cifras { display: grid; gap: 2.5rem 2rem; margin-top: clamp(2.5rem, 6vw, 4rem); }
 .cifra-bloque { padding-top: 1rem; border-top: 1px solid var(--linea); }
-.cifra-bloque__valor { font-family: var(--grito); font-size: var(--t-3xl); line-height: 1; letter-spacing: 0.01em; color: var(--crema); font-variant-numeric: tabular-nums; }
+.cifra-bloque__valor { font-family: var(--grito); font-weight: 400; font-size: var(--t-3xl); line-height: 1; letter-spacing: -0.01em; color: var(--crema); font-variant-numeric: tabular-nums; }
 .cifra-bloque__valor small { font-size: 0.45em; letter-spacing: 0.04em; margin-left: 0.15em; }
 .cifra-bloque__texto { margin-top: 0.75rem; color: var(--crema-suave); max-width: 34ch; text-wrap: pretty; }
 .cifra-bloque__fuente { margin-top: 0.5rem; color: var(--crema-tenue); font-size: var(--t-xs); }
@@ -462,7 +473,7 @@ a, button, summary, label { touch-action: manipulation; }
   background: linear-gradient(135deg, var(--marino), var(--ciruela));
   border-radius: 6px;
 }
-.ocho__fecha { font-size: clamp(3.5rem, 18vw, 7rem); color: var(--oro); }
+.ocho__fecha { font-size: clamp(3.2rem, 15vw, 6rem); color: var(--oro); }
 .ocho__lista { margin-top: 1.5rem; display: grid; gap: 0.875rem; }
 .ocho__lista li { display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; color: var(--crema-suave); }
 .ocho__lista .cifra { color: var(--crema); font-weight: 600; }
@@ -471,13 +482,14 @@ a, button, summary, label { touch-action: manipulation; }
 /* ---------- Para papás ---------- */
 
 .papas { background: var(--crema); color: var(--noche); }
-.papas .divisor { border-top-color: rgb(11 21 48 / 0.2); color: rgb(11 21 48 / 0.6); }
-.papas .suave, .papas .bajada { color: rgb(11 21 48 / 0.78); }
+.papas .divisor { color: rgb(11 21 48 / 0.72); }
+.papas .suave, .papas .bajada { color: rgb(11 21 48 / 0.86); }
+.papas .acento { color: #A8401C; }
 .papas .pendiente { color: #8A4A00; border-color: #B8741A; }
 .papas .divisor__num { color: #A8401C; }
 .ficha { margin-top: clamp(2.5rem, 6vw, 4rem); display: grid; gap: 0; border-top: 2px solid var(--noche); }
 .ficha__fila { display: grid; gap: 0.5rem; padding-block: 1.25rem; border-bottom: 1px solid rgb(11 21 48 / 0.18); }
-.ficha__clave { color: rgb(11 21 48 / 0.62); }
+.ficha__clave { color: rgb(11 21 48 / 0.74); }
 .ficha__valor { max-width: 56ch; text-wrap: pretty; }
 @media (min-width: 48rem) { .ficha__fila { grid-template-columns: 14rem 1fr; gap: 2rem; } }
 
@@ -617,7 +629,7 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .pie__grid { display: grid; gap: 2.5rem; }
 .pie__marca { display: flex; gap: 1rem; align-items: center; color: var(--crema); }
 .pie__marca svg { width: 2.25rem; height: 3.6rem; }
-.pie__lema { font-family: var(--grito); font-size: var(--t-lg); letter-spacing: 0.04em; line-height: 1; }
+.pie__lema { font-family: var(--grito); font-style: italic; font-weight: 400; font-size: var(--t-xl); letter-spacing: -0.01em; line-height: 1.1; }
 .pie__lista { display: grid; gap: 0.5rem; }
 .pie__lista a { color: var(--crema); }
 @media (min-width: 48rem) { .pie__grid { grid-template-columns: 2fr 1fr 1fr; } }
@@ -633,7 +645,7 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .cabecera::before { content: ""; position: absolute; inset: auto 0 0 0; height: 40%; background: linear-gradient(to bottom, transparent, var(--noche-profunda)); }
 .cabecera > * { position: relative; }
 .cabecera__titulo { font-size: var(--t-4xl); max-width: 12ch; }
-.cabecera__bajada { margin-top: 1.25rem; font-size: var(--t-xl); color: var(--oro); max-width: 24ch; }
+.cabecera__bajada { margin-top: 1.5rem; font-family: var(--texto); font-weight: 800; font-size: var(--t-sm); letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); max-width: 34ch; }
 
 .indice { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 2.5rem; font-size: var(--t-sm); }
 .indice a { color: var(--crema); }
@@ -641,7 +653,7 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .lectura { padding-block: clamp(4rem, 10vw, 7rem); }
 .lectura__bloque + .lectura__bloque { margin-top: clamp(4rem, 10vw, 6.5rem); }
 .lectura h2 { font-size: var(--t-3xl); max-width: 16ch; }
-.lectura h3 { font-family: var(--grito); text-transform: uppercase; font-size: var(--t-xl); line-height: 1; letter-spacing: 0.01em; margin-top: 2.75rem; }
+.lectura h3 { font-family: var(--grito); font-weight: 400; font-size: var(--t-xl); line-height: 1.15; letter-spacing: -0.01em; margin-top: 2.75rem; }
 .lectura h2 + .parrafo, .lectura h2 + p { margin-top: 1.5rem; }
 .lectura h3 + .parrafo { margin-top: 0.875rem; }
 .lectura .parrafo { color: var(--crema-suave); }
@@ -653,7 +665,7 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 
 .hitos { margin-top: 2rem; display: grid; gap: 1.5rem; }
 .hito-ficha { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--linea); }
-.hito-ficha__num { font-family: var(--grito); font-size: var(--t-3xl); line-height: 0.9; color: var(--brasa); font-variant-numeric: tabular-nums; }
+.hito-ficha__num { font-family: var(--grito); font-weight: 400; font-size: var(--t-3xl); line-height: 0.9; color: var(--brasa); font-variant-numeric: tabular-nums; }
 .hito-ficha__fecha { color: var(--oro); }
 .hito-ficha__titulo { margin-top: 0.25rem; font-size: var(--t-lg); }
 .hito-ficha__texto { margin-top: 0.5rem; color: var(--crema-suave); max-width: 52ch; }

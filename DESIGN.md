@@ -23,18 +23,24 @@ colors:
   univ-oro: "#F7BE1D"
   error: "#F58A57"
 typography:
-  grito:
-    fontFamily: "Anton, Arial Narrow, sans-serif"
-    fontSize: "clamp(3.6rem, 17vw, 6rem)"
+  display:
+    fontFamily: "Instrument Serif, Georgia, serif"
+    fontSize: "clamp(3.5rem, 16.5vw, 6rem)"
     fontWeight: 400
-    lineHeight: 0.92
-    letterSpacing: "0.012em"
+    lineHeight: 0.95
+    letterSpacing: "-0.012em"
   titular:
-    fontFamily: "Anton, Arial Narrow, sans-serif"
-    fontSize: "clamp(2.6rem, 10vw, 4.05rem)"
+    fontFamily: "Instrument Serif, Georgia, serif"
+    fontSize: "clamp(2.7rem, 11vw, 4.77rem)"
     fontWeight: 400
-    lineHeight: 0.92
-    letterSpacing: "0.012em"
+    lineHeight: 1.02
+    letterSpacing: "-0.012em"
+  acento:
+    fontFamily: "Montserrat, system-ui, sans-serif"
+    fontSize: "0.56em"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "0.02em"
   voz:
     fontFamily: "Instrument Serif, Georgia, serif"
     fontSize: "2.075rem"
@@ -42,12 +48,12 @@ typography:
     lineHeight: 1.12
     letterSpacing: "-0.005em"
   cuerpo:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
-    lineHeight: 1.6
+    fontFamily: "Montserrat, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 450
+    lineHeight: 1.65
   rotulo:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Montserrat, system-ui, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 600
     lineHeight: 1.4
@@ -75,13 +81,13 @@ Fondo de noche profunda. La brasa es la acción: botones, números de sección, 
 
 ## Tipografía
 
-Tres voces, cada una con un trabajo:
+Dos familias que conviven en los mismos titulares:
 
-- **Grito** (Anton, mayúsculas): titulares, nombres de etapas y héroes, cifras grandes y botones.
-- **Voz** (Instrument Serif itálica): el latín, las citas, las traducciones y los apodos. Es la voz de una tradición centenaria.
-- **Cuerpo** (Inter 400/600): párrafos de hasta 62 caracteres por línea, con `text-wrap: pretty`. Rótulos en versalitas de 0.75rem con espaciado de 0.16em.
+- **Titulares** en Instrument Serif: el lema en latín en itálica enorme y los titulares en redonda. Dentro de un titular, una frase clave va en **Montserrat 800 en mayúsculas** y en oro (clase `.acento`), como en los afiches de referencia.
+- **Texto** en Montserrat (variable, peso 450 en el cuerpo y 600 a 800 en rótulos y botones), con párrafos de hasta 62 caracteres por línea. Los rótulos van en mayúsculas de 0.75rem con espaciado de 0.14em.
+- **Latín y citas** en Instrument Serif itálica, también dentro de los párrafos.
 
-Escala modular de 1.25 sobre 17px. Las fechas y las cifras usan números tabulares.
+Escala modular de 1.25 sobre 16px. Las cifras grandes van en serif.
 
 ## Composición
 

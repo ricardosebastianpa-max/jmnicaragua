@@ -12,10 +12,10 @@
   <meta name="theme-color" content="#0C2A6E">
   <meta name="color-scheme" content="dark">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/sitio.css?v=2">
+  <link rel="stylesheet" href="/assets/sitio.css?v=4">
   <script>document.documentElement.classList.replace('sin-js', 'con-js');</script>
 </head>
 <body>
@@ -45,7 +45,7 @@
       <svg class="apertura__logo" viewBox="0 0 290 470" aria-hidden="true"><use href="/assets/icons/sprite.svg#logo"/></svg>
       <div class="contenedor apertura__contenido">
         <h1 class="grito apertura__lema" lang="la"><span>Ite,</span> <span>incendite</span> <span>mundum</span></h1>
-        <p class="voz apertura__traduccion">Vayan e incendien el mundo.</p>
+        <p class="apertura__traduccion">Vayan e incendien el mundo.</p>
         <p class="apertura__intro">Somos la Juventud Masculina del Movimiento Apostólico de Schoenstatt en Managua. Nos juntamos en grupos de vida cada 15 días.</p>
         <div class="apertura__acciones">
           <a class="boton" href="#unite">Unite a un grupo</a>
@@ -66,11 +66,11 @@
           </div>
           <div class="corto__fila">
             <dt class="rotulo corto__clave">Cuándo</dt>
-            <dd><span class="corto__valor cifra">Cada 15 días</span><p class="corto__nota"><span class="pendiente" data-pendiente="horario">día y hora de cada etapa</span></p></dd>
+            <dd><span class="corto__valor cifra">Cada 15 días</span><p class="corto__nota">De 3:00 a 6:00 p. m. Domingos, Cruzados y Pioneros; sábados, Universitarios.</p></dd>
           </div>
           <div class="corto__fila">
             <dt class="rotulo corto__clave">Dónde</dt>
-            <dd><span class="corto__valor">Managua</span><p class="corto__nota"><span class="pendiente" data-pendiente="lugar">lugar exacto de reunión</span></p></dd>
+            <dd><span class="corto__valor">Managua</span><p class="corto__nota">En las casas de los miembros: nos vamos rotando.</p></dd>
           </div>
           <div class="corto__fila">
             <dt class="rotulo corto__clave">Quiénes</dt>
@@ -115,7 +115,7 @@
     <section class="seccion" id="etapas" aria-labelledby="etapas-t" style="padding-bottom: 0">
       <div class="contenedor">
         <div class="divisor"><span class="divisor__num">03</span><span class="rotulo divisor__nombre">Las etapas</span></div>
-        <h2 class="grito titular" id="etapas-t" data-revela><span>Tres etapas, un mismo fuego</span></h2>
+        <h2 class="grito titular" id="etapas-t" data-revela><span>Tres etapas, <span class="acento">un mismo fuego</span></span></h2>
         <p class="bajada">En Nicaragua las etapas van por nivel escolar: depende de dónde estudiás.</p>
       </div>
       <div class="etapas">
@@ -126,6 +126,7 @@
             <h3 class="grito etapa__nombre" id="et-cruzados">Cruzados de María</h3>
             <p class="etapa__sentido">Entregan su vida diaria a la Virgen y se ponen bajo su mano protectora.</p>
             <p class="etapa__simbolos">En los campamentos de la JM, a medida que crecen, los Cruzados reciben el <strong>pañolín</strong>, el <strong>blasón</strong>, la <strong>cruz</strong> y la <strong>estrella</strong>. Su símbolo es la espada.</p>
+            <p class="etapa__simbolos"><strong>Domingos, 3:00 a 6:00 p. m.</strong><br>Jefe: Juan Pablo Padilla</p>
           </div>
         </article>
         <article class="etapa etapa--pioneros" aria-labelledby="et-pioneros">
@@ -135,6 +136,7 @@
             <h3 class="grito etapa__nombre" id="et-pioneros">Pioneros</h3>
             <p class="etapa__sentido">Los que van a la avanzada y abren camino a un mundo nuevo.</p>
             <p class="etapa__simbolos">Tienen <strong>doce leyes</strong> en cuatro dimensiones: Dios, el mundo, el prójimo y uno mismo. Su pañolín es triangular, como el Ojo del Padre.</p>
+            <p class="etapa__simbolos"><strong>Domingos, 3:00 a 6:00 p. m.</strong><br>Jefe: Ricardo Picado</p>
           </div>
         </article>
         <article class="etapa etapa--universitarios" aria-labelledby="et-universitarios">
@@ -144,6 +146,7 @@
             <h3 class="grito etapa__nombre" id="et-universitarios">Universitarios</h3>
             <p class="etapa__sentido">Grupos universitarios con apostolados propios.</p>
             <p class="etapa__simbolos">La rama forma a sus propios <strong>jefes</strong>: en la Escuela de Jefes Internacional, entre diciembre de 2025 y enero de 2026, se formaron 26 universitarios de seis países junto al Santuario Original.</p>
+            <p class="etapa__simbolos"><strong>Sábados, 3:00 a 6:00 p. m.</strong><br>Jefe: Yunapu Trauman</p>
           </div>
         </article>
       </div>
@@ -153,7 +156,7 @@
     <section class="seccion raiz" aria-labelledby="raiz-t">
       <div class="contenedor">
         <div class="divisor"><span class="divisor__num">04</span><span class="rotulo divisor__nombre">La raíz</span></div>
-        <h2 class="grito titular titular--ancho" id="raiz-t" data-revela><span>Un fuego de más de cien años</span></h2>
+        <h2 class="grito titular titular--ancho" id="raiz-t" data-revela><span>Un fuego de <span class="acento">más de cien años</span></span></h2>
         <div class="linea-tiempo">
           <ol class="linea-tiempo__pista" tabindex="0" aria-label="Línea de tiempo de Schoenstatt y la JM">
             <li class="hito"><p class="hito__fecha">1912<span class="rotulo hito__dia">27 de octubre</span></p><p class="hito__texto">El P. José Kentenich, director espiritual de un seminario en Schoenstatt (Alemania), propone a sus alumnos aprender a educarse a sí mismos bajo la protección de María.</p></li>
@@ -164,6 +167,7 @@
             <li class="hito"><p class="hito__fecha">1942<span class="rotulo hito__dia">20 de enero</span></p><p class="hito__texto">Kentenich acepta ir a Dachau. La juventud de Münster le escribe: «Vamos contigo».</p></li>
             <li class="hito"><p class="hito__fecha">1949<span class="rotulo hito__dia">31 de mayo</span></p><p class="hito__texto">En Bellavista (Chile), Kentenich deja una carta sobre el altar del santuario: el hito de la misión.</p></li>
             <li class="hito hito--nic"><p class="hito__fecha">2016<span class="rotulo hito__dia">Abril</span></p><p class="hito__texto">Schoenstatt llega a Nicaragua con la Campaña de la Virgen Peregrina, desde Costa Rica.</p></li>
+            <li class="hito hito--nic"><p class="hito__fecha">2023</p><p class="hito__texto">Abre la Juventud Masculina en Managua.</p></li>
             <li class="hito hito--nic"><p class="hito__fecha">Hoy</p><p class="hito__texto">Cruzados, Pioneros y Universitarios se juntan en Managua. Te toca a vos.</p></li>
           </ol>
           <div class="linea-tiempo__riel" aria-hidden="true"></div>
@@ -205,7 +209,7 @@
     <section class="seccion" aria-labelledby="heroes-t">
       <div class="contenedor">
         <div class="divisor"><span class="divisor__num">06</span><span class="rotulo divisor__nombre">Los héroes</span></div>
-        <h2 class="grito titular" id="heroes-t" data-revela><span>Muchachos que no se apagaron</span></h2>
+        <h2 class="grito titular" id="heroes-t" data-revela><span>Muchachos que <span class="acento">no se apagaron</span></span></h2>
         <p class="bajada">Los signos más fuertes de la JM sostienen opuestos: fuerza desde la debilidad, alegría en la trinchera, vencer en cadenas, todo o nada.</p>
         <ul class="honor" data-revela>
           <li class="heroe heroe--destacado">
@@ -228,7 +232,7 @@
     <section class="seccion mundo" aria-labelledby="mundo-t">
       <div class="contenedor">
         <div class="divisor"><span class="divisor__num">07</span><span class="rotulo divisor__nombre">En el mundo</span></div>
-        <h2 class="grito titular" id="mundo-t" data-revela><span>Una rama en cuatro continentes</span></h2>
+        <h2 class="grito titular" id="mundo-t" data-revela><span>Una rama en <span class="acento">cuatro continentes</span></span></h2>
         <div class="cifras" data-revela>
           <div class="cifra-bloque"><p class="cifra-bloque__valor">4</p><p class="cifra-bloque__texto">continentes con JM: Europa, América, Oceanía y África.</p></div>
           <div class="cifra-bloque"><p class="cifra-bloque__valor cifra">532</p><p class="cifra-bloque__texto">jóvenes de 18 países en el Ignis de Aveiro (Portugal), en 2023. Ignis, «fuego» en latín, es el encuentro internacional de la JM.</p></div>
@@ -247,10 +251,10 @@
         <div class="divisor"><span class="divisor__num">08</span><span class="rotulo divisor__nombre">En Nicaragua</span></div>
         <div class="nicaragua__grid">
           <div data-revela>
-            <h2 class="grito titular" id="nic-t"><span>El fuego llegó en 2016</span></h2>
+            <h2 class="grito titular" id="nic-t"><span>El fuego llegó <span class="acento">en 2016</span></span></h2>
             <p class="parrafo suave" style="margin-top: 1.5rem">Schoenstatt llegó a Nicaragua en abril de 2016 con la Campaña de la Virgen Peregrina, desde Costa Rica. El P. José Luis Correa y matrimonios costarricenses acompañaron la formación de los primeros grupos.</p>
             <p class="parrafo suave">El primer santuario de Schoenstatt de Centroamérica, «Familia de Esperanza», está en Santa Ana (Costa Rica) y se bendijo el 18 de marzo de 2017.</p>
-            <p class="parrafo suave">Nuestro campamento lleva el nombre de Franz Reinisch. <span class="pendiente" data-pendiente="reinisch">fecha, lugar y relato del campamento Reinisch</span></p>
+            <p class="parrafo suave">La Juventud Masculina abrió en Managua en 2023. Nuestro campamento lleva el nombre de Franz Reinisch.</p>
           </div>
           <div class="nicaragua__fotos">
             <figure class="foto foto--vacia"><div><svg viewBox="0 0 290 470" aria-hidden="true"><use href="/assets/icons/sprite.svg#logo"/></svg><p><span class="rotulo">Foto real</span><br>Campamento Reinisch</p></div></figure>
@@ -275,18 +279,16 @@
     <section class="seccion papas" id="papas" aria-labelledby="papas-t">
       <div class="contenedor">
         <div class="divisor"><span class="divisor__num">09</span><span class="rotulo divisor__nombre">Para papás</span></div>
-        <h2 class="grito titular" id="papas-t" data-revela><span>Para papás y mamás</span></h2>
+        <h2 class="grito titular" id="papas-t" data-revela><span>Para papás <span class="acento">y mamás</span></span></h2>
         <p class="bajada">Lo que necesitás saber antes de inscribir a tu hijo, en una ficha.</p>
         <dl class="ficha">
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Qué es</dt><dd class="ficha__valor">La rama juvenil masculina del Movimiento Apostólico de Schoenstatt, un movimiento católico y mariano nacido en Alemania en 1914 y presente en Nicaragua desde 2016.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Etapas</dt><dd class="ficha__valor">Cruzados de María (primaria), Pioneros (secundaria) y Universitarios (universidad).</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Cuándo y dónde</dt><dd class="ficha__valor">Cada 15 días, en Managua. <span class="pendiente" data-pendiente="lugar">lugar exacto</span> <span class="pendiente" data-pendiente="horario">día y hora</span></dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Quién acompaña</dt><dd class="ficha__valor">En la JM, cada grupo lo guía un jefe, un joven formado por la propia rama, y lo acompaña un asesor: un sacerdote, un hermano o una hermana. <span class="pendiente" data-pendiente="acompanan">quiénes acompañan en Managua</span></dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Cuándo y dónde</dt><dd class="ficha__valor">Cada 15 días, de 3:00 a 6:00 p. m.: los domingos Cruzados y Pioneros, los sábados Universitarios. Nos reunimos en las casas de los miembros, que se van rotando.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Quién acompaña</dt><dd class="ficha__valor">Cada etapa tiene su jefe: Juan Pablo Padilla en Cruzados, Ricardo Picado en Pioneros y Yunapu Trauman en Universitarios. El asesor de toda la rama es Juan Jarquín.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Qué se forma</dt><dd class="ficha__valor">Libertad interior: resistir la presión del ambiente, decidir y tener fuerza para cumplir lo decidido. Cada joven busca su ideal personal, su vocación propia.</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Cuidado de menores</dt><dd class="ficha__valor"><span class="pendiente" data-pendiente="cuidado">cómo se cuida a los menores</span></dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Campamentos</dt><dd class="ficha__valor"><span class="pendiente" data-pendiente="autorizaciones">autorizaciones y documentos</span></dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Costo</dt><dd class="ficha__valor"><span class="pendiente" data-pendiente="costo">si hay costo y cuánto</span></dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Contacto</dt><dd class="ficha__valor"><a class="enlace" data-whatsapp="Hola, soy papá/mamá y quiero información sobre la JM." href="https://wa.me/50582344190">WhatsApp <span class="cifra">+505 8234 4190</span></a>. <span class="pendiente" data-pendiente="responsable">nombre del responsable</span></dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Costo</dt><dd class="ficha__valor">No tiene costo.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Contacto</dt><dd class="ficha__valor"><a class="enlace" data-whatsapp="Hola, soy papá/mamá y quiero información sobre la JM." href="https://wa.me/50582344190">WhatsApp <span class="cifra">+505 8234 4190</span></a>. Preguntá por don Juan.</dd></div>
         </dl>
         <a class="boton" style="margin-top: 2.5rem" href="#unite" data-quien="papa">Inscribir a mi hijo</a>
       </div>
@@ -296,14 +298,14 @@
     <section class="seccion" aria-labelledby="preguntas-t">
       <div class="contenedor">
         <div class="divisor"><span class="divisor__num">10</span><span class="rotulo divisor__nombre">Preguntas</span></div>
-        <h2 class="grito titular" id="preguntas-t" data-revela><span>Lo que todos preguntan</span></h2>
+        <h2 class="grito titular" id="preguntas-t" data-revela><span>Lo que todos <span class="acento">preguntan</span></span></h2>
         <div class="preguntas">
           <details class="pregunta"><summary>¿En qué etapa me toca?</summary><div class="pregunta__respuesta"><p>Depende de dónde estudiás: en primaria, Cruzados de María; en secundaria, Pioneros; en la universidad, Universitarios.</p></div></details>
-          <details class="pregunta"><summary>¿Cuándo y dónde se reúnen?</summary><div class="pregunta__respuesta"><p>Cada 15 días, en Managua. <span class="pendiente" data-pendiente="lugar">lugar exacto</span> <span class="pendiente" data-pendiente="horario">día y hora</span></p></div></details>
-          <details class="pregunta"><summary>¿Cuánto cuesta?</summary><div class="pregunta__respuesta"><p><span class="pendiente" data-pendiente="costo">si hay costo y cuánto</span></p></div></details>
-          <details class="pregunta"><summary>¿Tengo que ser muy religioso?</summary><div class="pregunta__respuesta"><p>La JM se describe como una comunidad que quiere estar con los dos pies en la tierra y volverse hacia Dios.</p><p><span class="pendiente" data-pendiente="religioso">respuesta de la JM</span></p></div></details>
-          <details class="pregunta"><summary>¿Puedo llegar con un amigo?</summary><div class="pregunta__respuesta"><p><span class="pendiente" data-pendiente="amigo">si se puede llegar con un amigo</span></p></div></details>
-          <details class="pregunta"><summary>¿Qué pasa después de inscribirme?</summary><div class="pregunta__respuesta"><p><span class="pendiente" data-pendiente="despues">qué pasa después y en cuánto tiempo responden</span></p></div></details>
+          <details class="pregunta"><summary>¿Cuándo y dónde se reúnen?</summary><div class="pregunta__respuesta"><p>Cada 15 días, de 3:00 a 6:00 p. m.: los domingos Cruzados y Pioneros, los sábados Universitarios.</p><p>Nos reunimos en las casas de los miembros, que se van rotando.</p></div></details>
+          <details class="pregunta"><summary>¿Cuánto cuesta?</summary><div class="pregunta__respuesta"><p>No tiene costo.</p></div></details>
+          <details class="pregunta"><summary>¿Tengo que ser muy religioso?</summary><div class="pregunta__respuesta"><p>No. Llegás como sos, con tus preguntas. La JM quiere estar con los dos pies en la tierra y, al mismo tiempo, vuelta hacia Dios, y ese camino se hace en grupo.</p></div></details>
+          <details class="pregunta"><summary>¿Puedo llegar con un amigo?</summary><div class="pregunta__respuesta"><p>Sí. Podés llegar con tus amigos.</p></div></details>
+          <details class="pregunta"><summary>¿Qué pasa después de inscribirme?</summary><div class="pregunta__respuesta"><p>Te invitamos a la sesión más cercana de tu etapa y te respondemos en cuanto podamos.</p></div></details>
         </div>
       </div>
     </section>
@@ -314,7 +316,7 @@
         <div class="divisor"><span class="divisor__num">11</span><span class="rotulo divisor__nombre">Unite</span></div>
         <div class="unite__grid">
           <div>
-            <h2 class="grito unite__titulo" id="unite-t">Unite a tu grupo de vida</h2>
+            <h2 class="grito unite__titulo" id="unite-t">Unite a tu <span class="acento">grupo de vida</span></h2>
             <p class="bajada" style="color: var(--crema)">Llená el formulario o escribinos directo.</p>
             <div class="unite__vias">
               <a class="unite__via" data-whatsapp href="https://wa.me/50582344190" target="_blank" rel="noopener">
@@ -393,7 +395,7 @@
             <div class="formulario listo" id="listo" hidden>
               <svg class="listo__llama" viewBox="0 0 100 160" aria-hidden="true"><use href="/assets/icons/sprite.svg#llama"/></svg>
               <h3 class="grito listo__titulo" id="listo-titulo" tabindex="-1">Ya estás encendido</h3>
-              <p>Recibimos tu inscripción. <span class="pendiente" data-pendiente="despues">qué pasa después y en cuánto tiempo responden</span></p>
+              <p>Recibimos tu inscripción. Te invitamos a la sesión más cercana de tu etapa y te respondemos en cuanto podamos.</p>
               <a class="boton" id="compartir" href="https://wa.me/" target="_blank" rel="noopener">Invitá a un amigo</a>
             </div>
           </div>
@@ -424,6 +426,6 @@
     </div>
   </footer>
 
-  <script src="/assets/sitio.js?v=2" defer></script>
+  <script src="/assets/sitio.js?v=4" defer></script>
 </body>
 </html>
