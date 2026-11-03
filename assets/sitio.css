@@ -1093,7 +1093,7 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .unidad { background: linear-gradient(180deg, var(--noche-profunda), var(--ciruela) 70%, var(--noche-profunda)); overflow: hidden; }
 .unidad__grid { display: grid; gap: 2.5rem; align-items: center; }
 .unidad__cruz { margin: 0 auto; width: min(78vw, 22rem); padding: 2rem; border-radius: 50%; aspect-ratio: 1; display: grid; place-items: center; background: radial-gradient(circle, var(--crema) 0%, var(--crema) 58%, rgb(242 181 68 / 0.6) 66%, transparent 72%); }
-.unidad__cruz img { width: 78%; mix-blend-mode: multiply; }
+.unidad__cruz img { width: 74%; filter: drop-shadow(0 10px 18px rgb(58 29 68 / 0.35)); }
 @media (prefers-reduced-motion: no-preference) {
   .unidad__cruz { animation: latido 5s ease-in-out infinite; }
 }
@@ -1103,7 +1103,7 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .unidad__linea { display: block; }
 .unidad__enamorada {
   display: block; font-family: var(--voz); font-style: italic; font-weight: 400; letter-spacing: -0.01em;
-  font-size: clamp(3.4rem, 16vw, 6rem); line-height: 1.05; color: var(--oro);
+  font-size: clamp(2.8rem, 12vw, 5rem); line-height: 1.02; color: var(--oro); text-wrap: balance; margin-top: 0.25rem;
 }
 @media (prefers-reduced-motion: no-preference) {
   .con-js .unidad__enamorada { clip-path: inset(-10% 100% -10% 0); transition: clip-path 1.6s var(--ease-in-out) 0.3s; }
@@ -1169,3 +1169,4 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .fundador { margin: 2rem 0; display: grid; grid-template-columns: 7rem 1fr; gap: 1.25rem; align-items: end; }
 .fundador img { width: 7rem; border-radius: 4px; filter: grayscale(1) sepia(0.2); }
 .fundador figcaption { color: var(--crema-tenue); font-size: var(--t-sm); max-width: 30ch; }
+.unidad__cruz { aspect-ratio: auto; padding: 2.5rem 1.5rem; border-radius: 0; background: radial-gradient(closest-side, rgb(246 239 228 / 0.95), rgb(246 239 228 / 0.75) 55%, rgb(242 181 68 / 0.3) 80%, transparent 100%); }
