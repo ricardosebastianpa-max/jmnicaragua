@@ -91,7 +91,22 @@ Escala modular de 1.25 sobre 16px. Las cifras grandes van en serif.
 
 ## Composición
 
-Cada sección tiene un solo protagonista y el ritmo cambia: apertura inmersiva, ficha "en corto", cita grande con cuatro columnas, paneles de etapa a todo el ancho, línea de tiempo horizontal, definiciones con la introducción fija al costado, lista de honor, grilla de cifras, bloque del 8 de diciembre, ficha clara para papás, preguntas en acordeón y el formulario sobre el degradado. Un divisor numerado (01 a 11) indica en qué parte del recorrido estás.
+La portada es para mirar; la profundidad está en `/historia/` y `/simbolos/`. Cada sección tiene un protagonista visual:
+
+- **Apertura:** el logo dentro de un sol de rayos, como una custodia, girando muy lento.
+- **En corto:** cuatro íconos.
+- **El grupo de vida:** cuatro pilares con ícono.
+- **Las etapas:** paneles a todo el ancho con el ícono grande y el nombre mixto.
+- **La raíz:** línea de tiempo con íconos en los hitos clave.
+- **La Alianza:** un afiche con tres conceptos y una pared de stickers con los lemas y gritos.
+- **Los héroes:** tarjetas con monograma en carrusel.
+- **En el mundo:** cifras con ícono.
+- **En Managua:** espacios para fotos reales y el afiche del 8 de diciembre.
+- **Cierre:** ficha para papás, preguntas y Unite.
+
+**Titulares mixtos (`.titulo-mix`):** una línea en Montserrat 800 en mayúsculas y en oro, y otra en Instrument Serif grande. Se usan en todas las páginas.
+
+**Íconos propios:** en `assets/icons/sprite.svg` (prefijo `i-`), trazo geométrico de 7 unidades en coherencia con los íconos de las etapas.
 
 ## Movimiento
 

@@ -15,7 +15,7 @@
   <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/sitio.css?v=4">
+  <link rel="stylesheet" href="/assets/sitio.css?v=5">
   <script>document.documentElement.classList.replace('sin-js', 'con-js');</script>
 </head>
 <body>
@@ -40,13 +40,21 @@
 
   <main id="contenido">
 
-    <!-- Apertura -->
+    <!-- Apertura: el logo en su sol de rayos -->
     <header class="apertura">
-      <svg class="apertura__logo" viewBox="0 0 290 470" aria-hidden="true"><use href="/assets/icons/sprite.svg#logo"/></svg>
+      <div class="apertura__arte" aria-hidden="true">
+        <svg class="apertura__rayos" viewBox="0 0 400 400">
+          <g fill="currentColor">
+            <path d="M200 0l7 120h-14zM200 400l-7-120h14zM0 200l120 7v-14zM400 200l-120-7v14zM58.6 58.6l90 79.6-9.9 9.9zM341.4 341.4l-90-79.6 9.9-9.9zM58.6 341.4l79.6-90 9.9 9.9zM341.4 58.6l-79.6 90-9.9-9.9z"/>
+            <path opacity=".55" d="M276.5 15.2l-41.2 113-12.9-5.4zM123.5 384.8l41.2-113 12.9 5.4zM15.2 123.5l113 41.2-5.4 12.9zM384.8 276.5l-113-41.2 5.4-12.9zM384.8 123.5l-113 41.2 5.4 12.9zM15.2 276.5l113-41.2-5.4-12.9zM123.5 15.2l41.2 113 12.9-5.4zM276.5 384.8l-41.2-113-12.9 5.4z"/>
+          </g>
+        </svg>
+        <svg class="apertura__logo" viewBox="0 0 290 470"><use href="/assets/icons/sprite.svg#logo"/></svg>
+      </div>
       <div class="contenedor apertura__contenido">
-        <h1 class="grito apertura__lema" lang="la"><span>Ite,</span> <span>incendite</span> <span>mundum</span></h1>
-        <p class="apertura__traduccion">Vayan e incendien el mundo.</p>
-        <p class="apertura__intro">Somos la Juventud Masculina del Movimiento Apostólico de Schoenstatt en Managua. Nos juntamos en grupos de vida cada 15 días.</p>
+        <h1 class="apertura__lema" lang="la"><span class="mix-sans">Ite,</span> <span class="mix-serif">incendite mundum</span></h1>
+        <p class="apertura__traduccion">Vayan e incendien el mundo</p>
+        <p class="apertura__intro">Juventud Masculina de Schoenstatt en Managua. Grupos de vida cada 15 días.</p>
         <div class="apertura__acciones">
           <a class="boton" href="#unite">Unite a un grupo</a>
           <a class="boton boton--linea" href="#papas">Soy papá o mamá</a>
@@ -55,98 +63,65 @@
     </header>
 
     <!-- 01 En corto -->
-    <section class="seccion" aria-labelledby="corto-t">
+    <section class="seccion seccion--corta" aria-labelledby="corto-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">01</span><span class="rotulo divisor__nombre">En corto</span></div>
         <h2 class="sr-only" id="corto-t">La JM en corto</h2>
-        <dl class="corto" data-revela>
-          <div class="corto__fila">
-            <dt class="rotulo corto__clave">Qué</dt>
-            <dd><span class="corto__valor">La JM</span><p class="corto__nota">La rama juvenil masculina del Movimiento Apostólico de Schoenstatt. Existe desde el 18 de octubre de 1914.</p></dd>
-          </div>
-          <div class="corto__fila">
-            <dt class="rotulo corto__clave">Cuándo</dt>
-            <dd><span class="corto__valor cifra">Cada 15 días</span><p class="corto__nota">De 3:00 a 6:00 p. m. Domingos, Cruzados y Pioneros; sábados, Universitarios.</p></dd>
-          </div>
-          <div class="corto__fila">
-            <dt class="rotulo corto__clave">Dónde</dt>
-            <dd><span class="corto__valor">Managua</span><p class="corto__nota">En las casas de los miembros: nos vamos rotando.</p></dd>
-          </div>
-          <div class="corto__fila">
-            <dt class="rotulo corto__clave">Quiénes</dt>
-            <dd><span class="corto__valor">Tres etapas</span><p class="corto__nota">Cruzados de María en primaria, Pioneros en secundaria y Universitarios en la universidad.</p></dd>
-          </div>
-        </dl>
+        <ul class="iconos-corto" data-revela>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-que"/></svg><span class="rotulo">Qué</span><strong>La JM</strong><span>Rama juvenil de Schoenstatt, desde 1914</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-cuando"/></svg><span class="rotulo">Cuándo</span><strong>Cada 15 días</strong><span>Sáb. y dom., 3:00 a 6:00 p. m.</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-donde"/></svg><span class="rotulo">Dónde</span><strong>Managua</strong><span>En las casas, por turnos</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-quienes"/></svg><span class="rotulo">Quiénes</span><strong>Tres etapas</strong><span>Primaria, secundaria y universidad</span></li>
+        </ul>
       </div>
     </section>
 
     <!-- 02 El grupo de vida -->
     <section class="seccion" aria-labelledby="grupo-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">02</span><span class="rotulo divisor__nombre">El grupo de vida</span></div>
-        <div data-revela>
-          <h2 class="voz grupo-vida__cita" id="grupo-t">Con los dos pies en la tierra y vueltos hacia Dios.</h2>
-          <p class="rotulo grupo-vida__fuente">Así se describe la JM en la página internacional de Schoenstatt</p>
-          <p class="bajada">Tu grupo de vida son tus compañeros de etapa. Se juntan cada 15 días, y además hay campamentos, viajes, excursiones, juegos y aventura, siempre con formación espiritual.</p>
-        </div>
-        <div class="cuatro" data-revela>
-          <div class="cuatro__item">
-            <h3 class="grito cuatro__nombre">Amistad</h3>
-            <p class="cuatro__texto">Un grupo fijo que hace junto su camino y su Alianza. En la JM a eso se le dice curso o generación.</p>
-          </div>
-          <div class="cuatro__item">
-            <h3 class="grito cuatro__nombre">Formación</h3>
-            <p class="cuatro__texto">Autoeducación: aprender a formarte vos mismo, con María como madre y educadora, hasta tener libertad interior para decidir.</p>
-          </div>
-          <div class="cuatro__item">
-            <h3 class="grito cuatro__nombre">Fe</h3>
-            <p class="cuatro__texto">La Alianza de Amor con María, que se renueva el 18 de cada mes, el Día de Alianza.</p>
-          </div>
-          <div class="cuatro__item">
-            <h3 class="grito cuatro__nombre">Aventura</h3>
-            <p class="cuatro__texto">Campamentos, viajes, excursiones y misiones. En la JM los juegos, la diversión y la aventura no se descuidan.</p>
-          </div>
-        </div>
-        <p class="nota-etapas">Cómo es una reunión: <span class="pendiente" data-pendiente="reunion">cómo es una reunión, paso a paso</span></p>
+        <div class="divisor"><span class="divisor__num">01</span><span class="rotulo divisor__nombre">El grupo de vida</span></div>
+        <h2 class="titulo-mix" id="grupo-t" data-revela><span class="mix-sans">Con los dos pies en la tierra</span> <span class="mix-serif">y vueltos hacia Dios.</span></h2>
+        <ul class="pilares" data-revela>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-amistad"/></svg><h3>Amistad</h3><p>Un grupo fijo de tu etapa que hace junto su camino.</p></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-formacion"/></svg><h3>Formación</h3><p>Aprender a formarte a vos mismo, con María como educadora.</p></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-fe"/></svg><h3>Fe</h3><p>La Alianza de Amor con María, renovada cada 18.</p></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-aventura"/></svg><h3>Aventura</h3><p>Campamentos, viajes, excursiones y misiones.</p></li>
+        </ul>
       </div>
     </section>
 
     <!-- 03 Las etapas -->
     <section class="seccion" id="etapas" aria-labelledby="etapas-t" style="padding-bottom: 0">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">03</span><span class="rotulo divisor__nombre">Las etapas</span></div>
-        <h2 class="grito titular" id="etapas-t" data-revela><span>Tres etapas, <span class="acento">un mismo fuego</span></span></h2>
-        <p class="bajada">En Nicaragua las etapas van por nivel escolar: depende de dónde estudiás.</p>
+        <div class="divisor"><span class="divisor__num">02</span><span class="rotulo divisor__nombre">Las etapas</span></div>
+        <h2 class="titulo-mix" id="etapas-t" data-revela><span class="mix-sans">Tres etapas,</span> <span class="mix-serif">un mismo fuego.</span></h2>
+        <p class="bajada">Van por nivel escolar: depende de dónde estudiás.</p>
       </div>
       <div class="etapas">
         <article class="etapa etapa--cruzados" aria-labelledby="et-cruzados">
           <svg class="etapa__icono" viewBox="0 0 742 845" aria-hidden="true"><use href="/assets/icons/sprite.svg#cruzados"/></svg>
           <div>
-            <p class="rotulo etapa__nivel">Primaria</p>
-            <h3 class="grito etapa__nombre" id="et-cruzados">Cruzados de María</h3>
-            <p class="etapa__sentido">Entregan su vida diaria a la Virgen y se ponen bajo su mano protectora.</p>
-            <p class="etapa__simbolos">En los campamentos de la JM, a medida que crecen, los Cruzados reciben el <strong>pañolín</strong>, el <strong>blasón</strong>, la <strong>cruz</strong> y la <strong>estrella</strong>. Su símbolo es la espada.</p>
-            <p class="etapa__simbolos"><strong>Domingos, 3:00 a 6:00 p. m.</strong><br>Jefe: Juan Pablo Padilla</p>
+            <p class="rotulo etapa__nivel">Primaria · Domingos</p>
+            <h3 class="etapa__nombre" id="et-cruzados"><span class="mix-sans">Cruzados</span> <span class="mix-serif">de María</span></h3>
+            <p class="etapa__sentido">Entregan su vida diaria a la Virgen. Su símbolo es la espada.</p>
+            <p class="etapa__pie"><span>Jefe: Juan Pablo Padilla</span><a href="#unite" data-etapa="cruzados">Inscribirme</a></p>
           </div>
         </article>
         <article class="etapa etapa--pioneros" aria-labelledby="et-pioneros">
           <svg class="etapa__icono" viewBox="0 0 816 941" aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg>
           <div>
-            <p class="rotulo etapa__nivel">Secundaria</p>
-            <h3 class="grito etapa__nombre" id="et-pioneros">Pioneros</h3>
-            <p class="etapa__sentido">Los que van a la avanzada y abren camino a un mundo nuevo.</p>
-            <p class="etapa__simbolos">Tienen <strong>doce leyes</strong> en cuatro dimensiones: Dios, el mundo, el prójimo y uno mismo. Su pañolín es triangular, como el Ojo del Padre.</p>
-            <p class="etapa__simbolos"><strong>Domingos, 3:00 a 6:00 p. m.</strong><br>Jefe: Ricardo Picado</p>
+            <p class="rotulo etapa__nivel">Secundaria · Domingos</p>
+            <h3 class="etapa__nombre" id="et-pioneros"><span class="mix-sans">Pio</span><span class="mix-serif">neros</span></h3>
+            <p class="etapa__sentido">Van a la avanzada y abren camino. Tienen doce leyes.</p>
+            <p class="etapa__pie"><span>Jefe: Ricardo Picado</span><a href="#unite" data-etapa="pioneros">Inscribirme</a></p>
           </div>
         </article>
         <article class="etapa etapa--universitarios" aria-labelledby="et-universitarios">
           <svg class="etapa__icono" viewBox="0 0 890 872" aria-hidden="true"><use href="/assets/icons/sprite.svg#universitarios"/></svg>
           <div>
-            <p class="rotulo etapa__nivel">Universidad</p>
-            <h3 class="grito etapa__nombre" id="et-universitarios">Universitarios</h3>
-            <p class="etapa__sentido">Grupos universitarios con apostolados propios.</p>
-            <p class="etapa__simbolos">La rama forma a sus propios <strong>jefes</strong>: en la Escuela de Jefes Internacional, entre diciembre de 2025 y enero de 2026, se formaron 26 universitarios de seis países junto al Santuario Original.</p>
-            <p class="etapa__simbolos"><strong>Sábados, 3:00 a 6:00 p. m.</strong><br>Jefe: Yunapu Trauman</p>
+            <p class="rotulo etapa__nivel">Universidad · Sábados</p>
+            <h3 class="etapa__nombre" id="et-universitarios"><span class="mix-sans">Univer</span><span class="mix-serif">sitarios</span></h3>
+            <p class="etapa__sentido">Con apostolados propios. De acá salen los jefes de la rama.</p>
+            <p class="etapa__pie"><span>Jefe: Yunapu Trauman</span><a href="#unite" data-etapa="universitarios">Inscribirme</a></p>
           </div>
         </article>
       </div>
@@ -155,122 +130,102 @@
     <!-- 04 La raíz -->
     <section class="seccion raiz" aria-labelledby="raiz-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">04</span><span class="rotulo divisor__nombre">La raíz</span></div>
-        <h2 class="grito titular titular--ancho" id="raiz-t" data-revela><span>Un fuego de <span class="acento">más de cien años</span></span></h2>
+        <div class="divisor"><span class="divisor__num">03</span><span class="rotulo divisor__nombre">La raíz</span></div>
+        <h2 class="titulo-mix" id="raiz-t" data-revela><span class="mix-sans">Un fuego de</span> <span class="mix-serif">más de cien años.</span></h2>
         <div class="linea-tiempo">
           <ol class="linea-tiempo__pista" tabindex="0" aria-label="Línea de tiempo de Schoenstatt y la JM">
-            <li class="hito"><p class="hito__fecha">1912<span class="rotulo hito__dia">27 de octubre</span></p><p class="hito__texto">El P. José Kentenich, director espiritual de un seminario en Schoenstatt (Alemania), propone a sus alumnos aprender a educarse a sí mismos bajo la protección de María.</p></li>
-            <li class="hito"><p class="hito__fecha">1914<span class="rotulo hito__dia">18 de octubre</span></p><p class="hito__texto">En la capillita de San Miguel nace la Alianza de Amor. Ese día nace Schoenstatt, y con él la JM.</p></li>
-            <li class="hito"><p class="hito__fecha">1915</p><p class="hito__texto">Llega a la capilla la imagen de la Madre Tres Veces Admirable, la Mater. José Engling y su curso se consagran como congregantes.</p></li>
-            <li class="hito"><p class="hito__fecha">1918<span class="rotulo hito__dia">4 de octubre</span></p><p class="hito__texto">Muere José Engling cerca de Cambrai (Francia). Su generación pasa a la historia como las Cruces Negras.</p></li>
-            <li class="hito"><p class="hito__fecha">1919<span class="rotulo hito__dia">20 de agosto</span></p><p class="hito__texto">En el Congreso de Hörde los jóvenes empiezan a organizarse como comunidad dentro del Movimiento.</p></li>
-            <li class="hito"><p class="hito__fecha">1942<span class="rotulo hito__dia">20 de enero</span></p><p class="hito__texto">Kentenich acepta ir a Dachau. La juventud de Münster le escribe: «Vamos contigo».</p></li>
-            <li class="hito"><p class="hito__fecha">1949<span class="rotulo hito__dia">31 de mayo</span></p><p class="hito__texto">En Bellavista (Chile), Kentenich deja una carta sobre el altar del santuario: el hito de la misión.</p></li>
-            <li class="hito hito--nic"><p class="hito__fecha">2016<span class="rotulo hito__dia">Abril</span></p><p class="hito__texto">Schoenstatt llega a Nicaragua con la Campaña de la Virgen Peregrina, desde Costa Rica.</p></li>
+            <li class="hito"><p class="hito__fecha">1912</p><p class="hito__texto">Kentenich propone a sus alumnos educarse a sí mismos con María.</p></li>
+            <li class="hito hito--clave"><svg class="hito__icono" aria-hidden="true"><use href="/assets/icons/sprite.svg#i-santuario"/></svg><p class="hito__fecha">1914</p><p class="hito__texto">18 de octubre: la Alianza de Amor. Nacen Schoenstatt y la JM.</p></li>
+            <li class="hito"><p class="hito__fecha">1918</p><p class="hito__texto">Muere José Engling cerca de Cambrai. Nacen las Cruces Negras.</p></li>
+            <li class="hito"><p class="hito__fecha">1942</p><p class="hito__texto">Kentenich va a Dachau. Los jóvenes le escriben: «Vamos contigo».</p></li>
+            <li class="hito hito--nic"><svg class="hito__icono" aria-hidden="true"><use href="/assets/icons/sprite.svg#i-que"/></svg><p class="hito__fecha">2016</p><p class="hito__texto">Schoenstatt llega a Nicaragua con la Virgen Peregrina.</p></li>
             <li class="hito hito--nic"><p class="hito__fecha">2023</p><p class="hito__texto">Abre la Juventud Masculina en Managua.</p></li>
-            <li class="hito hito--nic"><p class="hito__fecha">Hoy</p><p class="hito__texto">Cruzados, Pioneros y Universitarios se juntan en Managua. Te toca a vos.</p></li>
+            <li class="hito hito--nic"><p class="hito__fecha">Hoy</p><p class="hito__texto">Te toca a vos.</p></li>
           </ol>
           <div class="linea-tiempo__riel" aria-hidden="true"></div>
           <div class="linea-tiempo__avance" aria-hidden="true"></div>
           <div class="linea-tiempo__controles">
             <button type="button" class="linea-tiempo__boton" aria-label="Fecha anterior"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             <button type="button" class="linea-tiempo__boton" aria-label="Fecha siguiente"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <a class="enlace linea-tiempo__mas" href="/historia/">Toda la historia</a>
           </div>
         </div>
-        <p style="margin-top: 2.5rem"><a class="enlace" href="/historia/">La historia completa: el fundador, los cuatro hitos y los héroes</a></p>
       </div>
     </section>
 
     <!-- 05 La Alianza -->
-    <section class="seccion" aria-labelledby="alianza-t">
-      <div class="contenedor alianza">
-        <div class="alianza__intro">
-          <div class="divisor"><span class="divisor__num">05</span><span class="rotulo divisor__nombre">La Alianza</span></div>
-          <div data-revela>
-            <h2 class="voz alianza__frase" id="alianza-t">«Nada sin ti,<br> nada sin nosotros.»</h2>
-            <p class="alianza__frase-fuente">Así resume María la Alianza de Amor en el santuario: un intercambio de corazones, de bienes y de intereses.</p>
-          </div>
+    <section class="seccion alianza-poster" aria-labelledby="alianza-t">
+      <div class="contenedor">
+        <div class="divisor"><span class="divisor__num">04</span><span class="rotulo divisor__nombre">La Alianza</span></div>
+        <h2 class="titulo-mix titulo-mix--grande" id="alianza-t" data-revela><span class="mix-sans">Nada sin ti,</span> <span class="mix-serif">nada sin nosotros.</span></h2>
+        <p class="bajada">Así resume María la Alianza de Amor: un intercambio de corazones.</p>
+        <ul class="trio" data-revela>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-alianza"/></svg><h3>Alianza de Amor</h3><p>Se renueva el 18 de cada mes.</p></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-capital"/></svg><h3>Capital de Gracias</h3><p>Tu esfuerzo diario, entregado a María.</p></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-ideal"/></svg><h3>Ideal personal</h3><p>Tu vocación única, en una frase.</p></li>
+        </ul>
+        <div class="stickers" aria-label="Lemas y gritos de la JM" data-revela>
+          <span class="sticker sticker--brasa" lang="la">Ite, incendite mundum</span>
+          <span class="sticker sticker--crema">Que viva tu Alianza</span>
+          <span class="sticker sticker--redondo">MTA</span>
+          <span class="sticker sticker--serif" lang="la">Mater habebit curam</span>
+          <span class="sticker sticker--pioneros"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg>Doce leyes</span>
+          <span class="sticker sticker--oro">Día de Alianza · 18</span>
+          <span class="sticker sticker--cruzados" lang="la">Aut Caesar aut nihil</span>
+          <span class="sticker sticker--noche">¡Cruzada de María… marchamos!</span>
         </div>
-        <dl class="conceptos" data-revela>
-          <div class="concepto"><dt class="grito">Alianza de Amor</dt><dd>Renovar con María la alianza del bautismo: una decisión libre por Cristo. El 18 de cada mes es el Día de Alianza.</dd></div>
-          <div class="concepto"><dt class="grito">Capital de Gracias</dt><dd>Tu esfuerzo, tu oración, tu sacrificio y tu trabajo de cada día, entregados a María para que actúe desde el santuario. En muchos santuarios se escriben, se depositan en un ánfora y se queman en la pira, normalmente cada 18.</dd></div>
-          <div class="concepto"><dt class="grito">Ideal personal</dt><dd>Cada uno tiene una vocación original, dada por Dios. Descubrirla y formularla en una frase es el centro de la madurez.</dd></div>
-          <div class="concepto"><dt class="grito">Autoeducación</dt><dd>Formarte a vos mismo con María como madre y educadora. La meta es la libertad interior: resistir la presión del ambiente, decidir y tener fuerza para cumplir lo decidido.</dd></div>
-          <div class="concepto"><dt class="grito">Las tres gracias</dt><dd>Lo que se recibe en el santuario: cobijamiento, transformación interior y envío. El envío es llevar a otros lo que recibiste gratis.</dd></div>
-        </dl>
-      </div>
-      <div class="contenedor" style="margin-top: clamp(4rem, 10vw, 6rem)" data-revela>
-        <p class="voz" style="font-size: var(--t-3xl); max-width: 16ch">La vida se enciende con la vida.</p>
-        <p class="rotulo" style="margin-top: 1rem; color: var(--crema-tenue)">José Kentenich, sobre su pedagogía</p>
+        <p style="margin-top: 2rem"><a class="enlace" href="/simbolos/">Qué significa cada símbolo y lema</a></p>
       </div>
     </section>
 
     <!-- 06 Los héroes -->
     <section class="seccion" aria-labelledby="heroes-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">06</span><span class="rotulo divisor__nombre">Los héroes</span></div>
-        <h2 class="grito titular" id="heroes-t" data-revela><span>Muchachos que <span class="acento">no se apagaron</span></span></h2>
-        <p class="bajada">Los signos más fuertes de la JM sostienen opuestos: fuerza desde la debilidad, alegría en la trinchera, vencer en cadenas, todo o nada.</p>
-        <ul class="honor" data-revela>
-          <li class="heroe heroe--destacado">
-            <h3 class="grito heroe__nombre">José Engling</h3><span class="heroe__anios cifra">1898–1918</span>
-            <p class="voz heroe__apodo">El León de Cambrai</p>
-            <p class="heroe__paradoja">Pobre, miope y con la columna deformada por la polio. Kentenich lo llamó «el Acta de Fundación vivida».</p>
-          </li>
-          <li class="heroe"><h3 class="grito heroe__nombre">Max Brunner</h3><span class="heroe__anios cifra">1897–1917</span><p class="heroe__paradoja">Antes de ir al frente saludó a la Inmaculada como los gladiadores: <span class="latin" lang="la">Ave imperatrix, morituri te salutant</span>.</p></li>
-          <li class="heroe"><h3 class="grito heroe__nombre">Hans Wormer</h3><span class="heroe__anios cifra">1897–1917</span><p class="heroe__paradoja">Su ideal, grabado en su ataúd: <span class="latin" lang="la">Aut Caesar aut nihil</span>. Todo o nada.</p></li>
-          <li class="heroe"><h3 class="grito heroe__nombre">Franz Reinisch</h3><span class="heroe__anios cifra">1903–1942</span><p class="heroe__paradoja">El único sacerdote católico que se negó a jurar fidelidad a Hitler. Nuestro campamento lleva su nombre.</p></li>
-          <li class="heroe"><h3 class="grito heroe__nombre">Beato Karl Leisner</h3><span class="heroe__anios cifra">1915–1945</span><p class="heroe__paradoja">Ordenado sacerdote en secreto en Dachau. Su báculo decía <span class="latin" lang="la">Victor in vinculis</span>: vencedor en cadenas.</p></li>
-          <li class="heroe"><h3 class="grito heroe__nombre">Venerable Mario Hiriart</h3><span class="heroe__anios cifra">1931–1964</span><p class="heroe__paradoja">Ingeniero chileno. Kentenich lo consideraba el modelo del varón que Schoenstatt quiere formar.</p></li>
-          <li class="heroe"><h3 class="grito heroe__nombre">Venerable João Pozzobon</h3><span class="heroe__anios cifra">1904–1985</span><p class="heroe__paradoja">Durante 35 años caminó más de 140,000 km con la imagen de la Virgen Peregrina.</p></li>
-        </ul>
-        <p style="margin-top: 2rem"><a class="enlace" href="/historia/#heroes">Sus historias completas</a></p>
+        <div class="divisor"><span class="divisor__num">05</span><span class="rotulo divisor__nombre">Los héroes</span></div>
+        <h2 class="titulo-mix" id="heroes-t" data-revela><span class="mix-sans">Muchachos que</span> <span class="mix-serif">no se apagaron.</span></h2>
       </div>
+      <ul class="heroes-carrusel" tabindex="0" aria-label="Héroes de la JM">
+        <li class="tarjeta-heroe tarjeta-heroe--a"><span class="tarjeta-heroe__mono" aria-hidden="true">JE</span><p class="rotulo">1898–1918</p><h3>José Engling</h3><p>El León de Cambrai. Pobre, miope y fiel hasta el final.</p></li>
+        <li class="tarjeta-heroe tarjeta-heroe--b"><span class="tarjeta-heroe__mono" aria-hidden="true">FR</span><p class="rotulo">1903–1942</p><h3>Franz Reinisch</h3><p>No juró fidelidad a Hitler. Nuestro campamento lleva su nombre.</p></li>
+        <li class="tarjeta-heroe tarjeta-heroe--c"><span class="tarjeta-heroe__mono" aria-hidden="true">KL</span><p class="rotulo">1915–1945 · Beato</p><h3>Karl Leisner</h3><p>Ordenado sacerdote en secreto en Dachau.</p></li>
+        <li class="tarjeta-heroe tarjeta-heroe--d"><span class="tarjeta-heroe__mono" aria-hidden="true">MH</span><p class="rotulo">1931–1964 · Venerable</p><h3>Mario Hiriart</h3><p>Ingeniero chileno, modelo del varón de Schoenstatt.</p></li>
+        <li class="tarjeta-heroe tarjeta-heroe--e"><span class="tarjeta-heroe__mono" aria-hidden="true">JP</span><p class="rotulo">1904–1985 · Venerable</p><h3>João Pozzobon</h3><p>140,000 km a pie con la Virgen Peregrina.</p></li>
+      </ul>
+      <div class="contenedor"><p style="margin-top: 1.5rem"><a class="enlace" href="/historia/#heroes">Sus historias, y las de Brunner y Wormer</a></p></div>
     </section>
 
     <!-- 07 En el mundo -->
     <section class="seccion mundo" aria-labelledby="mundo-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">07</span><span class="rotulo divisor__nombre">En el mundo</span></div>
-        <h2 class="grito titular" id="mundo-t" data-revela><span>Una rama en <span class="acento">cuatro continentes</span></span></h2>
-        <div class="cifras" data-revela>
-          <div class="cifra-bloque"><p class="cifra-bloque__valor">4</p><p class="cifra-bloque__texto">continentes con JM: Europa, América, Oceanía y África.</p></div>
-          <div class="cifra-bloque"><p class="cifra-bloque__valor cifra">532</p><p class="cifra-bloque__texto">jóvenes de 18 países en el Ignis de Aveiro (Portugal), en 2023. Ignis, «fuego» en latín, es el encuentro internacional de la JM.</p></div>
-          <div class="cifra-bloque"><p class="cifra-bloque__valor cifra">420<small>km</small></p><p class="cifra-bloque__texto">a pie en la Cruzada de María de 2026, de Mendoza (Argentina) a Bellavista (Chile), cruzando los Andes a 3,850 m.</p></div>
-          <div class="cifra-bloque"><p class="cifra-bloque__valor cifra">1,800<small>km</small></p><p class="cifra-bloque__texto">recorrió en 2014 una antorcha llevada por relevos por 84 jóvenes hasta el Santuario Original. Hoy arde como luz perpetua en el santuario del Tabor.</p></div>
-          <div class="cifra-bloque"><p class="cifra-bloque__valor cifra">200<small>+</small></p><p class="cifra-bloque__texto">santuarios filiales en el mundo.</p><p class="cifra-bloque__fuente">Cifra de todo el Movimiento de Schoenstatt, no solo de la JM</p></div>
-          <div class="cifra-bloque"><p class="cifra-bloque__valor cifra">1919</p><p class="cifra-bloque__texto">Congreso de Hörde: la primera organización formal de las comunidades juveniles.</p></div>
-        </div>
-        <p class="parrafo suave" style="margin-top: 3rem">En Sudamérica la JM se apoya en cuatro pilares: Unidad Internacional, Protagonismo, Cultura de Alianza y Fuego de la Misión. En Alemania, en cinco columnas: Comunidad, Escuela de Vida, Alianza de Amor, Ser Hombre y Ser Apóstol.</p>
+        <div class="divisor"><span class="divisor__num">06</span><span class="rotulo divisor__nombre">En el mundo</span></div>
+        <h2 class="titulo-mix" id="mundo-t" data-revela><span class="mix-sans">Una rama en</span> <span class="mix-serif">cuatro continentes.</span></h2>
+        <ul class="cifras-iconos" data-revela>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-mundo"/></svg><strong class="cifra">4</strong><span>continentes con JM</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-que"/></svg><strong class="cifra">532</strong><span>jóvenes de 18 países en el Ignis 2023</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-camino"/></svg><strong class="cifra">420 km</strong><span>a pie por los Andes, Cruzada de María 2026</span></li>
+          <li><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#i-antorcha"/></svg><strong class="cifra">1,800 km</strong><span>de antorcha por relevos hasta Schoenstatt, 2014</span></li>
+        </ul>
       </div>
     </section>
 
-    <!-- 08 En Nicaragua -->
+    <!-- 08 En Managua -->
     <section class="seccion" aria-labelledby="nic-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">08</span><span class="rotulo divisor__nombre">En Nicaragua</span></div>
+        <div class="divisor"><span class="divisor__num">07</span><span class="rotulo divisor__nombre">En Managua</span></div>
         <div class="nicaragua__grid">
           <div data-revela>
-            <h2 class="grito titular" id="nic-t"><span>El fuego llegó <span class="acento">en 2016</span></span></h2>
-            <p class="parrafo suave" style="margin-top: 1.5rem">Schoenstatt llegó a Nicaragua en abril de 2016 con la Campaña de la Virgen Peregrina, desde Costa Rica. El P. José Luis Correa y matrimonios costarricenses acompañaron la formación de los primeros grupos.</p>
-            <p class="parrafo suave">El primer santuario de Schoenstatt de Centroamérica, «Familia de Esperanza», está en Santa Ana (Costa Rica) y se bendijo el 18 de marzo de 2017.</p>
-            <p class="parrafo suave">La Juventud Masculina abrió en Managua en 2023. Nuestro campamento lleva el nombre de Franz Reinisch.</p>
+            <h2 class="titulo-mix" id="nic-t"><span class="mix-sans">El fuego llegó</span> <span class="mix-serif">en 2016.</span></h2>
+            <p class="bajada">Schoenstatt llegó con la Virgen Peregrina desde Costa Rica. La JM abrió en Managua en 2023.</p>
           </div>
           <div class="nicaragua__fotos">
             <figure class="foto foto--vacia"><div><svg viewBox="0 0 290 470" aria-hidden="true"><use href="/assets/icons/sprite.svg#logo"/></svg><p><span class="rotulo">Foto real</span><br>Campamento Reinisch</p></div></figure>
             <figure class="foto foto--vacia"><div><svg viewBox="0 0 742 845" aria-hidden="true"><use href="/assets/icons/sprite.svg#cruzados"/></svg><p><span class="rotulo">Foto real</span><br>Un grupo de vida</p></div></figure>
-            <figure class="foto foto--vacia"><div><svg viewBox="0 0 816 941" aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg><p><span class="rotulo">Foto real</span><br>Una misión o salida</p></div></figure>
+            <figure class="foto foto--vacia"><div><svg viewBox="0 0 816 941" aria-hidden="true"><use href="/assets/icons/sprite.svg#pioneros"/></svg><p><span class="rotulo">Foto real</span><br>Una misión</p></div></figure>
           </div>
         </div>
-
         <div class="ocho" data-revela>
-          <p class="grito ocho__fecha">8 de diciembre</p>
-          <p class="parrafo" style="margin-top: 1rem">Una fecha que la JM y Nicaragua comparten. Es la solemnidad de la Inmaculada Concepción, patrona de Nicaragua desde 2001, y la víspera es la Gritería. En la historia de la JM:</p>
-          <ul class="ocho__lista">
-            <li><span class="cifra">1914</span><span>Diecisiete congregantes se consagran en la capilla de Schoenstatt; Max Brunner saluda a la Inmaculada.</span></li>
-            <li><span class="cifra">1915</span><span>José Engling se consagra a María.</span></li>
-            <li><span class="cifra">1944</span><span>En Dachau, Karl Leisner y su grupo se dedican como <span class="latin" lang="la">Victor in vinculis Mariae</span>.</span></li>
-          </ul>
+          <p class="titulo-mix ocho__fecha"><span class="mix-sans">8 de</span> <span class="mix-serif">diciembre</span></p>
+          <p class="parrafo">La Purísima, patrona de Nicaragua. En 1914, ese mismo día, diecisiete jóvenes se consagraron en la capilla de Schoenstatt.</p>
         </div>
       </div>
     </section>
@@ -278,15 +233,13 @@
     <!-- 09 Para papás -->
     <section class="seccion papas" id="papas" aria-labelledby="papas-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">09</span><span class="rotulo divisor__nombre">Para papás</span></div>
-        <h2 class="grito titular" id="papas-t" data-revela><span>Para papás <span class="acento">y mamás</span></span></h2>
-        <p class="bajada">Lo que necesitás saber antes de inscribir a tu hijo, en una ficha.</p>
+        <div class="divisor"><span class="divisor__num">08</span><span class="rotulo divisor__nombre">Para papás</span></div>
+        <h2 class="titulo-mix" id="papas-t" data-revela><span class="mix-sans">Para papás</span> <span class="mix-serif">y mamás.</span></h2>
         <dl class="ficha">
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Qué es</dt><dd class="ficha__valor">La rama juvenil masculina del Movimiento Apostólico de Schoenstatt, un movimiento católico y mariano nacido en Alemania en 1914 y presente en Nicaragua desde 2016.</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Etapas</dt><dd class="ficha__valor">Cruzados de María (primaria), Pioneros (secundaria) y Universitarios (universidad).</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Cuándo y dónde</dt><dd class="ficha__valor">Cada 15 días, de 3:00 a 6:00 p. m.: los domingos Cruzados y Pioneros, los sábados Universitarios. Nos reunimos en las casas de los miembros, que se van rotando.</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Quién acompaña</dt><dd class="ficha__valor">Cada etapa tiene su jefe: Juan Pablo Padilla en Cruzados, Ricardo Picado en Pioneros y Yunapu Trauman en Universitarios. El asesor de toda la rama es Juan Jarquín.</dd></div>
-          <div class="ficha__fila"><dt class="rotulo ficha__clave">Qué se forma</dt><dd class="ficha__valor">Libertad interior: resistir la presión del ambiente, decidir y tener fuerza para cumplir lo decidido. Cada joven busca su ideal personal, su vocación propia.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Qué es</dt><dd class="ficha__valor">La rama juvenil masculina del Movimiento Apostólico de Schoenstatt, católico y mariano, nacido en 1914.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Cuándo</dt><dd class="ficha__valor">Cada 15 días, de 3:00 a 6:00 p. m. Domingos: Cruzados y Pioneros. Sábados: Universitarios.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Dónde</dt><dd class="ficha__valor">En las casas de los miembros, que se van rotando.</dd></div>
+          <div class="ficha__fila"><dt class="rotulo ficha__clave">Quién acompaña</dt><dd class="ficha__valor">Jefes: Juan Pablo Padilla (Cruzados), Ricardo Picado (Pioneros) y Yunapu Trauman (Universitarios). Asesor de la rama: Juan Jarquín.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Costo</dt><dd class="ficha__valor">No tiene costo.</dd></div>
           <div class="ficha__fila"><dt class="rotulo ficha__clave">Contacto</dt><dd class="ficha__valor"><a class="enlace" data-whatsapp="Hola, soy papá/mamá y quiero información sobre la JM." href="https://wa.me/50582344190">WhatsApp <span class="cifra">+505 8234 4190</span></a>. Preguntá por don Juan.</dd></div>
         </dl>
@@ -297,26 +250,26 @@
     <!-- 10 Preguntas -->
     <section class="seccion" aria-labelledby="preguntas-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">10</span><span class="rotulo divisor__nombre">Preguntas</span></div>
-        <h2 class="grito titular" id="preguntas-t" data-revela><span>Lo que todos <span class="acento">preguntan</span></span></h2>
+        <div class="divisor"><span class="divisor__num">09</span><span class="rotulo divisor__nombre">Preguntas</span></div>
+        <h2 class="titulo-mix" id="preguntas-t" data-revela><span class="mix-sans">Lo que todos</span> <span class="mix-serif">preguntan.</span></h2>
         <div class="preguntas">
-          <details class="pregunta"><summary>¿En qué etapa me toca?</summary><div class="pregunta__respuesta"><p>Depende de dónde estudiás: en primaria, Cruzados de María; en secundaria, Pioneros; en la universidad, Universitarios.</p></div></details>
-          <details class="pregunta"><summary>¿Cuándo y dónde se reúnen?</summary><div class="pregunta__respuesta"><p>Cada 15 días, de 3:00 a 6:00 p. m.: los domingos Cruzados y Pioneros, los sábados Universitarios.</p><p>Nos reunimos en las casas de los miembros, que se van rotando.</p></div></details>
+          <details class="pregunta"><summary>¿En qué etapa me toca?</summary><div class="pregunta__respuesta"><p>Primaria: Cruzados de María. Secundaria: Pioneros. Universidad: Universitarios.</p></div></details>
           <details class="pregunta"><summary>¿Cuánto cuesta?</summary><div class="pregunta__respuesta"><p>No tiene costo.</p></div></details>
           <details class="pregunta"><summary>¿Tengo que ser muy religioso?</summary><div class="pregunta__respuesta"><p>No. Llegás como sos, con tus preguntas. La JM quiere estar con los dos pies en la tierra y, al mismo tiempo, vuelta hacia Dios, y ese camino se hace en grupo.</p></div></details>
           <details class="pregunta"><summary>¿Puedo llegar con un amigo?</summary><div class="pregunta__respuesta"><p>Sí. Podés llegar con tus amigos.</p></div></details>
           <details class="pregunta"><summary>¿Qué pasa después de inscribirme?</summary><div class="pregunta__respuesta"><p>Te invitamos a la sesión más cercana de tu etapa y te respondemos en cuanto podamos.</p></div></details>
         </div>
+        <p class="nota-etapas">Cómo es una reunión, paso a paso: <span class="pendiente" data-pendiente="reunion">cómo es una reunión, paso a paso</span></p>
       </div>
     </section>
 
-    <!-- 11 Unite -->
+        <!-- 11 Unite -->
     <section class="seccion unite" id="unite" aria-labelledby="unite-t">
       <div class="contenedor">
-        <div class="divisor"><span class="divisor__num">11</span><span class="rotulo divisor__nombre">Unite</span></div>
+        <div class="divisor"><span class="divisor__num">10</span><span class="rotulo divisor__nombre">Unite</span></div>
         <div class="unite__grid">
           <div>
-            <h2 class="grito unite__titulo" id="unite-t">Unite a tu <span class="acento">grupo de vida</span></h2>
+            <h2 class="titulo-mix titulo-mix--grande" id="unite-t"><span class="mix-sans">Unite a tu</span> <span class="mix-serif">grupo de vida.</span></h2>
             <p class="bajada" style="color: var(--crema)">Llená el formulario o escribinos directo.</p>
             <div class="unite__vias">
               <a class="unite__via" data-whatsapp href="https://wa.me/50582344190" target="_blank" rel="noopener">
@@ -402,7 +355,8 @@
         </div>
       </div>
     </section>
-  </main>
+
+    </main>
 
   <a class="boton cta-fija" href="#unite">Unite a un grupo</a>
 
@@ -426,6 +380,6 @@
     </div>
   </footer>
 
-  <script src="/assets/sitio.js?v=4" defer></script>
+  <script src="/assets/sitio.js?v=5" defer></script>
 </body>
 </html>

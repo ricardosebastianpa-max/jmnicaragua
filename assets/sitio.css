@@ -710,3 +710,175 @@ fieldset[aria-invalid="true"] .opcion { border-color: #F58A57; }
 .siguiente { padding-block: clamp(4rem, 10vw, 6rem); border-top: 1px solid var(--linea); }
 .siguiente__titulo { font-size: var(--t-3xl); max-width: 14ch; }
 .siguiente .boton { margin-top: 2rem; }
+
+/* =========================================================================
+   v5 · Titulares mixtos, arte e íconos (portada)
+   ========================================================================= */
+
+/* Titular mixto: una línea en Montserrat 800 mayúsculas + una en Instrument Serif */
+.titulo-mix { font-weight: 400; text-wrap: balance; }
+.mix-sans {
+  display: block;
+  font-family: var(--texto); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.05rem, 4.6vw, 1.6rem); line-height: 1.1; letter-spacing: 0.04em;
+  color: var(--oro);
+}
+.mix-serif {
+  display: block;
+  font-family: var(--voz); font-weight: 400; font-style: normal;
+  font-size: var(--t-3xl); line-height: 1; letter-spacing: -0.015em;
+  color: var(--crema);
+}
+.titulo-mix--grande .mix-serif { font-size: clamp(3rem, 13vw, 6rem); font-style: italic; }
+.titulo-mix--grande .mix-sans { font-size: clamp(1.25rem, 5.6vw, 2.2rem); }
+.papas .mix-sans { color: #A8401C; }
+.papas .mix-serif { color: var(--noche); }
+
+/* Apertura con arte: el logo dentro de un sol de rayos, como una custodia */
+.apertura { align-content: end; }
+.apertura__arte {
+  position: absolute; z-index: 0; pointer-events: none;
+  top: calc(4.5rem + env(safe-area-inset-top, 0px)); left: 50%;
+  width: min(118vw, 46rem); aspect-ratio: 1; transform: translateX(-50%);
+  display: grid; place-items: center; color: var(--crema);
+}
+.apertura__rayos { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.16; }
+@media (prefers-reduced-motion: no-preference) {
+  .apertura__rayos { animation: girar 140s linear infinite; }
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+.apertura__logo {
+  position: relative; inset: auto; right: auto; top: auto;
+  width: 30%; height: auto; aspect-ratio: 290 / 470; opacity: 0.95; color: var(--crema);
+  filter: drop-shadow(0 0 40px rgb(242 181 68 / 0.35));
+}
+.apertura__contenido { padding-top: min(78vw, 24rem); }
+.apertura__lema .mix-sans { font-size: clamp(2rem, 10vw, 3.4rem); color: var(--crema); letter-spacing: 0.02em; }
+.apertura__lema .mix-serif { font-size: var(--t-4xl); font-style: italic; line-height: 0.95; }
+@media (min-width: 64rem) {
+  .apertura__arte { left: auto; right: -4rem; top: 50%; transform: translateY(-50%); width: min(52vw, 46rem); }
+  .apertura__contenido { padding-top: 0; }
+}
+
+/* En corto: cuatro íconos */
+.seccion--corta { padding-block: clamp(3rem, 8vw, 5rem); }
+.iconos-corto { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 1.25rem; }
+.iconos-corto li { display: grid; gap: 0.35rem; align-content: start; }
+.iconos-corto svg { width: 2.75rem; height: 2.75rem; color: var(--brasa); margin-bottom: 0.5rem; }
+.iconos-corto .rotulo { color: var(--crema-tenue); }
+.iconos-corto strong { font-family: var(--voz); font-weight: 400; font-size: var(--t-xl); line-height: 1.05; }
+.iconos-corto li > span:last-child { font-size: var(--t-sm); color: var(--crema-suave); }
+@media (min-width: 56rem) { .iconos-corto { grid-template-columns: repeat(4, 1fr); } }
+
+/* Pilares del grupo de vida */
+.pilares { margin-top: clamp(2.5rem, 7vw, 4rem); display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 1.25rem; }
+.pilares li { display: grid; gap: 0.5rem; align-content: start; }
+.pilares svg { width: 3.5rem; height: 3.5rem; color: var(--oro); margin-bottom: 0.5rem; }
+.pilares h3 { font-family: var(--voz); font-size: var(--t-xl); line-height: 1; }
+.pilares p { font-size: var(--t-sm); color: var(--crema-suave); max-width: 24ch; }
+@media (min-width: 56rem) { .pilares { grid-template-columns: repeat(4, 1fr); } }
+
+/* Etapas: nombre mixto y pie con jefe */
+.etapa { min-height: 30rem; }
+.etapa__icono { width: clamp(7rem, 34vw, 10rem); filter: drop-shadow(0 12px 30px rgb(0 0 0 / 0.25)); }
+.etapa__nombre .mix-sans { display: inline; font-size: var(--t-3xl); letter-spacing: -0.01em; color: inherit; line-height: 1; }
+.etapa__nombre .mix-serif { display: inline; font-size: calc(var(--t-3xl) * 1.12); font-style: italic; color: inherit; }
+.etapa__sentido { font-size: var(--t-base); }
+.etapa__pie { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgb(246 239 228 / 0.35); display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: var(--t-sm); font-weight: 600; }
+.etapa__pie a { color: inherit; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--t-xs); text-decoration: none; padding: 0.625rem 0.875rem; border: 1.5px solid currentColor; border-radius: 4px; transition: transform 160ms var(--ease-out); }
+.etapa__pie a:active { transform: scale(0.97); }
+.etapa--universitarios .etapa__pie { border-top-color: rgb(11 21 48 / 0.35); }
+
+/* Línea de tiempo con íconos en los hitos clave */
+.hito__icono { position: absolute; top: -0.875rem; left: -0.75rem; width: 2.4rem; height: 2.4rem; color: var(--oro); background: var(--noche); padding: 0.3rem; }
+.hito--clave::before, .hito:has(.hito__icono)::before { opacity: 0; }
+.linea-tiempo__controles { align-items: center; }
+.linea-tiempo__mas { margin-left: auto; }
+
+/* La Alianza como afiche */
+.alianza-poster { background: radial-gradient(120% 80% at 80% 0%, rgb(58 29 68 / 0.9), transparent 60%), var(--noche-profunda); }
+.trio { margin-top: clamp(2.5rem, 7vw, 3.5rem); display: grid; gap: 1.75rem; }
+.trio li { display: grid; grid-template-columns: 3rem 1fr; gap: 0.25rem 1rem; align-items: center; }
+.trio svg { grid-row: span 2; width: 3rem; height: 3rem; color: var(--brasa); }
+.trio h3 { font-family: var(--voz); font-size: var(--t-xl); line-height: 1; }
+.trio p { color: var(--crema-suave); font-size: var(--t-sm); }
+@media (min-width: 56rem) { .trio { grid-template-columns: repeat(3, 1fr); } }
+
+/* Pared de stickers: los lemas y gritos de la rama */
+.stickers { margin-top: clamp(3rem, 8vw, 4.5rem); display: flex; flex-wrap: wrap; gap: 0.875rem 0.75rem; align-items: center; }
+.sticker {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.1rem; border-radius: 10px;
+  font-family: var(--texto); font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; font-size: clamp(0.85rem, 3.6vw, 1.05rem); line-height: 1.1;
+  box-shadow: 0 6px 18px -6px rgb(0 0 0 / 0.55), inset 0 0 0 2px rgb(246 239 228 / 0.12);
+  transform: rotate(var(--r, 0deg));
+}
+.sticker:nth-child(1) { --r: -3deg; } .sticker:nth-child(2) { --r: 2deg; } .sticker:nth-child(3) { --r: -6deg; }
+.sticker:nth-child(4) { --r: 3deg; } .sticker:nth-child(5) { --r: -2deg; } .sticker:nth-child(6) { --r: 4deg; }
+.sticker:nth-child(7) { --r: -4deg; } .sticker:nth-child(8) { --r: 1.5deg; }
+.sticker--brasa { background: var(--brasa); color: var(--noche); }
+.sticker--crema { background: var(--crema); color: var(--noche); border: 2px dashed var(--brasa); }
+.sticker--redondo { width: 4.5rem; height: 4.5rem; padding: 0; justify-content: center; border-radius: 50%; background: var(--oro); color: var(--noche); font-size: 1.25rem; }
+.sticker--serif { background: var(--marino); color: var(--oro); font-family: var(--voz); font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0; font-size: clamp(1.25rem, 5.5vw, 1.6rem); }
+.sticker--pioneros { background: linear-gradient(160deg, var(--pioneros), var(--pioneros-luz)); color: var(--crema); }
+.sticker--pioneros svg { width: 1.4rem; height: 1.6rem; }
+.sticker--oro { background: linear-gradient(120deg, var(--univ-naranja), var(--univ-oro)); color: var(--noche); }
+.sticker--cruzados { background: var(--cruzados); color: var(--crema); font-family: var(--voz); font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0; font-size: clamp(1.2rem, 5vw, 1.5rem); }
+.sticker--noche { background: var(--noche); color: var(--crema); border: 1.5px solid var(--oro); }
+
+/* Héroes: tarjetas con monograma en carrusel */
+.heroes-carrusel {
+  margin-top: clamp(2.5rem, 7vw, 3.5rem);
+  display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding-inline: var(--margen); scroll-padding-inline: var(--margen); overscroll-behavior-x: contain;
+  max-width: calc(var(--ancho) + 2 * var(--margen)); margin-inline: auto;
+}
+.heroes-carrusel::-webkit-scrollbar { display: none; }
+.tarjeta-heroe {
+  position: relative; overflow: hidden; isolation: isolate;
+  flex: 0 0 min(72vw, 17rem); scroll-snap-align: start;
+  min-height: 22rem; padding: 1.5rem; border-radius: 6px;
+  display: grid; align-content: end; gap: 0.5rem;
+}
+.tarjeta-heroe::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: radial-gradient(rgb(7 13 30 / 0.35) 0.9px, transparent 1.1px); background-size: 4px 4px; mix-blend-mode: multiply;
+}
+.tarjeta-heroe--a { background: linear-gradient(165deg, var(--azul-logo), var(--ciruela) 60%, #8E2D25); }
+.tarjeta-heroe--b { background: linear-gradient(165deg, #4D0A1C, var(--cruzados)); }
+.tarjeta-heroe--c { background: linear-gradient(165deg, #061B5C, var(--pioneros)); }
+.tarjeta-heroe--d { background: linear-gradient(165deg, var(--ciruela), #7A2A26); }
+.tarjeta-heroe--e { background: linear-gradient(165deg, #7A2A26, #A83C1E); }
+.tarjeta-heroe__mono {
+  position: absolute; z-index: -1; top: 0.75rem; right: 0.75rem;
+  font-family: var(--voz); font-style: italic; font-size: 8rem; line-height: 0.8; color: rgb(246 239 228 / 0.16);
+}
+.tarjeta-heroe .rotulo { color: var(--oro); }
+.tarjeta-heroe h3 { font-family: var(--voz); font-size: var(--t-2xl); line-height: 1; }
+.tarjeta-heroe p:last-child { font-size: var(--t-sm); color: rgb(246 239 228 / 0.9); }
+
+/* Cifras con íconos */
+.cifras-iconos { margin-top: clamp(2.5rem, 7vw, 4rem); display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 1.25rem; }
+.cifras-iconos li { display: grid; gap: 0.375rem; align-content: start; }
+.cifras-iconos svg { width: 2.75rem; height: 2.75rem; color: var(--brasa); margin-bottom: 0.5rem; }
+.cifras-iconos strong { font-family: var(--voz); font-weight: 400; font-size: var(--t-3xl); line-height: 1; letter-spacing: -0.02em; }
+.cifras-iconos span { font-size: var(--t-sm); color: var(--crema-suave); max-width: 22ch; }
+@media (min-width: 56rem) { .cifras-iconos { grid-template-columns: repeat(4, 1fr); } }
+
+.ocho__fecha .mix-serif { font-size: clamp(3.2rem, 15vw, 6rem); color: var(--oro); font-style: italic; }
+.ocho__fecha .mix-sans { color: var(--crema); }
+
+/* Páginas de lectura con titulares mixtos */
+.lectura .titulo-mix { max-width: 18ch; }
+.lectura .titulo-mix + .parrafo { margin-top: 1.5rem; }
+.cabecera__titulo.titulo-mix { max-width: none; }
+.cabecera__titulo .mix-sans { color: var(--crema); }
+.siguiente__titulo.titulo-mix { max-width: none; }
+@media (min-width: 60rem) {
+  .etapa__nombre .mix-sans { font-size: clamp(1.9rem, 2.9vw, 2.6rem); }
+  .etapa__nombre .mix-serif { font-size: clamp(2.1rem, 3.2vw, 2.9rem); }
+}
+/* Contraste: el rojo de Universitarios queda detrás del ícono; el texto, sobre naranja y oro */
+.etapa--universitarios { background: radial-gradient(circle 11rem at 5rem 5.5rem, var(--univ-rojo), rgb(194 23 15 / 0) 100%), linear-gradient(160deg, var(--univ-naranja), #F59A17 60%, var(--univ-oro)); }
+.tarjeta-heroe--d .rotulo, .tarjeta-heroe--e .rotulo { color: var(--crema); }
+.tarjeta-heroe--a .rotulo { color: var(--crema); }
